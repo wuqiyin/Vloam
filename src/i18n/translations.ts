@@ -160,6 +160,14 @@ export interface Translation {
   productsPage: {
     title: string;
     subtitle: string;
+    desktopSectionTitle: string;
+    desktopSectionDesc: string;
+    webSectionTitle: string;
+    webSectionDesc: string;
+    btnDownload: string;
+    btnLaunch: string;
+    integrityTitle: string;
+    integrityDesc: string;
   };
   footer: {
     brandDesc: string;
@@ -552,8 +560,16 @@ const en: Translation = {
     ],
   },
   productsPage: {
-    title: 'All Software & Online Tools',
-    subtitle: 'Focused native desktop software alongside zero-install web tools and evidence-based screening websites.',
+    title: 'Software Directory & Access Index',
+    subtitle: 'Direct downloads, platform binaries, and browser links for all Vloam applications and utilities.',
+    desktopSectionTitle: 'Native Desktop Applications',
+    desktopSectionDesc: 'Fast native client software for macOS and Windows with zero telemetry and on-device storage.',
+    webSectionTitle: 'Web Applications & Online Tools',
+    webSectionDesc: 'Client-side web utilities and clinical screening sites, accessible instantly in modern browsers.',
+    btnDownload: 'Download / View ↗',
+    btnLaunch: 'Launch Web App ↗',
+    integrityTitle: 'Build Integrity & Security Verification',
+    integrityDesc: 'All desktop binaries are compiled natively with hardened runtime. macOS releases are signed and notarized by Apple. Windows builds adhere to Microsoft Authenticode standards.',
   },
   footer: {
     brandDesc: 'Focused, lightweight, and practical digital tools and web services—spanning native desktop applications, visual utilities, and helpful online resources.',
@@ -946,8 +962,16 @@ const zh: Translation = {
     ],
   },
   productsPage: {
-    title: '全部软件与在线网站',
-    subtitle: '涵盖轻巧高效的原生桌面客户端软件，以及打开即用的 Web 在线应用与自测网站。',
+    title: '软件与工具索引清单',
+    subtitle: '提供 Vloam 旗下原生客户端安装包下载、运行环境要求及 Web 在线工具直达通道。',
+    desktopSectionTitle: '桌面客户端软件',
+    desktopSectionDesc: '原生编译的高性能桌面工具，启动迅速、内存受控，支持 macOS 与 Windows。',
+    webSectionTitle: 'Web 在线应用与工具网站',
+    webSectionDesc: '无需安装、浏览器即开即用的实用工具与专业心理健康自评网站。',
+    btnDownload: '官方页面 / 获取 ↗',
+    btnLaunch: '打开在线工具 ↗',
+    integrityTitle: '构建完整性与安全签名说明',
+    integrityDesc: '所有桌面二进制程序均采用本地原生编译。macOS 版本遵循 Apple 严格的安全公证规范，Windows 安装包采用标准代码安全验证，确保无后门与恶意篡改。',
   },
   footer: {
     brandDesc: '独立软件工作室，专注打造轻快实用的原生桌面软件，以及开箱即用的在线工具与自测网站。',

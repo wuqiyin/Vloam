@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SpecsTable from '../components/SpecsTable.astro';
 import { defaultLocale } from '../i18n/config';
 import { useTranslations } from '../i18n/translations';
 import '../styles/global.css';
@@ -13,229 +12,574 @@ const clipUrl = "https://clip.vloam.com/";
 const mermaidUrl = "https://mermaid.vloam.com/";
 const adhdUrl = "https://adhdtest.vloam.com/";
 const bpdUrl = "https://bdptest.vloam.com/";
+
+const securityUrl = "/security/";
 ---
 
 <Layout lang={lang}>
-  <div class="products-directory-page">
+  <div class="directory-page">
     <header class="directory-header">
       <div class="container">
-        <span class="section-label">{t.nav.products}</span>
+        <span class="section-label">Software &amp; Tools Index</span>
         <h1>{t.productsPage.title}</h1>
         <p class="directory-subtitle">{t.productsPage.subtitle}</p>
       </div>
     </header>
 
-    <!-- Native Desktop Software Category -->
-    <section class="products-section">
-      <div class="container">
-        <h2 class="section-title">{t.categories.developerTools}</h2>
-        <p class="category-subtitle">{t.categories.developerSubtitle}</p>
+    <div class="container directory-body">
+      <!-- Group 1: Native Desktop Applications -->
+      <section class="dir-group">
+        <div class="dir-group-header">
+          <div class="dir-group-title">
+            <span class="dir-group-badge">Desktop</span>
+            <h2>{t.productsPage.desktopSectionTitle}</h2>
+          </div>
+          <p class="dir-group-desc">{t.productsPage.desktopSectionDesc}</p>
+        </div>
 
-        <div class="products-grid two-col">
-          <!-- VloamDb Card -->
-          <article class="product-card" style="--card-accent: #3b82f6;">
-            <div class="card-header">
-              <span class="product-tag">{t.products.db.tag}</span>
-              <span class="os-tag">{t.products.db.badge}</span>
-            </div>
-            <h3>{t.products.db.title}</h3>
-            <p class="product-slogan blue-slogan">{t.products.db.slogan}</p>
-            <p class="product-desc">{t.products.db.desc}</p>
-
-            <div class="features-list">
-              {t.products.db.features.map(f => (
-                <div class="feature-item">
-                  <span class="feature-icon">{f.icon}</span>
-                  <div><strong>{f.title}</strong> {f.desc}</div>
+        <div class="dir-list">
+          <!-- VloamDb Entry -->
+          <div class="dir-row" style="--accent-color: #3b82f6;">
+            <div class="dir-app-col">
+              <div class="dir-avatar db-avatar">Db</div>
+              <div class="dir-app-info">
+                <div class="dir-name-row">
+                  <h3 class="dir-app-name">VloamDb</h3>
+                  <span class="dir-ver-tag">v3.3.4</span>
                 </div>
-              ))}
+                <p class="dir-app-tagline">{t.products.db.slogan}</p>
+              </div>
             </div>
 
-            <div class="card-actions">
-              <a href={dbUrl} target="_blank" rel="noopener" class="btn-primary">
+            <div class="dir-meta-col">
+              <div class="dir-chips-wrap">
+                <span class="dir-chip">macOS (Silicon &amp; Intel)</span>
+                <span class="dir-chip">Windows 10/11 x64</span>
+              </div>
+              <div class="dir-tech-sub">Go / Native · Keychain &amp; DPAPI · Instant 0.5s cold start</div>
+            </div>
+
+            <div class="dir-action-col">
+              <a href={dbUrl} target="_blank" rel="noopener" class="dir-cta-btn btn-blue">
                 {t.products.db.cta}
               </a>
-              <div class="deep-links">
+              <div class="dir-sub-links">
                 <a href={`${dbUrl}features/`} target="_blank" rel="noopener">Features</a>
-                <a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">Navicat &amp; DataGrip Alt</a>
+                <span class="sep">·</span>
+                <a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">Alternatives</a>
+                <span class="sep">·</span>
                 <a href={`${dbUrl}guides/`} target="_blank" rel="noopener">MySQL Guides</a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- VloamClip Card -->
-          <article class="product-card" style="--card-accent: #10b981;">
-            <div class="card-header">
-              <span class="product-tag">{t.products.clip.tag}</span>
-              <span class="os-tag">{t.products.clip.badge}</span>
-            </div>
-            <h3>{t.products.clip.title}</h3>
-            <p class="product-slogan emerald-slogan">{t.products.clip.slogan}</p>
-            <p class="product-desc">{t.products.clip.desc}</p>
-
-            <div class="features-list">
-              {t.products.clip.features.map(f => (
-                <div class="feature-item">
-                  <span class="feature-icon">{f.icon}</span>
-                  <div><strong>{f.title}</strong> {f.desc}</div>
+          <!-- VloamClip Entry -->
+          <div class="dir-row" style="--accent-color: #10b981;">
+            <div class="dir-app-col">
+              <div class="dir-avatar clip-avatar">Clip</div>
+              <div class="dir-app-info">
+                <div class="dir-name-row">
+                  <h3 class="dir-app-name">VloamClip</h3>
+                  <span class="dir-ver-tag">v1.2.0</span>
                 </div>
-              ))}
-            </div>
-
-            <div class="card-actions">
-              <a href={clipUrl} target="_blank" rel="noopener" class="btn-primary btn-emerald">
-                {t.products.clip.cta}
-              </a>
-              <div class="deep-links">
-                <a href={`${clipUrl}features/`} target="_blank" rel="noopener">Features</a>
-                <a href={`${clipUrl}guides/`} target="_blank" rel="noopener">Usage Guides</a>
-                <a href={`${clipUrl}changelog/`} target="_blank" rel="noopener">Release Notes</a>
+                <p class="dir-app-tagline">{t.products.clip.slogan}</p>
               </div>
             </div>
-          </article>
+
+            <div class="dir-meta-col">
+              <div class="dir-chips-wrap">
+                <span class="dir-chip">macOS (Universal)</span>
+                <span class="dir-chip">Windows 10/11 x64</span>
+              </div>
+              <div class="dir-tech-sub">FIFO/LIFO Queues · Sub-ms Fuzzy Search · Local SQLite</div>
+            </div>
+
+            <div class="dir-action-col">
+              <a href={clipUrl} target="_blank" rel="noopener" class="dir-cta-btn btn-emerald">
+                {t.products.clip.cta}
+              </a>
+              <div class="dir-sub-links">
+                <a href={`${clipUrl}features/`} target="_blank" rel="noopener">Features</a>
+                <span class="sep">·</span>
+                <a href={`${clipUrl}guides/`} target="_blank" rel="noopener">Guides</a>
+                <span class="sep">·</span>
+                <a href={`${clipUrl}changelog/`} target="_blank" rel="noopener">Changelog</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Web Applications & Tools Category -->
-    <section class="products-section alt-bg">
-      <div class="container">
-        <h2 class="section-title">{t.categories.assessmentTools}</h2>
-        <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
+      <!-- Group 2: Web Applications & Tools -->
+      <section class="dir-group">
+        <div class="dir-group-header">
+          <div class="dir-group-title">
+            <span class="dir-group-badge badge-web">Web Apps</span>
+            <h2>{t.productsPage.webSectionTitle}</h2>
+          </div>
+          <p class="dir-group-desc">{t.productsPage.webSectionDesc}</p>
+        </div>
 
-        <div class="products-grid three-col">
-          <!-- Vloam Mermaid Card -->
-          <article class="product-card" style="--card-accent: #06b6d4;">
-            <div class="card-header">
-              <span class="product-tag">{t.products.mermaid.tag}</span>
-              <span class="os-tag">{t.products.mermaid.badge}</span>
-            </div>
-            <h3>{t.products.mermaid.title}</h3>
-            <p class="product-slogan cyan-slogan">{t.products.mermaid.slogan}</p>
-            <p class="product-desc">{t.products.mermaid.desc}</p>
-
-            <div class="features-list">
-              {t.products.mermaid.features.map(f => (
-                <div class="feature-item">
-                  <span class="feature-icon">{f.icon}</span>
-                  <div><strong>{f.title}</strong> {f.desc}</div>
+        <div class="dir-list">
+          <!-- Vloam Mermaid Entry -->
+          <div class="dir-row" style="--accent-color: #06b6d4;">
+            <div class="dir-app-col">
+              <div class="dir-avatar mermaid-avatar">Mmd</div>
+              <div class="dir-app-info">
+                <div class="dir-name-row">
+                  <h3 class="dir-app-name">Vloam Mermaid</h3>
+                  <span class="dir-ver-tag">v1.1.0</span>
                 </div>
-              ))}
+                <p class="dir-app-tagline">{t.products.mermaid.slogan}</p>
+              </div>
             </div>
 
-            <div class="card-actions">
-              <a href={mermaidUrl} target="_blank" rel="noopener" class="btn-primary btn-cyan">
+            <div class="dir-meta-col">
+              <div class="dir-chips-wrap">
+                <span class="dir-chip">All Modern Web Browsers</span>
+                <span class="dir-chip chip-free">100% Free</span>
+              </div>
+              <div class="dir-tech-sub">Client-Side Island · Instant SVG/PNG Export · Zero Latency</div>
+            </div>
+
+            <div class="dir-action-col">
+              <a href={mermaidUrl} target="_blank" rel="noopener" class="dir-cta-btn btn-cyan">
                 {t.products.mermaid.cta}
               </a>
-              <div class="deep-links">
+              <div class="dir-sub-links">
                 <a href={`${mermaidUrl}editor/`} target="_blank" rel="noopener">Interactive Canvas</a>
+                <span class="sep">·</span>
                 <a href={`${mermaidUrl}docs/`} target="_blank" rel="noopener">Syntax Cheatsheet</a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- ADHD Test Card -->
-          <article class="product-card" style="--card-accent: #f59e0b;">
-            <div class="card-header">
-              <span class="product-tag">{t.products.adhd.tag}</span>
-              <span class="os-tag">{t.products.adhd.badge}</span>
-            </div>
-            <h3>{t.products.adhd.title}</h3>
-            <p class="product-slogan amber-slogan">{t.products.adhd.slogan}</p>
-            <p class="product-desc">{t.products.adhd.desc}</p>
-
-            <div class="features-list">
-              {t.products.adhd.features.map(f => (
-                <div class="feature-item">
-                  <span class="feature-icon">{f.icon}</span>
-                  <div><strong>{f.title}</strong> {f.desc}</div>
+          <!-- ADHD Test Entry -->
+          <div class="dir-row" style="--accent-color: #f59e0b;">
+            <div class="dir-app-col">
+              <div class="dir-avatar adhd-avatar">ADHD</div>
+              <div class="dir-app-info">
+                <div class="dir-name-row">
+                  <h3 class="dir-app-name">ADHD Test</h3>
+                  <span class="dir-ver-tag">v2.1.0</span>
                 </div>
-              ))}
+                <p class="dir-app-tagline">{t.products.adhd.slogan}</p>
+              </div>
             </div>
 
-            <div class="card-actions">
-              <a href={adhdUrl} target="_blank" rel="noopener" class="btn-primary btn-amber">
+            <div class="dir-meta-col">
+              <div class="dir-chips-wrap">
+                <span class="dir-chip">Mobile &amp; Desktop Web</span>
+                <span class="dir-chip chip-free">10 Languages · Free</span>
+              </div>
+              <div class="dir-tech-sub">Standardized Clinical Criteria · In-Memory Scoring · No Sign-Up</div>
+            </div>
+
+            <div class="dir-action-col">
+              <a href={adhdUrl} target="_blank" rel="noopener" class="dir-cta-btn btn-amber">
                 {t.products.adhd.cta}
               </a>
-              <div class="deep-links">
+              <div class="dir-sub-links">
                 <a href={`${adhdUrl}about/`} target="_blank" rel="noopener">Clinical Background</a>
-                <a href={`${adhdUrl}privacy/`} target="_blank" rel="noopener">Privacy Commitment</a>
+                <span class="sep">·</span>
+                <a href={`${adhdUrl}privacy/`} target="_blank" rel="noopener">Privacy Policy</a>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- BPD Test Card -->
-          <article class="product-card" style="--card-accent: #8b5cf6;">
-            <div class="card-header">
-              <span class="product-tag">{t.products.bpd.tag}</span>
-              <span class="os-tag">{t.products.bpd.badge}</span>
-            </div>
-            <h3>{t.products.bpd.title}</h3>
-            <p class="product-slogan purple-slogan">{t.products.bpd.slogan}</p>
-            <p class="product-desc">{t.products.bpd.desc}</p>
-
-            <div class="features-list">
-              {t.products.bpd.features.map(f => (
-                <div class="feature-item">
-                  <span class="feature-icon">{f.icon}</span>
-                  <div><strong>{f.title}</strong> {f.desc}</div>
+          <!-- BPD Test Entry -->
+          <div class="dir-row" style="--accent-color: #8b5cf6;">
+            <div class="dir-app-col">
+              <div class="dir-avatar bpd-avatar">BPD</div>
+              <div class="dir-app-info">
+                <div class="dir-name-row">
+                  <h3 class="dir-app-name">BPD Test</h3>
+                  <span class="dir-ver-tag">v2.1.0</span>
                 </div>
-              ))}
+                <p class="dir-app-tagline">{t.products.bpd.slogan}</p>
+              </div>
             </div>
 
-            <div class="card-actions">
-              <a href={bpdUrl} target="_blank" rel="noopener" class="btn-primary btn-purple">
+            <div class="dir-meta-col">
+              <div class="dir-chips-wrap">
+                <span class="dir-chip">Mobile &amp; Desktop Web</span>
+                <span class="dir-chip chip-free">10 Languages · Free</span>
+              </div>
+              <div class="dir-tech-sub">Multi-Factor Analysis · Zero Server Storage · Educational Reference</div>
+            </div>
+
+            <div class="dir-action-col">
+              <a href={bpdUrl} target="_blank" rel="noopener" class="dir-cta-btn btn-purple">
                 {t.products.bpd.cta}
               </a>
-              <div class="deep-links">
-                <a href={`${bpdUrl}about/`} target="_blank" rel="noopener">Assessment Methodology</a>
-                <a href={`${bpdUrl}privacy/`} target="_blank" rel="noopener">Confidentiality Guarantee</a>
+              <div class="dir-sub-links">
+                <a href={`${bpdUrl}about/`} target="_blank" rel="noopener">Methodology</a>
+                <span class="sep">·</span>
+                <a href={`${bpdUrl}privacy/`} target="_blank" rel="noopener">Confidentiality</a>
               </div>
             </div>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Product Matrix Technical Specs Table -->
-    <SpecsTable t={t} />
+      <!-- Build Integrity & Security Notice Card -->
+      <section class="dir-integrity-box">
+        <div class="integrity-icon">🛡️</div>
+        <div class="integrity-content">
+          <h4>{t.productsPage.integrityTitle}</h4>
+          <p>{t.productsPage.integrityDesc}</p>
+          <div class="integrity-link">
+            <a href={securityUrl}>Read Full Security Architecture &amp; Data Isolation Whitepaper →</a>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </Layout>
 
 <style>
+  .directory-page {
+    padding-bottom: 5rem;
+  }
+
   .directory-header {
-    padding: 5rem 0 3.5rem;
+    padding: 4.5rem 0 3rem;
     text-align: center;
     border-bottom: 1px solid var(--border);
-    background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.08) 0%, rgba(11, 15, 23, 0) 70%);
+    background: radial-gradient(circle at 50% 10%, rgba(59, 130, 246, 0.08) 0%, rgba(11, 15, 23, 0) 70%);
   }
 
   .directory-header h1 {
-    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-size: clamp(2rem, 4vw, 2.85rem);
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.025em;
-    margin: 0.75rem 0 1rem;
+    margin: 0.5rem 0 0.85rem;
     color: var(--text-main);
   }
 
   .directory-subtitle {
-    font-size: 1.12rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
-    line-height: 1.65;
-    max-width: 680px;
+    line-height: 1.6;
+    max-width: 640px;
     margin: 0 auto;
   }
 
-  @media (max-width: 768px) {
+  .directory-body {
+    max-width: 1040px;
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .dir-group-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .dir-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .dir-group-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .dir-group-badge.badge-web {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+
+  .dir-group-title h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.015em;
+  }
+
+  .dir-group-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  .dir-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .dir-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    display: grid;
+    grid-template-columns: 1.35fr 1.1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  }
+
+  .dir-row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent-color, var(--primary));
+  }
+
+  .dir-row:hover {
+    border-color: var(--border-highlight);
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+  }
+
+  .dir-app-col {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .dir-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    background: var(--bg-subtle);
+    color: var(--text-main);
+    border: 1px solid var(--border-highlight);
+  }
+
+  .db-avatar { color: #60a5fa; border-color: rgba(59, 130, 246, 0.4); }
+  .clip-avatar { color: #34d399; border-color: rgba(16, 185, 129, 0.4); }
+  .mermaid-avatar { color: #22d3ee; border-color: rgba(6, 182, 212, 0.4); }
+  .adhd-avatar { color: #fbbf24; border-color: rgba(245, 158, 11, 0.4); font-size: 0.72rem; }
+  .bpd-avatar { color: #a78bfa; border-color: rgba(139, 92, 246, 0.4); font-size: 0.78rem; }
+
+  .dir-name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .dir-app-name {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+  }
+
+  .dir-ver-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-faint);
+  }
+
+  .dir-app-tagline {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .dir-meta-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .dir-chips-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .dir-chip {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    background: var(--bg-subtle);
+    color: #cbd5e1;
+    border: 1px solid var(--border);
+  }
+
+  .dir-chip.chip-free {
+    color: #6ee7b7;
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.25);
+  }
+
+  .dir-tech-sub {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+
+  .dir-action-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+  }
+
+  .dir-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.15rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-highlight);
+    color: var(--text-main);
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .dir-cta-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent-color, var(--primary));
+  }
+
+  .btn-blue:hover { color: #60a5fa; border-color: #3b82f6; }
+  .btn-emerald:hover { color: #34d399; border-color: #10b981; }
+  .btn-cyan:hover { color: #22d3ee; border-color: #06b6d4; }
+  .btn-amber:hover { color: #fbbf24; border-color: #f59e0b; }
+  .btn-purple:hover { color: #a78bfa; border-color: #8b5cf6; }
+
+  .dir-sub-links {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+
+  .dir-sub-links a {
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+  }
+
+  .dir-sub-links a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+
+  .dir-sub-links .sep {
+    opacity: 0.4;
+  }
+
+  .dir-integrity-box {
+    margin-top: 1rem;
+    padding: 1.75rem 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .integrity-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .integrity-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .integrity-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
+  }
+
+  .integrity-link a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #60a5fa;
+    transition: color 0.15s ease;
+  }
+
+  .integrity-link a:hover {
+    color: #93c5fd;
+  }
+
+  @media (max-width: 900px) {
+    .dir-row {
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+      padding: 1.35rem 1.2rem;
+    }
+
+    .dir-row::before {
+      top: 0;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      height: 3px;
+      width: 100%;
+    }
+
+    .dir-action-col {
+      align-items: flex-start;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .dir-sub-links {
+      flex-wrap: wrap;
+    }
+
+    .dir-integrity-box {
+      padding: 1.35rem 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
     .directory-header {
       padding: 3rem 0 2rem;
     }
+
     .directory-header h1 {
-      font-size: 1.85rem;
+      font-size: 1.8rem;
     }
-    .directory-subtitle {
-      font-size: 0.98rem;
+
+    .directory-body {
+      margin-top: 2rem;
+      gap: 2.5rem;
     }
   }
 </style>
