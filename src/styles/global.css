@@ -83,11 +83,17 @@ a {
   border-radius: 8px;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
-  font-size: 0.95rem;
+  gap: 1.5rem;
+  font-size: 0.92rem;
   font-weight: 500;
 }
 
@@ -97,6 +103,33 @@ a {
 }
 
 .nav-links a:hover {
+  color: var(--text-main);
+}
+
+.lang-switch-wrapper {
+  position: relative;
+}
+
+.lang-select {
+  appearance: none;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 1.8rem 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.lang-select:hover,
+.lang-select:focus {
+  border-color: var(--border-highlight);
   color: var(--text-main);
 }
 
