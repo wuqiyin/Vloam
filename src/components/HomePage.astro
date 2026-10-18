@@ -12,6 +12,9 @@ const t = useTranslations(lang);
 
 const dbUrl = lang === defaultLocale ? "https://db.vloam.com/" : `https://db.vloam.com/${lang}/`;
 const clipUrl = lang === defaultLocale ? "https://clip.vloam.com/" : `https://clip.vloam.com/${lang}/`;
+const mermaidUrl = lang === defaultLocale ? "https://mermaid.vloam.com/" : `https://mermaid.vloam.com/${lang}/`;
+const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https://adhdtest.vloam.com/${lang}/`;
+const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
 ---
 
 <Layout lang={lang}>
@@ -26,92 +29,173 @@ const clipUrl = lang === defaultLocale ? "https://clip.vloam.com/" : `https://cl
     </div>
   </section>
 
-  <!-- Products Matrix Section -->
-  <section id="products" class="products-section">
+  <!-- Developer Tools Section -->
+  <section id="developer-tools" class="products-section">
     <div class="container">
-      <p class="section-label">{t.nav.products}</p>
-      <h2 class="section-title">The Vloam Developer Toolset</h2>
+      <p class="section-label">{t.nav.developerTools}</p>
+      <h2 class="section-title">{t.categories.developerTools}</h2>
+      <p class="category-subtitle">{t.categories.developerSubtitle}</p>
 
-      <div class="products-grid">
+      <div class="products-grid three-col">
         <!-- VloamDb Card -->
         <article class="product-card" style="--card-accent: #3b82f6;">
           <div class="card-header">
-            <span class="product-tag">{t.dbCard.tag}</span>
-            <span class="os-tag">{t.dbCard.os}</span>
+            <span class="product-tag">{t.products.db.tag}</span>
+            <span class="os-tag">{t.products.db.badge}</span>
           </div>
-          <h3>{t.dbCard.title}</h3>
-          <p class="product-slogan">{t.dbCard.slogan}</p>
-          <p class="product-desc">{t.dbCard.desc}</p>
+          <h3>{t.products.db.title}</h3>
+          <p class="product-slogan blue-slogan">{t.products.db.slogan}</p>
+          <p class="product-desc">{t.products.db.desc}</p>
 
           <div class="features-list">
-            <div class="feature-item">
-              <span class="feature-icon">⚡</span>
-              <div><strong>{t.dbCard.features.speedTitle}</strong> {t.dbCard.features.speedDesc}</div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🛡️</span>
-              <div><strong>{t.dbCard.features.safetyTitle}</strong> {t.dbCard.features.safetyDesc}</div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">⌨️</span>
-              <div><strong>{t.dbCard.features.kbdTitle}</strong> {t.dbCard.features.kbdDesc}</div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🔒</span>
-              <div><strong>{t.dbCard.features.privacyTitle}</strong> {t.dbCard.features.privacyDesc}</div>
-            </div>
+            {t.products.db.features.map(f => (
+              <div class="feature-item">
+                <span class="feature-icon">{f.icon}</span>
+                <div><strong>{f.title}</strong> {f.desc}</div>
+              </div>
+            ))}
           </div>
 
           <div class="card-actions">
             <a href={dbUrl} target="_blank" rel="noopener" class="btn-primary">
-              {t.dbCard.cta}
+              {t.products.db.cta}
             </a>
             <div class="deep-links">
-              <a href={`${dbUrl}features/`} target="_blank" rel="noopener">{t.dbCard.links.features}</a>
-              <a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">{t.dbCard.links.alternatives}</a>
-              <a href={`${dbUrl}guides/`} target="_blank" rel="noopener">{t.dbCard.links.guides}</a>
-              <a href={`${dbUrl}#pricing`} target="_blank" rel="noopener">{t.dbCard.links.pricing}</a>
+              <a href={`${dbUrl}features/`} target="_blank" rel="noopener">Features</a>
+              <a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">Navicat &amp; DataGrip Alt</a>
+              <a href={`${dbUrl}guides/`} target="_blank" rel="noopener">MySQL Guides</a>
             </div>
           </div>
         </article>
 
         <!-- VloamClip Card -->
-        <article class="product-card clip-card" style="--card-accent: #8b5cf6;">
+        <article class="product-card" style="--card-accent: #10b981;">
           <div class="card-header">
-            <span class="product-tag">{t.clipCard.tag}</span>
-            <span class="os-tag">{t.clipCard.os}</span>
+            <span class="product-tag">{t.products.clip.tag}</span>
+            <span class="os-tag">{t.products.clip.badge}</span>
           </div>
-          <h3>{t.clipCard.title}</h3>
-          <p class="product-slogan">{t.clipCard.slogan}</p>
-          <p class="product-desc">{t.clipCard.desc}</p>
+          <h3>{t.products.clip.title}</h3>
+          <p class="product-slogan emerald-slogan">{t.products.clip.slogan}</p>
+          <p class="product-desc">{t.products.clip.desc}</p>
 
           <div class="features-list">
-            <div class="feature-item">
-              <span class="feature-icon">📋</span>
-              <div><strong>{t.clipCard.features.queueTitle}</strong> {t.clipCard.features.queueDesc}</div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🔍</span>
-              <div><strong>{t.clipCard.features.searchTitle}</strong> {t.clipCard.features.searchDesc}</div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">⭐</span>
-              <div><strong>{t.clipCard.features.favTitle}</strong> {t.clipCard.features.favDesc}</div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🔐</span>
-              <div><strong>{t.clipCard.features.privacyTitle}</strong> {t.clipCard.features.privacyDesc}</div>
-            </div>
+            {t.products.clip.features.map(f => (
+              <div class="feature-item">
+                <span class="feature-icon">{f.icon}</span>
+                <div><strong>{f.title}</strong> {f.desc}</div>
+              </div>
+            ))}
           </div>
 
           <div class="card-actions">
-            <a href={clipUrl} target="_blank" rel="noopener" class="btn-primary btn-purple">
-              {t.clipCard.cta}
+            <a href={clipUrl} target="_blank" rel="noopener" class="btn-primary btn-emerald">
+              {t.products.clip.cta}
             </a>
             <div class="deep-links">
-              <a href={`${clipUrl}features/`} target="_blank" rel="noopener">{t.clipCard.links.features}</a>
-              <a href={`${clipUrl}guides/`} target="_blank" rel="noopener">{t.clipCard.links.guides}</a>
-              <a href={`${clipUrl}changelog/`} target="_blank" rel="noopener">{t.clipCard.links.changelog}</a>
+              <a href={`${clipUrl}features/`} target="_blank" rel="noopener">Features</a>
+              <a href={`${clipUrl}guides/`} target="_blank" rel="noopener">Usage Guides</a>
+              <a href={`${clipUrl}changelog/`} target="_blank" rel="noopener">Release Notes</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vloam Mermaid Card -->
+        <article class="product-card" style="--card-accent: #06b6d4;">
+          <div class="card-header">
+            <span class="product-tag">{t.products.mermaid.tag}</span>
+            <span class="os-tag">{t.products.mermaid.badge}</span>
+          </div>
+          <h3>{t.products.mermaid.title}</h3>
+          <p class="product-slogan cyan-slogan">{t.products.mermaid.slogan}</p>
+          <p class="product-desc">{t.products.mermaid.desc}</p>
+
+          <div class="features-list">
+            {t.products.mermaid.features.map(f => (
+              <div class="feature-item">
+                <span class="feature-icon">{f.icon}</span>
+                <div><strong>{f.title}</strong> {f.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="card-actions">
+            <a href={mermaidUrl} target="_blank" rel="noopener" class="btn-primary btn-cyan">
+              {t.products.mermaid.cta}
+            </a>
+            <div class="deep-links">
+              <a href={mermaidUrl} target="_blank" rel="noopener">Flowcharts &amp; Sequences</a>
+              <a href={mermaidUrl} target="_blank" rel="noopener">SVG / PNG Export</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Tools Section -->
+  <section id="assessment-tools" class="products-section alt-bg">
+    <div class="container">
+      <p class="section-label">{t.nav.wellnessTools}</p>
+      <h2 class="section-title">{t.categories.assessmentTools}</h2>
+      <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
+
+      <div class="products-grid two-col">
+        <!-- ADHD Test Card -->
+        <article class="product-card" style="--card-accent: #f59e0b;">
+          <div class="card-header">
+            <span class="product-tag">{t.products.adhd.tag}</span>
+            <span class="os-tag">{t.products.adhd.badge}</span>
+          </div>
+          <h3>{t.products.adhd.title}</h3>
+          <p class="product-slogan amber-slogan">{t.products.adhd.slogan}</p>
+          <p class="product-desc">{t.products.adhd.desc}</p>
+
+          <div class="features-list">
+            {t.products.adhd.features.map(f => (
+              <div class="feature-item">
+                <span class="feature-icon">{f.icon}</span>
+                <div><strong>{f.title}</strong> {f.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="card-actions">
+            <a href={adhdUrl} target="_blank" rel="noopener" class="btn-primary btn-amber">
+              {t.products.adhd.cta}
+            </a>
+            <div class="deep-links">
+              <a href={`${adhdUrl}about/`} target="_blank" rel="noopener">Clinical Background</a>
+              <a href={`${adhdUrl}privacy/`} target="_blank" rel="noopener">Privacy Commitment</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BPD Test Card -->
+        <article class="product-card" style="--card-accent: #8b5cf6;">
+          <div class="card-header">
+            <span class="product-tag">{t.products.bpd.tag}</span>
+            <span class="os-tag">{t.products.bpd.badge}</span>
+          </div>
+          <h3>{t.products.bpd.title}</h3>
+          <p class="product-slogan purple-slogan">{t.products.bpd.slogan}</p>
+          <p class="product-desc">{t.products.bpd.desc}</p>
+
+          <div class="features-list">
+            {t.products.bpd.features.map(f => (
+              <div class="feature-item">
+                <span class="feature-icon">{f.icon}</span>
+                <div><strong>{f.title}</strong> {f.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="card-actions">
+            <a href={bpdUrl} target="_blank" rel="noopener" class="btn-primary btn-purple">
+              {t.products.bpd.cta}
+            </a>
+            <div class="deep-links">
+              <a href={`${bpdUrl}about/`} target="_blank" rel="noopener">Assessment Scale Methodology</a>
+              <a href={`${bpdUrl}privacy/`} target="_blank" rel="noopener">Confidentiality Guarantee</a>
             </div>
           </div>
         </article>

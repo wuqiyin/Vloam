@@ -15,6 +15,9 @@ const canonicalURL = new URL(canonicalPath, siteUrl);
 
 const dbUrl = lang === defaultLocale ? "https://db.vloam.com/" : `https://db.vloam.com/${lang}/`;
 const clipUrl = lang === defaultLocale ? "https://clip.vloam.com/" : `https://clip.vloam.com/${lang}/`;
+const mermaidUrl = lang === defaultLocale ? "https://mermaid.vloam.com/" : `https://mermaid.vloam.com/${lang}/`;
+const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https://adhdtest.vloam.com/${lang}/`;
+const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -28,7 +31,10 @@ const structuredData = {
       "description": t.meta.description,
       "sameAs": [
         dbUrl,
-        clipUrl
+        clipUrl,
+        mermaidUrl,
+        adhdUrl,
+        bpdUrl
       ]
     },
     {
@@ -45,7 +51,7 @@ const structuredData = {
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS, Windows",
       "url": dbUrl,
-      "description": t.dbCard.desc
+      "description": t.products.db.desc
     },
     {
       "@type": "SoftwareApplication",
@@ -53,7 +59,28 @@ const structuredData = {
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "macOS, Windows",
       "url": clipUrl,
-      "description": t.clipCard.desc
+      "description": t.products.clip.desc
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Vloam Mermaid",
+      "applicationCategory": "DesignApplication",
+      "url": mermaidUrl,
+      "description": t.products.mermaid.desc
+    },
+    {
+      "@type": "WebApplication",
+      "name": "ADHD Test",
+      "applicationCategory": "HealthApplication",
+      "url": adhdUrl,
+      "description": t.products.adhd.desc
+    },
+    {
+      "@type": "WebApplication",
+      "name": "BPD Test",
+      "applicationCategory": "HealthApplication",
+      "url": bpdUrl,
+      "description": t.products.bpd.desc
     },
     {
       "@type": "FAQPage",
@@ -125,9 +152,8 @@ const structuredData = {
 
         <div class="header-right">
           <nav class="nav-links">
-            <a href="#products">{t.nav.products}</a>
-            <a href={dbUrl} target="_blank" rel="noopener">VloamDb</a>
-            <a href={clipUrl} target="_blank" rel="noopener">VloamClip</a>
+            <a href="#developer-tools">{t.nav.developerTools}</a>
+            <a href="#assessment-tools">{t.nav.wellnessTools}</a>
             <a href="#values">{t.nav.philosophy}</a>
             <a href="#faq">{t.nav.faq}</a>
           </nav>
@@ -168,21 +194,22 @@ const structuredData = {
           </div>
           <div class="footer-columns">
             <div class="footer-col">
-              <h5>{t.footer.productsTitle}</h5>
+              <h5>{t.footer.devTitle}</h5>
               <ul>
-                <li><a href={dbUrl} target="_blank" rel="noopener">VloamDb</a></li>
-                <li><a href={clipUrl} target="_blank" rel="noopener">VloamClip</a></li>
-                <li><a href={`${dbUrl}features/`} target="_blank" rel="noopener">{t.dbCard.links.features}</a></li>
-                <li><a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">{t.footer.navicatAlt}</a></li>
+                <li><a href={dbUrl} target="_blank" rel="noopener">VloamDb (MySQL Client)</a></li>
+                <li><a href={clipUrl} target="_blank" rel="noopener">VloamClip (Clipboard)</a></li>
+                <li><a href={mermaidUrl} target="_blank" rel="noopener">Vloam Mermaid (Editor)</a></li>
+                <li><a href={`${dbUrl}features/`} target="_blank" rel="noopener">VloamDb Features</a></li>
+                <li><a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">Navicat / DataGrip Alt</a></li>
               </ul>
             </div>
             <div class="footer-col">
-              <h5>{t.footer.resourcesTitle}</h5>
+              <h5>{t.footer.healthTitle}</h5>
               <ul>
-                <li><a href={`${dbUrl}guides/`} target="_blank" rel="noopener">{t.footer.mysqlGuides}</a></li>
-                <li><a href={`${clipUrl}guides/`} target="_blank" rel="noopener">{t.clipCard.links.guides}</a></li>
-                <li><a href={`${dbUrl}changelog/`} target="_blank" rel="noopener">{t.footer.releaseNotes}</a></li>
-                <li><a href="#faq">{t.nav.faq}</a></li>
+                <li><a href={adhdUrl} target="_blank" rel="noopener">ADHD Assessment Test</a></li>
+                <li><a href={bpdUrl} target="_blank" rel="noopener">BPD Screening Test</a></li>
+                <li><a href={`${adhdUrl}about/`} target="_blank" rel="noopener">ADHD Clinical Criteria</a></li>
+                <li><a href={`${bpdUrl}about/`} target="_blank" rel="noopener">BPD Assessment Scale</a></li>
               </ul>
             </div>
             <div class="footer-col">
