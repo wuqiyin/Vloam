@@ -1,0 +1,187 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Vloam — Focused, Lightweight Developer Tools",
+  description = "Vloam builds fast, local-first developer tools for macOS and Windows. Explore VloamDb (lean MySQL client) and VloamClip (smart clipboard manager with paste queue).",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://vloam.com");
+
+const faqData = [
+  {
+    q: "What is Vloam?",
+    a: "Vloam is a software studio building high-performance, distraction-free desktop developer tools. We focus on native performance, clean ergonomics, and local-first data privacy."
+  },
+  {
+    q: "Do Vloam tools upload database credentials or clipboard contents to cloud servers?",
+    a: "No. All Vloam tools (including VloamDb and VloamClip) are engineered with a strict local-first architecture. Database connection strings, passwords, query history, and clipboard items stay exclusively on your local machine."
+  },
+  {
+    q: "Which operating systems are supported?",
+    a: "Both VloamDb and VloamClip offer native desktop builds for macOS (Apple Silicon M-series & Intel x86_64) and Windows (x64)."
+  },
+  {
+    q: "What is the pricing model?",
+    a: "Each tool offers a generous 15-day unrestricted free trial. After that, users can unlock the software via a simple, transparent one-time purchase with perpetual access — no forced subscriptions."
+  },
+  {
+    q: "How can I get support or report feature requests?",
+    a: "You can reach out via email at support@vloam.com or submit feedback directly through our community repositories on GitHub."
+  }
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vloam.com/#organization",
+      "name": "Vloam",
+      "url": "https://vloam.com",
+      "logo": "https://vloam.com/favicon.svg",
+      "description": "Creator of focused, lightweight desktop developer tools.",
+      "sameAs": [
+        "https://db.vloam.com",
+        "https://clip.vloam.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vloam.com/#website",
+      "url": "https://vloam.com",
+      "name": "Vloam",
+      "publisher": { "@id": "https://vloam.com/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "VloamDb",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS, Windows",
+      "url": "https://db.vloam.com",
+      "description": "Fast, lightweight, keyboard-first MySQL client for developers on macOS and Windows."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "VloamClip",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS, Windows",
+      "url": "https://clip.vloam.com",
+      "description": "Local-first clipboard manager for macOS and Windows with FIFO/LIFO paste queue and full-text history search."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Vloam" />
+    <meta property="og:image" content="https://vloam.com/favicon.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">
+          <img src="/favicon.svg" alt="Vloam Logo" width="32" height="32" />
+          <span>Vloam</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#products">Products</a>
+          <a href="https://db.vloam.com" target="_blank" rel="noopener">VloamDb</a>
+          <a href="https://clip.vloam.com" target="_blank" rel="noopener">VloamClip</a>
+          <a href="#values">Philosophy</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand">
+              <img src="/favicon.svg" alt="Vloam Logo" width="28" height="28" />
+              <span>Vloam</span>
+            </div>
+            <p>Focused, lightweight developer tools built for speed, local-first privacy, and distraction-free daily workflows.</p>
+          </div>
+          <div class="footer-columns">
+            <div class="footer-col">
+              <h5>Products</h5>
+              <ul>
+                <li><a href="https://db.vloam.com" target="_blank" rel="noopener">VloamDb (MySQL Client)</a></li>
+                <li><a href="https://clip.vloam.com" target="_blank" rel="noopener">VloamClip (Clipboard Manager)</a></li>
+                <li><a href="https://db.vloam.com/features/" target="_blank" rel="noopener">VloamDb Features</a></li>
+                <li><a href="https://db.vloam.com/alternatives/" target="_blank" rel="noopener">Navicat & DataGrip Alternative</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h5>Resources</h5>
+              <ul>
+                <li><a href="https://db.vloam.com/guides/" target="_blank" rel="noopener">MySQL Guides</a></li>
+                <li><a href="https://db.vloam.com/changelog/" target="_blank" rel="noopener">Release Notes</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h5>Legal & Trust</h5>
+              <ul>
+                <li><a href="https://db.vloam.com/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+                <li><a href="https://db.vloam.com/terms/" target="_blank" rel="noopener">Terms of Service</a></li>
+                <li><a href="https://db.vloam.com/about/" target="_blank" rel="noopener">About Team</a></li>
+                <li><a href="mailto:support@vloam.com">Contact Support</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; {new Date().getFullYear()} Vloam. All rights reserved.</span>
+          <span>Local-First · Zero Bloat · Native Ergonomics</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
