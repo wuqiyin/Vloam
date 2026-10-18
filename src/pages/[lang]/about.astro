@@ -22,7 +22,7 @@ const t = useTranslations(lang);
 <Layout lang={lang}>
   <div class="container article-page">
     <header class="article-header">
-      <span class="section-label">Studio Transparency</span>
+      <span class="section-label">{lang === 'zh' ? '工作室理念' : 'Studio Transparency'}</span>
       <h1>{t.aboutPage.title}</h1>
       <p class="article-subtitle">{t.aboutPage.subtitle}</p>
     </header>
@@ -58,8 +58,8 @@ const t = useTranslations(lang);
       </section>
 
       <section class="content-block contact-block">
-        <h3>Contact &amp; Governance</h3>
-        <p>Inquiries and feedback: <a href="mailto:contact@vloam.com" class="text-primary font-bold">contact@vloam.com</a>.</p>
+        <h3>{lang === 'zh' ? '联系与合作' : 'Contact & Governance'}</h3>
+        <p>{lang === 'zh' ? 'Vloam 由独立工程师团队开发与维护。合作咨询与产品建议可直接发送邮件至' : 'Vloam is maintained by an independent group of engineers. Inquiries and partnerships can be directed to'} <a href="mailto:contact@vloam.com" class="text-primary font-bold">contact@vloam.com</a>。</p>
       </section>
     </div>
   </div>

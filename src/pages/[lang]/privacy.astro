@@ -22,7 +22,7 @@ const t = useTranslations(lang);
 <Layout lang={lang}>
   <div class="container article-page">
     <header class="article-header">
-      <span class="section-label">Compliance &amp; Trust</span>
+      <span class="section-label">{lang === 'zh' ? '合规与隐私承诺' : 'Compliance & Trust'}</span>
       <h1>{t.privacyPage.title}</h1>
       <p class="article-subtitle">{t.privacyPage.subtitle}</p>
       <div class="article-date-meta">{t.privacyPage.updatedDate}</div>

@@ -247,7 +247,6 @@ const structuredData = {
               <ul>
                 <li><a href={dbUrl} target="_blank" rel="noopener">VloamDb (MySQL Client)</a></li>
                 <li><a href={clipUrl} target="_blank" rel="noopener">VloamClip (Clipboard)</a></li>
-                <li><a href={mermaidUrl} target="_blank" rel="noopener">Vloam Mermaid (Editor)</a></li>
                 <li><a href={`${dbUrl}features/`} target="_blank" rel="noopener">VloamDb Features</a></li>
                 <li><a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">Navicat / DataGrip Alt</a></li>
               </ul>
@@ -255,6 +254,7 @@ const structuredData = {
             <div class="footer-col">
               <h5>{t.footer.healthTitle}</h5>
               <ul>
+                <li><a href={mermaidUrl} target="_blank" rel="noopener">Vloam Mermaid (Editor)</a></li>
                 <li><a href={adhdUrl} target="_blank" rel="noopener">ADHD Assessment Test</a></li>
                 <li><a href={bpdUrl} target="_blank" rel="noopener">BPD Screening Test</a></li>
                 <li><a href={`${adhdUrl}about/`} target="_blank" rel="noopener">ADHD Clinical Criteria</a></li>
@@ -264,12 +264,10 @@ const structuredData = {
             <div class="footer-col">
               <h5>{t.footer.trustTitle}</h5>
               <ul>
+                <li><a href={productsUrl}>{t.nav.products}</a></li>
                 <li><a href={articlesUrl}>{t.nav.notes}</a></li>
                 <li><a href={securityUrl}>{t.footer.security}</a></li>
                 <li><a href={aboutUrl}>{t.footer.about}</a></li>
-                <li><a href={`${homeUrl}#specs`}>{t.nav.specs}</a></li>
-                <li><a href={`${homeUrl}#radar`}>{t.nav.radar}</a></li>
-                <li><a href={`${homeUrl}#faq`}>{t.nav.faq}</a></li>
                 <li><a href={privacyUrl}>{t.footer.privacy}</a></li>
                 <li><a href={termsUrl}>{t.footer.terms}</a></li>
                 <li><a href="mailto:support@vloam.com">{t.footer.contact}</a></li>

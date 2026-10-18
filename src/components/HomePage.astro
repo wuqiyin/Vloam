@@ -38,11 +38,11 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
   <!-- Developer Tools Section -->
   <section id="developer-tools" class="products-section">
     <div class="container">
-      <p class="section-label">{t.nav.products}</p>
+      <p class="section-label">{lang === 'zh' ? '原生桌面应用' : 'Desktop Applications'}</p>
       <h2 class="section-title">{t.categories.developerTools}</h2>
       <p class="category-subtitle">{t.categories.developerSubtitle}</p>
 
-      <div class="products-grid three-col">
+      <div class="products-grid two-col">
         <!-- VloamDb Card -->
         <article class="product-card" style="--card-accent: #3b82f6;">
           <div class="card-header">
@@ -104,7 +104,18 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- Assessment Tools Section -->
+  <section id="assessment-tools" class="products-section alt-bg">
+    <div class="container">
+      <p class="section-label">{lang === 'zh' ? '免安装 Web 矩阵' : 'Browser Utilities'}</p>
+      <h2 class="section-title">{t.categories.assessmentTools}</h2>
+      <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
+
+      <div class="products-grid three-col">
         <!-- Vloam Mermaid Card -->
         <article class="product-card" style="--card-accent: #06b6d4;">
           <div class="card-header">
@@ -129,23 +140,12 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
               {t.products.mermaid.cta}
             </a>
             <div class="deep-links">
-              <a href={mermaidUrl} target="_blank" rel="noopener">Flowcharts &amp; Sequences</a>
-              <a href={mermaidUrl} target="_blank" rel="noopener">SVG / PNG Export</a>
+              <a href={`${mermaidUrl}editor/`} target="_blank" rel="noopener">Interactive Canvas</a>
+              <a href={`${mermaidUrl}docs/`} target="_blank" rel="noopener">Syntax Cheatsheet</a>
             </div>
           </div>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- Assessment Tools Section -->
-  <section id="assessment-tools" class="products-section alt-bg">
-    <div class="container">
-      <p class="section-label">{t.categories.assessmentTools}</p>
-      <h2 class="section-title">{t.categories.assessmentTools}</h2>
-      <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
-
-      <div class="products-grid two-col">
         <!-- ADHD Test Card -->
         <article class="product-card" style="--card-accent: #f59e0b;">
           <div class="card-header">
