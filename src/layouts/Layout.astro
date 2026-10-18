@@ -32,6 +32,7 @@ const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://
 const homeUrl = lang === defaultLocale ? "/" : `/${lang}/`;
 const aboutUrl = lang === defaultLocale ? "/about/" : `/${lang}/about/`;
 const securityUrl = lang === defaultLocale ? "/security/" : `/${lang}/security/`;
+const articlesUrl = lang === defaultLocale ? "/articles/" : `/${lang}/articles/`;
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -169,7 +170,7 @@ const structuredData = {
             <a href={`${homeUrl}#developer-tools`}>{t.nav.products}</a>
             <a href={`${homeUrl}#specs`}>{t.nav.specs}</a>
             <a href={`${homeUrl}#radar`}>{t.nav.radar}</a>
-            <a href={`${homeUrl}#notes`}>{t.nav.notes}</a>
+            <a href={articlesUrl}>{t.nav.notes}</a>
             <a href={securityUrl}>{t.nav.security}</a>
             <a href={aboutUrl}>{t.nav.about}</a>
             <a href={`${homeUrl}#faq`}>{t.nav.faq}</a>
@@ -232,6 +233,7 @@ const structuredData = {
             <div class="footer-col">
               <h5>{t.footer.trustTitle}</h5>
               <ul>
+                <li><a href={articlesUrl}>{t.nav.notes}</a></li>
                 <li><a href={aboutUrl}>{t.footer.about}</a></li>
                 <li><a href={securityUrl}>{t.footer.security}</a></li>
                 <li><a href={`${dbUrl}privacy/`} target="_blank" rel="noopener">{t.footer.privacy}</a></li>
