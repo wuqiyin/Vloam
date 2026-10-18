@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { prefixedLocales, type Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/translations';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return prefixedLocales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang}>
+  <div class="container article-page">
+    <header class="article-header">
+      <span class="section-label">Legal Terms</span>
+      <h1>{t.termsPage.title}</h1>
+      <p class="article-subtitle">{t.termsPage.subtitle}</p>
+      <div class="article-date-meta">{t.termsPage.updatedDate}</div>
+    </header>
+
+    <div class="article-body">
+      {t.termsPage.sections.map((sec) => (
+        <section class="content-block">
+          <h2>{sec.title}</h2>
+          <p>{sec.content}</p>
+          {sec.points && (
+            <ul class="policy-points">
+              {sec.points.map((pt) => (
+                <li>
+                  <span class="bullet-dot">›</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+
+      <section class="content-block contact-block">
+        <h3>{lang === 'zh' ? '条款咨询与法律联络' : 'Legal Contact'}</h3>
+        <p>{lang === 'zh' ? '如对本协议或服务条款有任何疑问，请发送邮件至' : 'For questions or notices regarding these terms, please contact our legal desk at'} <a href="mailto:legal@vloam.com" class="text-primary font-bold">legal@vloam.com</a>。</p>
+      </section>
+    </div>
+  </div>
+</Layout>

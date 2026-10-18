@@ -137,6 +137,26 @@ export interface Translation {
     contactTitle: string;
     contactP1: string;
   };
+  privacyPage: {
+    title: string;
+    subtitle: string;
+    updatedDate: string;
+    sections: {
+      title: string;
+      content: string;
+      points?: string[];
+    }[];
+  };
+  termsPage: {
+    title: string;
+    subtitle: string;
+    updatedDate: string;
+    sections: {
+      title: string;
+      content: string;
+      points?: string[];
+    }[];
+  };
   footer: {
     brandDesc: string;
     devTitle: string;
@@ -458,6 +478,75 @@ const en: Translation = {
     contactTitle: '5. Security Contact & Disclosures',
     contactP1: 'If you discover a security concern or vulnerability in any Vloam software, please contact our engineering team directly at security@vloam.com.',
   },
+  privacyPage: {
+    title: 'Privacy Policy',
+    subtitle: 'Transparent, principled data practices across all Vloam desktop applications and web services.',
+    updatedDate: 'Last updated: October 2026',
+    sections: [
+      {
+        title: '1. Foundational Privacy Commitment',
+        content: 'At Vloam, our business model is simple: we create helpful software and web tools. We do not sell user data, monetize behavioral attention, or build tracking profiles. Data minimization and local-first architecture guide everything we engineer.',
+      },
+      {
+        title: '2. Native Desktop Applications (VloamDb & VloamClip)',
+        content: 'Our desktop utilities are engineered to operate on your local machine with strict boundaries:',
+        points: [
+          'Database credentials and connection passwords are encrypted via native OS enclaves (macOS Keychain Services and Windows DPAPI).',
+          'Database queries, clipboard text, history stacks, and configuration files reside solely on your physical drive.',
+          'No clipboard content, SQL text, or database schemas are transmitted to our servers.',
+        ],
+      },
+      {
+        title: '3. Web Applications & Online Assessments',
+        content: 'For our browser-based utilities including Vloam Mermaid, ADHD Test, and BPD Test:',
+        points: [
+          'Diagram rendering (Mermaid syntax) executes entirely client-side inside your active browser session.',
+          'Psychological questionnaire responses and score breakdowns are calculated via in-memory JavaScript.',
+          'Zero test answers or personal screening data are stored on or sent to remote databases.',
+          'All session memory is purged as soon as you close or reload the browser tab.',
+        ],
+      },
+      {
+        title: '4. Infrastructure & Edge Logs',
+        content: 'Our public websites are hosted on global content delivery networks (Cloudflare). Minimal transient server logs (e.g. IP addresses, request paths) are maintained temporarily for DDoS defense, routing optimization, and infrastructure uptime, and are never used for personal tracking.',
+      },
+      {
+        title: '5. Privacy Inquiries & Data Rights',
+        content: 'If you have questions, feedback, or concerns regarding your privacy when using Vloam software or sites, please reach out directly to privacy@vloam.com.',
+      },
+    ],
+  },
+  termsPage: {
+    title: 'Terms of Service',
+    subtitle: 'Clear, fair conditions for utilizing Vloam desktop tools and online web applications.',
+    updatedDate: 'Last updated: October 2026',
+    sections: [
+      {
+        title: '1. Acceptance of Terms',
+        content: 'By accessing our websites, downloading our desktop software, or using our web applications, you agree to these Terms of Service. If you do not agree with any part of these terms, please discontinue using Vloam products.',
+      },
+      {
+        title: '2. Software Licenses & Evaluation',
+        content: 'Vloam desktop software (including VloamDb and VloamClip) is distributed with an unrestricted 15-day free evaluation period. Continued usage following the evaluation period requires purchase of a perpetual lifetime license. Licenses are non-exclusive and non-transferable, granting you the right to run the application on supported personal or work devices.',
+      },
+      {
+        title: '3. Online Tools & Health Self-Assessment Disclaimer',
+        content: 'Web applications such as Vloam Mermaid, ADHD Test, and BPD Test are provided free of charge for public benefit. Please note the clinical self-assessment tools are intended solely for educational and informational self-screening purposes and do not replace professional psychological diagnosis, medical advice, or psychiatric treatment. Always seek the advice of a qualified healthcare provider with any medical questions.',
+      },
+      {
+        title: '4. Permitted Use & Restrictions',
+        content: 'You agree to use Vloam products only for lawful purposes. You may not reverse-engineer, decompile, redistribute unauthorized cracked copies, or deploy automated attacks against our network infrastructure.',
+      },
+      {
+        title: '5. Disclaimer of Warranties & Limitation of Liability',
+        content: 'Vloam applications and services are provided "as is" and "as available". To the extent permitted by applicable law, Vloam disclaims all warranties, express or implied. Under no circumstances shall Vloam be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our products.',
+      },
+      {
+        title: '6. Amendments & Contact',
+        content: 'We may modify these terms as our products and services evolve. Notice of substantial revisions will be published on our website. For inquiries concerning these terms, contact us at legal@vloam.com.',
+      },
+    ],
+  },
   footer: {
     brandDesc: 'Focused, lightweight, and practical digital tools and web services—spanning native desktop applications, visual utilities, and helpful online resources.',
     devTitle: 'Desktop Software',
@@ -778,6 +867,75 @@ const zh: Translation = {
     healthP1: 'ADHD Test 和 BPD Test 均采用纯前端离线运算模型。测评题目回答只保留在当前标签页内存中，关闭页面即刻销毁，无任何服务器数据库留存。',
     contactTitle: '5. 安全问题联络通道',
     contactP1: '如果你在 Vloam 旗下任何产品中发现安全隐患或漏洞，请直接发送邮件至 security@vloam.com，我们将第一时间评估并响应。',
+  },
+  privacyPage: {
+    title: '隐私政策与说明',
+    subtitle: '公开透明的数据处理准则，全面保障你在使用 Vloam 桌面软件与在线网站时的隐私与安全。',
+    updatedDate: '最近更新：2026 年 10 月',
+    sections: [
+      {
+        title: '1. 我们的核心隐私原则',
+        content: 'Vloam 坚守纯粹好用、数据克制的原则。我们依靠提供实用的桌面客户端软件获得收入，绝不出售用户数据、不进行隐蔽行为追踪，更不以牺牲用户隐私为代价进行商业化。我们从产品设计之初就贯彻最小化数据收集的理念。',
+      },
+      {
+        title: '2. 原生桌面客户端软件（VloamDb 与 VloamClip）',
+        content: '针对我们开发的桌面客户端工具，我们确立了严格的本地隔离边界：',
+        points: [
+          '数据库连接密码等敏感信息由系统原生安全区（macOS Keychain / Windows DPAPI）加密保管，不以明文保存在磁盘。',
+          '所有的数据库连接串、SQL 查询历史、剪贴板历史记录均保存在你自己的电脑本地磁盘中。',
+          '绝无任何隐蔽遥测，不扫描、不上传你的数据库结构、SQL 语句或剪贴板文本。',
+        ],
+      },
+      {
+        title: '3. Web 在线应用与工具网站',
+        content: '针对 Vloam Mermaid、ADHD Test 与 BPD Test 等在浏览器中运行的 Web 工具：',
+        points: [
+          'Mermaid 图表语法的解析与渲染完全在当前浏览器窗口内即时完成，无需后端传输等待。',
+          '心理与性格倾向测评的计分算法由浏览器端 JavaScript 在前端内存中即时计算。',
+          '无需注册账号，我们的服务器绝不存储任何用户的答题选项与测评报告。',
+          '关闭或刷新当前网页标签页后，所有临时运算内存立即自动销毁，不留任何痕迹。',
+        ],
+      },
+      {
+        title: '4. 网络基础设施与日志',
+        content: '我们的网站部署在经过行业验证的全球 CDN 网络（如 Cloudflare）。基础设施产生的临时网络访问日志（如访问 IP、User-Agent 等）仅用于网络层安全防护、防范恶意 DDoS 攻击与保障服务连通性，绝不用于构建跨站行为画像。',
+      },
+      {
+        title: '5. 隐私咨询与联络',
+        content: '如果你对本隐私政策有任何疑问，或需要了解具体技术实现，欢迎直接发送邮件至 privacy@vloam.com 与我们沟通。',
+      },
+    ],
+  },
+  termsPage: {
+    title: '服务条款与使用协议',
+    subtitle: '规范并保障你合法、公平使用 Vloam 旗下桌面软件与 Web 在线工具的条款细则。',
+    updatedDate: '最近更新：2026 年 10 月',
+    sections: [
+      {
+        title: '1. 条款适用与协议接受',
+        content: '欢迎使用 Vloam 提供的数字化产品与服务。通过访问我们的网站、下载安装桌面软件或使用 Web 工具，即表示你已阅读并同意受本服务条款的约束。如果你不同意本条款的任何部分，请停止使用我们的软件与服务。',
+      },
+      {
+        title: '2. 桌面软件授权与使用',
+        content: 'Vloam 桌面客户端（如 VloamDb、VloamClip）提供为期 15 天的全功能免费试用。试用期结束后，用户可通过购买一次性终身授权继续使用。该授权授予你在受支持的设备上运行本软件的非排他性、不可转让的权利。Vloam 保留所有软件代码、界面设计、商标与知识产权所有权。',
+      },
+      {
+        title: '3. 在线工具与心理测评免责声明',
+        content: 'Vloam Mermaid、ADHD Test 与 BPD Test 等在线工具面向公众免费开放。请注意：心理与性格自评工具仅供个人自我筛查认知与常识科普参考，不能替代执业医师、心理学家或专科医疗机构的临床诊断与治疗方案。如有身心健康疑虑，请务必咨询专业医疗人员。',
+      },
+      {
+        title: '4. 合理合规使用规范',
+        content: '你同意仅在法律法规允许的范围内使用 Vloam 产品。严禁对软件进行逆向破解、未经授权的恶意分发盗版，或利用自动化工具对我们的在线网站与网络基础设施发起恶意扫描或攻击。',
+      },
+      {
+        title: '5. 免责声明与责任限制',
+        content: '在法律允许的最大范围内，Vloam 软件与在线服务均按“现状”（AS-IS）和“可提供状态”提供。虽然我们竭力保证代码的稳定健壮，但不对完全无缺陷或满足所有特定使用场景作默示保证。在任何情况下，Vloam 均不对因使用或无法使用本软件导致的任何间接或连带损失承担赔偿责任。',
+      },
+      {
+        title: '6. 条款修订与法律联络',
+        content: '我们可能会根据产品演进和法律要求不时更新本条款。更新后的条款一旦在网站公布即行生效。如对本条款有任何法律相关的咨询，请联系 legal@vloam.com。',
+      },
+    ],
   },
   footer: {
     brandDesc: '独立软件工作室，专注打造轻快实用的原生桌面软件，以及开箱即用的在线工具与自测网站。',

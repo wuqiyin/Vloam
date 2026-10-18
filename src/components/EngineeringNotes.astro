@@ -176,4 +176,19 @@ function getArticleUrl(slug: string) {
     color: #ffffff;
     transform: translateY(-1px);
   }
+
+  @media (max-width: 768px) {
+    .notes-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .note-card {
+      padding: 1.35rem 1.15rem;
+    }
+
+    .notes-more-wrap {
+      margin-top: 2.25rem;
+    }
+  }
 </style>

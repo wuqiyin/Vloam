@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { prefixedLocales, type Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/translations';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return prefixedLocales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang}>
+  <div class="container article-page">
+    <header class="article-header">
+      <span class="section-label">Compliance &amp; Trust</span>
+      <h1>{t.privacyPage.title}</h1>
+      <p class="article-subtitle">{t.privacyPage.subtitle}</p>
+      <div class="article-date-meta">{t.privacyPage.updatedDate}</div>
+    </header>
+
+    <div class="article-body">
+      {t.privacyPage.sections.map((sec) => (
+        <section class="content-block">
+          <h2>{sec.title}</h2>
+          <p>{sec.content}</p>
+          {sec.points && (
+            <ul class="policy-points">
+              {sec.points.map((pt) => (
+                <li>
+                  <span class="bullet-dot">›</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+
+      <section class="content-block contact-block">
+        <h3>{lang === 'zh' ? '隐私联络通道' : 'Direct Privacy Inquiries'}</h3>
+        <p>{lang === 'zh' ? '如需进一步咨询个人数据相关事宜，请直接发送邮件至' : 'If you have any questions or data requests, contact our privacy engineering team directly at'} <a href="mailto:privacy@vloam.com" class="text-primary font-bold">privacy@vloam.com</a>。</p>
+      </section>
+    </div>
+  </div>
+</Layout>
