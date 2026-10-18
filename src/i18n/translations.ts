@@ -146,8 +146,8 @@ export interface Translation {
 
 const en: Translation = {
   meta: {
-    title: 'Vloam — Focused Developer Utilities & Private Web Tools',
-    description: 'Explore the Vloam software ecosystem: VloamDb (fast MySQL client), VloamClip (smart clipboard manager), Vloam Mermaid, ADHD Test, and BPD Test.',
+    title: 'Vloam — Focused Digital Tools & Private Online Services',
+    description: 'Explore the Vloam ecosystem: VloamDb (fast MySQL client), VloamClip (smart clipboard manager), Vloam Mermaid (diagram editor), ADHD Test, and BPD Test.',
   },
   nav: {
     products: 'Products',
@@ -158,15 +158,15 @@ const en: Translation = {
     faq: 'FAQ',
   },
   hero: {
-    badge: 'Independent Software Studio',
-    title: 'Focused Developer Utilities & Private Web Tools',
-    subtitle: 'High-speed desktop software and evidence-based browser tools built with native ergonomics, local-first privacy, and zero bloat for macOS and Windows.',
+    badge: 'Digital Products & Web Services',
+    title: 'Focused Utilities & Private Online Services',
+    subtitle: 'From high-speed desktop software and visual web utilities to evidence-based health self-assessments, Vloam builds focused, privacy-first digital tools with zero bloat.',
   },
   categories: {
     developerTools: 'Developer & Productivity Tools',
-    developerSubtitle: 'Native desktop clients and visual utilities engineered for developer velocity.',
+    developerSubtitle: 'Native desktop clients and visual utilities engineered for developer velocity and distraction-free workflow.',
     assessmentTools: 'Online Self-Assessment & Wellness',
-    assessmentSubtitle: 'Confidential, evidence-based self-screening tools computed 100% privately in your browser.',
+    assessmentSubtitle: 'Confidential, evidence-based self-screening tools computed 100% privately in your browser sandbox.',
   },
   products: {
     db: {
@@ -243,7 +243,7 @@ const en: Translation = {
   specsSection: {
     label: 'Technical Specifications',
     title: 'Ecosystem Architecture Matrix',
-    subtitle: 'Transparent technical parameters, platform support, and data privacy guarantees across all Vloam applications.',
+    subtitle: 'Transparent technical parameters, platform support, and data privacy guarantees across all Vloam applications and web services.',
     headers: {
       product: 'Product',
       category: 'Category',
@@ -298,13 +298,13 @@ const en: Translation = {
   radarSection: {
     label: 'Ecosystem Pulse',
     title: 'Recent Release Radar',
-    subtitle: 'Actively maintained and developed. Track key milestones across the Vloam desktop and web products.',
+    subtitle: 'Actively maintained and developed. Track key milestones across the Vloam desktop applications and web services.',
     items: [
       {
         version: 'v3.3.4',
         product: 'VloamDb',
         date: 'October 2026',
-        tag: 'Desktop Update',
+        tag: 'Desktop App',
         highlights: [
           'Added production color-tagging system and strict read-only lock to prevent accidental table drops.',
           'Enhanced double-tap Shift fuzzy search to index schemas with 5,000+ tables instantly.',
@@ -315,7 +315,7 @@ const en: Translation = {
         version: 'v1.2.0',
         product: 'VloamClip',
         date: 'October 2026',
-        tag: 'Desktop Update',
+        tag: 'Desktop App',
         highlights: [
           'Introduced dual FIFO / LIFO sequential paste queue modes for accelerated data migration.',
           'Added persistent template categories for recurring SQL snippets and shell commands.',
@@ -337,7 +337,7 @@ const en: Translation = {
         version: 'v2.1.0',
         product: 'ADHD & BPD Screening Tools',
         date: 'September 2026',
-        tag: 'Health Tools',
+        tag: 'Health Web Tools',
         highlights: [
           'Standardized clinical scoring logic aligned with evidence-based diagnostic checklists.',
           'Rollout of 10 fully localized international language editions.',
@@ -349,7 +349,7 @@ const en: Translation = {
   securitySection: {
     label: 'Trust & Architecture',
     title: 'Local-First Security Manifesto',
-    subtitle: 'Why our applications never phone home with your database credentials or clipboard records.',
+    subtitle: 'Why our software and web services guarantee strict privacy and client-side data isolation.',
     pillars: [
       {
         title: 'Zero Cloud Storage for Sensitive Assets',
@@ -370,11 +370,11 @@ const en: Translation = {
         ],
       },
       {
-        title: 'Native Performance Over Runtimes',
+        title: 'Native Performance & Clean Web Architecture',
         desc: 'We purposefully bypass heavy, insecure bundled runtimes that devour gigabytes of memory and complicate threat surfaces.',
         details: [
           'Lightweight native compilation starts in under 500ms.',
-          'Minimal attack surface and near-zero idle CPU consumption.',
+          'Web utilities operate with zero backend dependencies.',
           'Transparent open issue tracking and verified release checksums.',
         ],
       },
@@ -398,7 +398,7 @@ const en: Translation = {
     items: [
       {
         q: 'What is the Vloam ecosystem?',
-        a: 'Vloam is an independent software studio building developer tools (VloamDb, VloamClip, Vloam Mermaid) and privacy-first online self-assessment tools (ADHD Test, BPD Test).',
+        a: 'Vloam is an independent software studio building native desktop applications (VloamDb, VloamClip), visual web utilities (Vloam Mermaid), and privacy-first online self-assessment tools (ADHD Test, BPD Test).',
       },
       {
         q: 'Are my data or test results sent to cloud servers?',
@@ -420,17 +420,17 @@ const en: Translation = {
   },
   aboutPage: {
     title: 'About Vloam Studio',
-    subtitle: 'An independent software studio creating focused desktop utilities and privacy-first web tools.',
+    subtitle: 'An independent digital product studio creating focused desktop applications and private web services.',
     storyTitle: 'Our Story & Motivation',
-    storyP1: 'Modern developer software has become increasingly bloated. Simple utilities now require hundreds of megabytes of memory, constant network connectivity, and intrusive cloud accounts just to perform local tasks.',
-    storyP2: 'Vloam was created to counter this trend. We build lean, native, keyboard-first desktop applications and client-side web tools that respect your memory, CPU, battery, and privacy.',
+    storyP1: 'Modern software has become increasingly bloated and intrusive. Simple utilities now require hundreds of megabytes of memory, constant network connectivity, and mandatory cloud logins just to perform basic tasks.',
+    storyP2: 'Vloam was created to counter this trend. We build lean, native desktop applications and client-side web services that respect your memory, CPU, battery, and privacy.',
     missionTitle: 'Our Mission',
-    missionP1: 'To provide software engineers and focused individuals with high-craft tools that launch instantly, function completely offline when needed, and never treat your data as a revenue stream.',
+    missionP1: 'To provide users with high-craft digital products that launch instantly, function completely offline when needed, and never treat your data as a revenue stream.',
     pillarsTitle: 'What Sets Us Apart',
   },
   securityPage: {
     title: 'Security & Privacy Architecture',
-    subtitle: 'Our technical commitments, cryptographic design, and data isolation guarantees.',
+    subtitle: 'Our technical commitments, cryptographic design, and data isolation guarantees across desktop and web.',
     localFirstTitle: '1. Local-First Architecture',
     localFirstP1: 'We believe sensitive assets—such as database connection strings, SQL query histories, clipboard text, and psychological self-evaluations—must never leave your local environment unless you explicitly choose to export them.',
     credentialTitle: '2. Operating System Credential Enclaves',
@@ -443,7 +443,7 @@ const en: Translation = {
     contactP1: 'If you discover a security concern or vulnerability in any Vloam software, please contact our engineering team directly at security@vloam.com.',
   },
   footer: {
-    brandDesc: 'Focused desktop utilities and private web tools built for speed, local-first privacy, and distraction-free workflows.',
+    brandDesc: 'Focused, lightweight, and privacy-first digital tools and web services—spanning native desktop applications, visual utilities, and evidence-based self-assessments.',
     devTitle: 'Developer Tools',
     healthTitle: 'Self-Assessment',
     trustTitle: 'Studio & Trust',
@@ -459,8 +459,8 @@ const en: Translation = {
 
 const zh: Translation = {
   meta: {
-    title: 'Vloam — 专注、轻量、高生产力的工具矩阵与工程实验室',
-    description: '探索 Vloam 软件生态：VloamDb（轻量 MySQL 客户端）、VloamClip（带粘贴队列的剪贴板工具）、Vloam Mermaid、ADHD 测评与 BPD 测评。',
+    title: 'Vloam — 专注、轻量、隐私优先的实用工具与在线服务矩阵',
+    description: '探索 Vloam 矩阵：涵盖 VloamDb（MySQL 客户端）、VloamClip（剪贴板利器）、Vloam Mermaid（在线图表编辑）、ADHD 心理自测与 BPD 专业测评。',
   },
   nav: {
     products: '产品矩阵',
@@ -471,9 +471,9 @@ const zh: Translation = {
     faq: '常见问题',
   },
   hero: {
-    badge: '独立软件工程实验室',
-    title: '专注效能工具与隐私优先服务矩阵',
-    subtitle: '为全球工程师与追求专注的用户匠心打造：极速响应、极低资源开销、严格的本地离线隐私守护，让工具回归纯粹。',
+    badge: '数字产品与在线服务生态',
+    title: '专注、纯粹的实用工具与在线服务矩阵',
+    subtitle: '从高性能桌面客户端、轻快 Web 在线工具，到严谨匿名的专业健康自评，Vloam 坚持本地优先、零冗余与极致体验。',
   },
   categories: {
     developerTools: '🛠️ 开发者与效能工具',
@@ -617,7 +617,7 @@ const zh: Translation = {
         version: 'v3.3.4',
         product: 'VloamDb',
         date: '2026 年 10 月',
-        tag: '桌面端更新',
+        tag: '桌面端应用',
         highlights: [
           '新增生产环境醒目颜色隔离与严苛的只读保护锁，从机制上杜绝误删误改。',
           '优化双击 Shift 全局表检索算法，万级数据表秒级秒出，丝滑无延迟。',
@@ -628,7 +628,7 @@ const zh: Translation = {
         version: 'v1.2.0',
         product: 'VloamClip',
         date: '2026 年 10 月',
-        tag: '桌面端更新',
+        tag: '桌面端应用',
         highlights: [
           '重构先进先出（FIFO）与后进先出（LIFO）粘贴队列逻辑，支持复杂数据依序录入。',
           '支持高频 Shell 命令与 SQL 模版分类固定收藏，支持全局快捷键秒级呼出。',
@@ -650,7 +650,7 @@ const zh: Translation = {
         version: 'v2.1.0',
         product: 'ADHD 与 BPD 在线自测',
         date: '2026 年 9 月',
-        tag: '健康测评工具',
+        tag: '健康测评 Web 应用',
         highlights: [
           '严格对照国际公认的精神心理诊断量表基准完成多维度计分算法校准。',
           '完成全球 10 种主流语言的本土化翻译与常模适配上线。',
@@ -662,7 +662,7 @@ const zh: Translation = {
   securitySection: {
     label: '安全与信任',
     title: '本地优先（Local-First）工程安全宣言',
-    subtitle: '揭秘为什么 Vloam 的软件绝不擅自上传你的数据库凭证与剪贴板隐私。',
+    subtitle: '揭秘为什么 Vloam 的软件与服务绝不擅自上传你的数据库凭证、剪贴板隐私与健康问卷。',
     pillars: [
       {
         title: '敏感凭据零云端化存储',
@@ -686,7 +686,7 @@ const zh: Translation = {
         title: '原生轻量架构与低受攻击面',
         desc: '我们坚决不打包消耗数吉字节内存的多层臃肿框架，降低技术复杂度与安全漏洞风险。',
         details: [
-          '纯粹的原生二进制，冷启动时间小于 500 毫秒。',
+          '纯粹的原生二进制与静态 Web 交付，冷启动时间小于 500 毫秒。',
           '极度收敛的攻击面，静默状态下零额外 CPU 负载。',
           '公开透明的问题反馈渠道与官方安全校验机制。',
         ],
@@ -701,8 +701,8 @@ const zh: Translation = {
       speedDesc: '坚决拒绝为了简单功能消耗数吉字节内存的臃肿架构。Vloam 工具秒开秒关，安静守候。',
       privacyTitle: '严格本地离线优先',
       privacyDesc: '无论是数据库密码、剪贴板历史，还是心理自测答卷，你的数据必须且只能保存在本地。',
-      kbdTitle: '以人为本的极客体验',
-      kbdDesc: '精心推敲的快捷键、全局指令与直觉化界面，让你在专注心流中流畅完成一切。',
+      kbdTitle: '纯粹与直觉好用',
+      kbdDesc: '精心推敲的交互流、全局指令与简洁界面，让你在专注心流中流畅完成一切。',
     },
   },
   faq: {
@@ -711,7 +711,7 @@ const zh: Translation = {
     items: [
       {
         q: '什么是 Vloam 软件生态？',
-        a: 'Vloam 是一家独立的软件工作室，旗下涵盖开发者工具（VloamDb、VloamClip、Vloam Mermaid）与隐私至上的在线专业自评工具（ADHD Test、BPD Test）。',
+        a: 'Vloam 是一家独立的数字化产品工作室，旗下涵盖桌面端效率软件（VloamDb、VloamClip）、Web 可视化工具（Vloam Mermaid）以及隐私至上的在线专业自评工具（ADHD Test、BPD Test）。',
       },
       {
         q: '我的数据或测评结果会被上传到云端服务器吗？',
@@ -719,7 +719,7 @@ const zh: Translation = {
       },
       {
         q: '支持哪些操作系统与运行环境？',
-        a: '桌面软件原生支持 macOS（Apple Silicon 与 Intel）和 Windows（10/11 x64）；Web 工具在所有现代浏览器中均可流畅运行。',
+        a: '桌面软件原生支持 macOS（Apple Silicon 与 Intel）和 Windows（10/11 x64）；Web 工具在所有现代移动端与桌面端浏览器中均可流畅运行。',
       },
       {
         q: '收费模式与授权政策是怎样的？',
@@ -733,12 +733,12 @@ const zh: Translation = {
   },
   aboutPage: {
     title: '关于 Vloam 独立工坊',
-    subtitle: '致力于打造专注于高频工作流、本地隐私优先的桌面工具与纯净 Web 服务。',
+    subtitle: '致力于打造实用、轻快、尊重隐私的多维数字化产品矩阵。',
     storyTitle: '我们的缘起与初衷',
-    storyP1: '今天的桌面软件正变得越来越臃肿庞大。一个简单的工具动辄需要数百兆内存，强制要求云端联网注册，甚至在后台持续扫描或收集用户数据。',
-    storyP2: 'Vloam 诞生就是为了抵抗这种浮躁与臃肿。我们崇尚原生性能、键盘优先与纯粹的本地优先体验，让软件回归到“工具”本身该有的纯净与高效。',
+    storyP1: '今天的很多数字工具正变得越来越臃肿庞大。一个简单的实用程序动辄需要数百兆内存，强制要求云端联网注册，甚至在后台持续扫描或收集用户数据。',
+    storyP2: 'Vloam 诞生就是为了抵抗这种浮躁与臃肿。从高效实用的桌面原生客户端，到即开即用的 Web 效率工具与匿名健康的专业在线自测，我们崇尚纯粹好用与本地隐私优先，让数字产品回归本源。',
     missionTitle: '工坊愿景',
-    missionP1: '为全球软件工程师和追求高效与专注的人群提供启动即用、离线无忧、绝不将用户数据商业化的可靠软件产品。',
+    missionP1: '为追求专注、高效与数据安全的人群提供启动即用、无干扰、绝不将用户数据商业化的纯净产品矩阵。',
     pillarsTitle: '我们的不同之处',
   },
   securityPage: {
@@ -749,14 +749,14 @@ const zh: Translation = {
     credentialTitle: '2. 操作系统级安全区集成',
     credentialP1: 'Vloam 桌面端软件直接委托操作系统底层安全区（macOS Keychain 与 Windows DPAPI）存储关键密码，绝不在磁盘以明文形式保存敏感数据。',
     telemetryTitle: '3. 零云端隐私遥测',
-    telemetryP1: '我们的工具不扫描剪贴板内容、不分析执行的 SQL 语义、不上传数据库表结构信息，杜绝任何侵犯用户商业机密与隐私的隐蔽行为。',
+    telemetryP1: '我们的工具不扫描剪贴板内容、不分析执行的 SQL 语义、不上传数据库表结构信息，杜绝任何侵犯用户隐私的隐蔽行为。',
     healthTitle: '4. 纯前端离线自测机制',
     healthP1: 'ADHD Test 和 BPD Test 均采用纯前端离线运算模型。测评题目回答只保留在当前标签页内存中，关闭页面即刻销毁，无任何服务器数据库留存。',
     contactTitle: '5. 安全问题联络通道',
     contactP1: '如果你在 Vloam 旗下任何产品中发现安全隐患或漏洞，请直接发送邮件至 security@vloam.com，我们将第一时间评估并响应。',
   },
   footer: {
-    brandDesc: '专注、轻量、高生产力的桌面工具与隐私在线服务矩阵，致力于为用户提供极速响应与本地隐私守护。',
+    brandDesc: '专注、轻量、隐私优先的实用工具与在线服务矩阵，涵盖桌面端效率软件、Web 可视化工具与专业在线测评。',
     devTitle: '开发者工具',
     healthTitle: '自评与健康',
     trustTitle: '团队与信任',
@@ -773,7 +773,7 @@ const zh: Translation = {
 const es: Translation = {
   ...en,
   meta: {
-    title: 'Vloam — Herramientas para desarrolladores y utilidades privadas',
+    title: 'Vloam — Herramientas digitales y utilidades privadas en línea',
     description: 'Explora el ecosistema Vloam: VloamDb (cliente MySQL), VloamClip (portapapeles), Vloam Mermaid, test de TDAH y test de TLP.',
   },
   nav: {
@@ -789,7 +789,7 @@ const es: Translation = {
 const fr: Translation = {
   ...en,
   meta: {
-    title: 'Vloam — Outils pour développeurs et utilitaires privés',
+    title: 'Vloam — Outils numériques et services en ligne privés',
     description: 'Explorez l’écosystème Vloam : VloamDb, VloamClip, Vloam Mermaid, tests TDAH et TPL.',
   },
   nav: {
@@ -826,12 +826,12 @@ export const translations: Record<Locale, Translation> = {
   zh,
   es,
   fr,
-  de: createMirror('Entwicklertools', 'Selbsttests', 'VloamDb öffnen →', 'VloamClip öffnen →', 'Mermaid Editor öffnen →', 'ADHD Test starten →', 'BPD Test starten →'),
-  pt: createMirror('Ferramentas de Desenvolvimento', 'Autoavaliação', 'Abrir VloamDb →', 'Abrir VloamClip →', 'Abrir Editor Mermaid →', 'Fazer Teste TDAH →', 'Fazer Teste TPB →'),
-  it: createMirror('Strumenti di Sviluppo', 'Autovalutazione', 'Apri VloamDb →', 'Apri VloamClip →', 'Apri Mermaid Editor →', 'Inizia Test ADHD →', 'Inizia Test BPD →'),
-  nl: createMirror('Ontwikkelaarstools', 'Zelftests', 'Open VloamDb →', 'Open VloamClip →', 'Open Mermaid Editor →', 'Start ADHD-test →', 'Start BPD-test →'),
-  pl: createMirror('Narzędzia developerskie', 'Autodiagnoza', 'Otwórz VloamDb →', 'Otwórz VloamClip →', 'Otwórz Mermaid Editor →', 'Rozpocznij test ADHD →', 'Rozpocznij test BPD →'),
-  ro: createMirror('Instrumente Dezvoltator', 'Autoevaluare', 'Deschide VloamDb →', 'Deschide VloamClip →', 'Deschide Editor Mermaid →', 'Începe testul ADHD →', 'Începe testul BPD →'),
+  de: createMirror('Produkte', 'Selbsttests', 'VloamDb öffnen →', 'VloamClip öffnen →', 'Mermaid Editor öffnen →', 'ADHD Test starten →', 'BPD Test starten →'),
+  pt: createMirror('Produtos', 'Autoavaliação', 'Abrir VloamDb →', 'Abrir VloamClip →', 'Abrir Editor Mermaid →', 'Fazer Teste TDAH →', 'Fazer Teste TPB →'),
+  it: createMirror('Prodotti', 'Autovalutazione', 'Apri VloamDb →', 'Apri VloamClip →', 'Apri Mermaid Editor →', 'Inizia Test ADHD →', 'Inizia Test BPD →'),
+  nl: createMirror('Producten', 'Zelftests', 'Open VloamDb →', 'Open VloamClip →', 'Open Mermaid Editor →', 'Start ADHD-test →', 'Start BPD-test →'),
+  pl: createMirror('Produkty', 'Autodiagnoza', 'Otwórz VloamDb →', 'Otwórz VloamClip →', 'Otwórz Mermaid Editor →', 'Rozpocznij test ADHD →', 'Rozpocznij test BPD →'),
+  ro: createMirror('Produse', 'Autoevaluare', 'Deschide VloamDb →', 'Deschide VloamClip →', 'Deschide Editor Mermaid →', 'Începe testul ADHD →', 'Începe testul BPD →'),
 };
 
 export function useTranslations(locale: Locale): Translation {

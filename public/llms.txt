@@ -1,0 +1,18 @@
+# Vloam
+
+> Focused software products and private online utilities across desktop and web.
+
+Vloam is an independent software studio building fast, focused desktop utilities and privacy-first web tools. All desktop tools operate strictly local-first without mandatory cloud sync, while web tools compute entirely in the browser sandbox.
+
+## Products
+
+- [VloamDb](https://db.vloam.com/): Fast, lightweight, keyboard-first MySQL client for developers on macOS and Windows. Features production safety locks, environment color tags, instant table fuzzy search, and local-first data storage.
+- [VloamClip](https://clip.vloam.com/): Local-first desktop clipboard manager for macOS and Windows. Features FIFO/LIFO sequential multi-paste queues, persistent template categories, and sub-millisecond history search.
+- [Vloam Mermaid](https://mermaid.vloam.com/): Real-time interactive in-browser Mermaid diagram editor. Instant split-pane preview, lossless SVG/PNG export, and zero-telemetry client-side processing.
+- [ADHD Test](https://adhdtest.vloam.com/): Evidence-based adult ADHD screening self-assessment tool with confidential in-browser scoring, comprehensive dimensional breakdown, and 10-language international support.
+- [BPD Test](https://bdptest.vloam.com/): Clinically referenced Borderline Personality screening tool providing confidential evaluation, multi-factor analysis, and actionable educational summaries.
+
+## Architecture & Trust
+
+- [About Vloam Studio](https://vloam.com/about/): Studio transparency, engineering values, and mission.
+- [Security Architecture](https://vloam.com/security/): Local-first security commitments, macOS Keychain & Windows DPAPI secret storage, and zero cloud harvesting guarantees.
