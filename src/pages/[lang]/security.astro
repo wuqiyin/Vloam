@@ -22,7 +22,7 @@ const t = useTranslations(lang);
 <Layout lang={lang}>
   <div class="container article-page">
     <header class="article-header">
-      <span class="section-label">Architecture &amp; Trust</span>
+      <span class="section-label">{lang === 'zh' ? '安全与隐私' : 'Security & Privacy'}</span>
       <h1>{t.securityPage.title}</h1>
       <p class="article-subtitle">{t.securityPage.subtitle}</p>
     </header>

@@ -194,7 +194,7 @@ const en: Translation = {
     specs: 'Specifications',
     radar: 'Release Radar',
     notes: 'Articles',
-    security: 'Security Manifesto',
+    security: 'Security & Privacy',
     about: 'About Studio',
     faq: 'FAQ',
   },
@@ -477,7 +477,7 @@ const en: Translation = {
     pillarsTitle: 'What Sets Us Apart',
   },
   securityPage: {
-    title: 'Security & Privacy Architecture',
+    title: 'Security & Data Privacy',
     subtitle: 'Our technical commitments, cryptographic design, and data isolation guarantees across desktop and web.',
     localFirstTitle: '1. Local-First Architecture',
     localFirstP1: 'We believe sensitive assets—such as database connection strings, SQL query histories, clipboard text, and psychological self-evaluations—must never leave your local environment unless you explicitly choose to export them.',
@@ -581,7 +581,7 @@ const en: Translation = {
     privacy: 'Privacy Commitment',
     terms: 'Terms of Service',
     about: 'About Studio',
-    security: 'Security Architecture',
+    security: 'Security & Privacy',
     contact: 'Support & Inquiries',
   },
 };
@@ -592,11 +592,11 @@ const zh: Translation = {
     description: '独立软件工作室，打造轻巧高效的原生桌面软件（VloamDb、VloamClip）与免安装开箱即用的 Web 在线工具与自测网站（Vloam Mermaid、ADHD 与 BPD 自评）。',
   },
   nav: {
-    products: '软件与网站',
+    products: '软件与工具',
     specs: '技术参数',
     radar: '更新动态',
     notes: '技术文章',
-    security: '安全架构',
+    security: '安全与隐私',
     about: '关于 Vloam',
     faq: '常见问题',
   },
@@ -983,7 +983,7 @@ const zh: Translation = {
     privacy: '隐私说明',
     terms: '使用条款',
     about: '关于 Vloam',
-    security: '安全架构',
+    security: '安全与隐私',
     contact: '联系技术支持',
   },
 };
@@ -1030,7 +1030,7 @@ function createMirror(devNav: string, healthNav: string, dbCta: string, clipCta:
     nav: {
       ...en.nav,
       products: devNav,
-      security: 'Security Architecture',
+      security: 'Security & Privacy',
       about: 'About Studio',
     },
     products: {
