@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SpecsTable from './SpecsTable.astro';
 import ReleaseRadar from './ReleaseRadar.astro';
+import EngineeringNotes from './EngineeringNotes.astro';
 import SecurityPillars from './SecurityPillars.astro';
 import { getLang, defaultLocale, type Locale } from '../i18n/config';
 import { useTranslations } from '../i18n/translations';
@@ -213,6 +214,9 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
 
   <!-- Release Radar Activity Feed -->
   <ReleaseRadar t={t} />
+
+  <!-- Engineering & Architecture Notes -->
+  <EngineeringNotes t={t} lang={lang} />
 
   <!-- Local-First Security Manifesto -->
   <SecurityPillars t={t} securityPageUrl={securityPageUrl} />

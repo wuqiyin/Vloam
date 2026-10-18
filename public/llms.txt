@@ -1,18 +1,23 @@
-# Vloam
+# Vloam Labs
 
-> Focused software products and private online utilities across desktop and web.
+> Independent software & privacy research studio building native desktop utilities and ephemeral client-side web tools.
 
-Vloam is an independent software studio building fast, focused desktop utilities and privacy-first web tools. All desktop tools operate strictly local-first without mandatory cloud sync, while web tools compute entirely in the browser sandbox.
+Vloam Labs is an independent engineering collective dedicated to local-first computation, zero-telemetry software design, and client-side ephemeral sandboxing. All desktop applications operate strictly on-device without cloud sync dependencies, while online self-assessment tools execute all logic exclusively within the visitor's local browser memory.
 
-## Products
+## Software & Tools Matrix
 
-- [VloamDb](https://db.vloam.com/): Fast, lightweight, keyboard-first MySQL client for developers on macOS and Windows. Features production safety locks, environment color tags, instant table fuzzy search, and local-first data storage.
-- [VloamClip](https://clip.vloam.com/): Local-first desktop clipboard manager for macOS and Windows. Features FIFO/LIFO sequential multi-paste queues, persistent template categories, and sub-millisecond history search.
-- [Vloam Mermaid](https://mermaid.vloam.com/): Real-time interactive in-browser Mermaid diagram editor. Instant split-pane preview, lossless SVG/PNG export, and zero-telemetry client-side processing.
+- [VloamDb](https://db.vloam.com/): Fast, lightweight, keyboard-first native MySQL client for developers on macOS and Windows. Features production safety locks, environment color tags, instant table fuzzy search, and hardware-backed local credential storage (macOS Keychain & Windows DPAPI).
+- [VloamClip](https://clip.vloam.com/): Local-first desktop clipboard utility for macOS and Windows. Features FIFO/LIFO sequential multi-paste queues, persistent template categories, encrypted on-device SQLite storage, and sub-millisecond history search.
+- [Vloam Mermaid](https://mermaid.vloam.com/): Real-time interactive in-browser Mermaid diagram visualizer and editor. Instant split-pane preview, lossless SVG and high-resolution PNG export, and zero-telemetry client-side processing.
 - [ADHD Test](https://adhdtest.vloam.com/): Evidence-based adult ADHD screening self-assessment tool with confidential in-browser scoring, comprehensive dimensional breakdown, and 10-language international support.
 - [BPD Test](https://bdptest.vloam.com/): Clinically referenced Borderline Personality screening tool providing confidential evaluation, multi-factor analysis, and actionable educational summaries.
 
-## Architecture & Trust
+## Engineering Essays & Architectural Notes
 
-- [About Vloam Studio](https://vloam.com/about/): Studio transparency, engineering values, and mission.
-- [Security Architecture](https://vloam.com/security/): Local-first security commitments, macOS Keychain & Windows DPAPI secret storage, and zero cloud harvesting guarantees.
+- [Why We Build Native in 2026: The Case for Zero-Cloud Local Computing](https://vloam.com/articles/why-we-build-native/): Architectural analysis on binary efficiency, memory overhead, OS secure enclave integration (macOS Keychain & Windows DPAPI), and why developer tools should not require a cloud account.
+- [Zero-Knowledge Health Screening: Running Clinical Logic in Pure Browser Sandboxes](https://vloam.com/articles/zero-knowledge-screening/): How to implement evidence-based psychiatric self-assessment scales strictly client-side without databases, tracking pixels, or behavioral profiling.
+
+## Architecture, Security & Governance
+
+- [About Vloam Labs](https://vloam.com/about/): Studio transparency, engineering values, and mission.
+- [Security Architecture Manifesto](https://vloam.com/security/): Local-first security commitments, macOS Keychain & Windows DPAPI secret storage, and zero cloud harvesting guarantees.

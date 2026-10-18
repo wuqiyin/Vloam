@@ -1,0 +1,223 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { defaultLocale } from '../../i18n/config';
+import { articles } from '../../data/articles';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: typeof articles[0];
+}
+
+const { article } = Astro.props;
+const localized = article.en;
+
+const siteUrl = "https://vloam.com";
+const canonicalUrl = `${siteUrl}/articles/${article.slug}/`;
+
+const articleStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": localized.title,
+  "description": localized.description,
+  "datePublished": "2026-10-01",
+  "dateModified": "2026-10-18",
+  "author": {
+    "@type": "Organization",
+    "name": "Vloam Labs",
+    "url": siteUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vloam Labs",
+    "logo": `${siteUrl}/favicon.svg`
+  },
+  "mainEntityOfPage": canonicalUrl
+};
+---
+
+<Layout lang={defaultLocale} title={`${localized.title} — Vloam Labs`} description={localized.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleStructuredData)} />
+
+  <article class="container article-page">
+    <div class="article-breadcrumb">
+      <a href="/">← Back to Vloam Labs</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">{article.category}</span>
+    </div>
+
+    <header class="article-header">
+      <div class="article-header-meta">
+        <span class="article-tag">{article.category}</span>
+        <span class="meta-dot">·</span>
+        <span class="article-date">{article.date}</span>
+        <span class="meta-dot">·</span>
+        <span class="article-read">{article.readTime}</span>
+      </div>
+      <h1>{localized.title}</h1>
+      <p class="article-lead">{localized.lead}</p>
+    </header>
+
+    <div class="article-body">
+      {localized.sections.map((section) => (
+        <section class="content-block">
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((p) => (
+            <p>{p}</p>
+          ))}
+        </section>
+      ))}
+
+      <section class="content-block lab-box">
+        <h3>About Vloam Labs Engineering</h3>
+        <p>
+          Vloam Labs is an independent studio developing lightweight, native tools and ephemeral, client-side web utilities. 
+          All tools are engineered with zero-telemetry and local-first data sovereignty.
+        </p>
+        <div class="lab-links">
+          <a href="/#developer-tools">Explore Native Software Matrix →</a>
+          <a href="/security/">Read Security Architecture Whitepaper →</a>
+        </div>
+      </section>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 6rem;
+  }
+
+  .article-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 2.25rem;
+    font-family: var(--font-mono);
+  }
+
+  .article-breadcrumb a {
+    color: #60a5fa;
+    transition: color 0.15s ease;
+  }
+
+  .article-breadcrumb a:hover {
+    color: #93c5fd;
+  }
+
+  .breadcrumb-sep {
+    opacity: 0.4;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .article-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.84rem;
+    font-family: var(--font-mono);
+    color: var(--text-faint);
+    margin-bottom: 1.25rem;
+  }
+
+  .article-tag {
+    color: #60a5fa;
+    font-weight: 600;
+  }
+
+  .meta-dot {
+    opacity: 0.5;
+  }
+
+  .article-header h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+  }
+
+  .article-lead {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-style: normal;
+    border-left: 3px solid #3b82f6;
+    padding-left: 1.25rem;
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+  }
+
+  .content-block {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-block h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    letter-spacing: -0.015em;
+  }
+
+  .content-block p {
+    margin-bottom: 1.25rem;
+    color: #cbd5e1;
+  }
+
+  .lab-box {
+    margin-top: 3.5rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .lab-box h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+  }
+
+  .lab-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .lab-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .lab-links a {
+    color: #60a5fa;
+  }
+
+  .lab-links a:hover {
+    color: #93c5fd;
+  }
+</style>

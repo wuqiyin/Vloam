@@ -4,10 +4,15 @@ import { useTranslations } from '../i18n/translations';
 
 interface Props {
   lang?: Locale;
+  title?: string;
+  description?: string;
 }
 
-const { lang = defaultLocale } = Astro.props;
+const { lang = defaultLocale, title, description } = Astro.props;
 const t = useTranslations(lang);
+
+const pageTitle = title ?? t.meta.title;
+const pageDesc = description ?? t.meta.description;
 
 const siteUrl = "https://vloam.com";
 
@@ -111,8 +116,8 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
 
     <!-- Canonical & Multilingual Hreflang Alternates -->
     <link rel="canonical" href={canonicalURL} />
@@ -130,9 +135,9 @@ const structuredData = {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={t.meta.title} />
-    <meta property="og:description" content={t.meta.description} />
-    <meta property="og:site_name" content="Vloam" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:site_name" content="Vloam Labs" />
     <meta property="og:locale" content={ogLocales[lang]} />
     {locales.filter(l => l !== lang).map(l => (
       <meta property="og:locale:alternate" content={ogLocales[l]} />
@@ -142,8 +147,8 @@ const structuredData = {
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={t.meta.title} />
-    <meta property="twitter:description" content={t.meta.description} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={pageDesc} />
 
     <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -156,7 +161,7 @@ const structuredData = {
       <div class="container header-inner">
         <a href={homeUrl} class="brand">
           <img src="/favicon.svg" alt="Vloam Logo" width="32" height="32" />
-          <span>Vloam</span>
+          <span>Vloam <span style="font-weight: 400; font-size: 0.82em; color: var(--text-faint); font-family: var(--font-mono);">Labs</span></span>
         </a>
 
         <div class="header-right">
@@ -164,6 +169,7 @@ const structuredData = {
             <a href={`${homeUrl}#developer-tools`}>{t.nav.products}</a>
             <a href={`${homeUrl}#specs`}>{t.nav.specs}</a>
             <a href={`${homeUrl}#radar`}>{t.nav.radar}</a>
+            <a href={`${homeUrl}#notes`}>{t.nav.notes}</a>
             <a href={securityUrl}>{t.nav.security}</a>
             <a href={aboutUrl}>{t.nav.about}</a>
             <a href={`${homeUrl}#faq`}>{t.nav.faq}</a>

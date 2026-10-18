@@ -1,0 +1,147 @@
+---
+import type { Translation } from '../i18n/translations';
+import { articles } from '../data/articles';
+import { defaultLocale, type Locale } from '../i18n/config';
+
+interface Props {
+  t: Translation;
+  lang: Locale;
+}
+
+const { t, lang } = Astro.props;
+
+function getArticleUrl(slug: string) {
+  return lang === defaultLocale ? `/articles/${slug}/` : `/${lang}/articles/${slug}/`;
+}
+---
+
+<section id="notes" class="notes-section">
+  <div class="container">
+    <p class="section-label">{t.articlesSection.label}</p>
+    <h2 class="section-title">{t.articlesSection.title}</h2>
+    <p class="category-subtitle">{t.articlesSection.subtitle}</p>
+
+    <div class="notes-grid">
+      {articles.map((art) => {
+        const localized = lang === 'zh' ? art.zh : art.en;
+        const url = getArticleUrl(art.slug);
+        return (
+          <article class="note-card">
+            <div class="note-meta">
+              <span class="note-category">{art.category}</span>
+              <span class="note-dot">·</span>
+              <span class="note-date">{art.date}</span>
+              <span class="note-dot">·</span>
+              <span class="note-time">{art.readTime}</span>
+            </div>
+            <h3 class="note-title">
+              <a href={url}>{localized.title}</a>
+            </h3>
+            <p class="note-desc">{localized.description}</p>
+            <div class="note-footer">
+              <a href={url} class="note-read-link">
+                {t.articlesSection.readMore}
+              </a>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .notes-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.45);
+  }
+
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .note-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .note-card:hover {
+    transform: translateY(-2px);
+    border-color: #3b82f6;
+    box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .note-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+  }
+
+  .note-category {
+    color: #60a5fa;
+    font-weight: 600;
+  }
+
+  .note-dot {
+    opacity: 0.5;
+  }
+
+  .note-title {
+    font-size: 1.28rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.015em;
+  }
+
+  .note-title a {
+    color: var(--text-main);
+    transition: color 0.15s ease;
+  }
+
+  .note-title a:hover {
+    color: #60a5fa;
+  }
+
+  .note-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+  }
+
+  .note-footer {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .note-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #60a5fa;
+    transition: gap 0.15s ease, color 0.15s ease;
+  }
+
+  .note-read-link:hover {
+    color: #93c5fd;
+    gap: 0.6rem;
+  }
+</style>

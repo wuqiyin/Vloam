@@ -36,6 +36,7 @@ export interface Translation {
     products: string;
     specs: string;
     radar: string;
+    notes: string;
     security: string;
     about: string;
     faq: string;
@@ -78,10 +79,17 @@ export interface Translation {
     subtitle: string;
     items: ReleaseItem[];
   };
+  articlesSection: {
+    label: string;
+    title: string;
+    subtitle: string;
+    readMore: string;
+  };
   securitySection: {
     label: string;
     title: string;
     subtitle: string;
+    readWhitepaper: string;
     pillars: {
       title: string;
       desc: string;
@@ -150,23 +158,24 @@ const en: Translation = {
     description: 'Explore the Vloam ecosystem: VloamDb (fast MySQL client), VloamClip (smart clipboard manager), Vloam Mermaid (diagram editor), ADHD Test, and BPD Test.',
   },
   nav: {
-    products: 'Products',
+    products: 'Software & Tools',
     specs: 'Specifications',
     radar: 'Release Radar',
-    security: 'Security Architecture',
+    notes: 'Engineering Notes',
+    security: 'Security Manifesto',
     about: 'About Studio',
     faq: 'FAQ',
   },
   hero: {
-    badge: 'Digital Products & Web Services',
-    title: 'Focused Utilities & Private Online Services',
-    subtitle: 'From high-speed desktop software and visual web utilities to evidence-based health self-assessments, Vloam builds focused, privacy-first digital tools with zero bloat.',
+    badge: 'Vloam Labs · Independent Engineering',
+    title: 'Native Software & Privacy-First Online Tools',
+    subtitle: 'We build lightweight, zero-telemetry desktop utilities engineered for developer velocity, alongside private, client-side sandbox tools for thoughtful individuals.',
   },
   categories: {
-    developerTools: 'Developer & Productivity Tools',
-    developerSubtitle: 'Native desktop clients and visual utilities engineered for developer velocity and distraction-free workflow.',
-    assessmentTools: 'Online Self-Assessment & Wellness',
-    assessmentSubtitle: 'Confidential, evidence-based self-screening tools computed 100% privately in your browser sandbox.',
+    developerTools: 'Developer & System Utilities',
+    developerSubtitle: 'Native desktop clients compiled for speed, zero memory bloat, and unbroken keyboard flow.',
+    assessmentTools: 'Client-Side Self-Assessment Tools',
+    assessmentSubtitle: 'Confidential, evidence-based self-screening tools computed 100% ephemerally in your browser sandbox.',
   },
   products: {
     db: {
@@ -176,12 +185,12 @@ const en: Translation = {
       slogan: 'Fast, Focused MySQL Client for Developers',
       desc: 'A lightning-fast native MySQL GUI designed to eliminate bloat. Features production safety guards, environment color tags, instant fuzzy table search, and local-first privacy.',
       features: [
-        { icon: '⚡', title: 'Instant Launch:', desc: 'Starts in under 0.5s with minimal memory. No Electron lag.' },
-        { icon: '🛡️', title: 'Production Guard:', desc: 'Color tags and read-only mode prevent accidental deletions.' },
-        { icon: '⌨️', title: 'Keyboard-First:', desc: 'Double Shift table search and Ctrl+F12 column navigation.' },
-        { icon: '🔒', title: 'Local-First:', desc: 'Credentials and queries remain strictly on your machine.' },
+        { icon: '›', title: 'Instant Launch:', desc: 'Starts in under 0.5s with minimal memory. No Electron lag.' },
+        { icon: '›', title: 'Production Guard:', desc: 'Color tags and read-only mode prevent accidental deletions.' },
+        { icon: '›', title: 'Keyboard-First:', desc: 'Double Shift table search and Ctrl+F12 column navigation.' },
+        { icon: '›', title: 'Local-First:', desc: 'Credentials and queries remain strictly on your machine.' },
       ],
-      cta: 'Explore VloamDb →',
+      cta: 'View VloamDb ↗',
     },
     clip: {
       tag: 'Clipboard Manager',
@@ -190,12 +199,12 @@ const en: Translation = {
       slogan: 'Local-First Clipboard Manager with FIFO/LIFO Queue',
       desc: 'Distraction-free desktop clipboard utility. Copy multiple items in sequence and paste them automatically in order for fast form filling, code migration, and refactoring.',
       features: [
-        { icon: '📋', title: 'Paste Queue:', desc: 'Sequential multi-copy with FIFO/LIFO ordered paste.' },
-        { icon: '🔍', title: 'Fuzzy Search:', desc: 'Sub-millisecond full-text history search.' },
-        { icon: '⭐', title: 'Pinned Templates:', desc: 'Save recurring shell commands and SQL snippets.' },
-        { icon: '🔐', title: 'Zero Cloud Sync:', desc: '100% on-device storage with no external telemetry.' },
+        { icon: '›', title: 'Paste Queue:', desc: 'Sequential multi-copy with FIFO/LIFO ordered paste.' },
+        { icon: '›', title: 'Fuzzy Search:', desc: 'Sub-millisecond full-text history search.' },
+        { icon: '›', title: 'Pinned Templates:', desc: 'Save recurring shell commands and SQL snippets.' },
+        { icon: '›', title: 'Zero Cloud Sync:', desc: '100% on-device storage with no external telemetry.' },
       ],
-      cta: 'Explore VloamClip →',
+      cta: 'View VloamClip ↗',
     },
     mermaid: {
       tag: 'Visual Diagramming',
@@ -204,12 +213,12 @@ const en: Translation = {
       slogan: 'Live Interactive Mermaid Diagram Editor',
       desc: 'Streamlined in-browser Mermaid chart editor and visualizer. Convert markdown-like syntax into flowcharts, sequence diagrams, and architecture maps with instant SVG/PNG export.',
       features: [
-        { icon: '📊', title: 'Live Preview:', desc: 'Zero-latency split-pane rendering as you write syntax.' },
-        { icon: '⚡', title: 'Instant Export:', desc: 'Export crystal-clear SVG, high-res PNG, or copy markdown.' },
-        { icon: '🎨', title: 'Theme Switching:', desc: 'Clean dark/light theme presets for documentation.' },
-        { icon: '🔒', title: 'Client-Side Only:', desc: 'Diagram source never leaves your local browser tab.' },
+        { icon: '›', title: 'Live Preview:', desc: 'Zero-latency split-pane rendering as you write syntax.' },
+        { icon: '›', title: 'Instant Export:', desc: 'Export crystal-clear SVG, high-res PNG, or copy markdown.' },
+        { icon: '›', title: 'Theme Switching:', desc: 'Clean dark/light theme presets for documentation.' },
+        { icon: '›', title: 'Client-Side Only:', desc: 'Diagram source never leaves your local browser tab.' },
       ],
-      cta: 'Open Mermaid Editor →',
+      cta: 'Launch Editor ↗',
     },
     adhd: {
       tag: 'Psychological Screening',
@@ -218,12 +227,12 @@ const en: Translation = {
       slogan: 'Adult ADHD Self-Assessment Screening Tool',
       desc: 'Scientifically validated self-assessment tool based on standardized clinical criteria. Evaluate attention, hyperactivity, and executive function tendencies with instant private scoring.',
       features: [
-        { icon: '🧪', title: 'Clinical Grounding:', desc: 'Formulated following recognized ADHD symptom checklists.' },
-        { icon: '📊', title: 'Instant Report:', desc: 'Clear dimensional score breakdown and symptom insights.' },
-        { icon: '🔒', title: '100% Confidential:', desc: 'Runs entirely client-side. No personal health data is saved.' },
-        { icon: '🌐', title: '10 Languages:', desc: 'Available in English, Chinese, Spanish, French, German, and more.' },
+        { icon: '›', title: 'Clinical Grounding:', desc: 'Formulated following recognized ADHD symptom checklists.' },
+        { icon: '›', title: 'Instant Report:', desc: 'Clear dimensional score breakdown and symptom insights.' },
+        { icon: '›', title: '100% Confidential:', desc: 'Runs entirely client-side. No personal health data is saved.' },
+        { icon: '›', title: '10 Languages:', desc: 'Available in English, Chinese, Spanish, French, German, and more.' },
       ],
-      cta: 'Take ADHD Assessment →',
+      cta: 'Launch Screener ↗',
     },
     bpd: {
       tag: 'Personality Assessment',
@@ -232,12 +241,12 @@ const en: Translation = {
       slogan: 'Borderline Personality Self-Evaluation Tool',
       desc: 'Evidence-based questionnaire designed to screen for patterns associated with borderline personality traits, emotional regulation, interpersonal dynamics, and self-image.',
       features: [
-        { icon: '📑', title: 'Standardized Scales:', desc: 'Groundwork based on established diagnostic criteria.' },
-        { icon: '🎯', title: 'Multi-Factor Analysis:', desc: 'Evaluates emotional reactivity, stability, and relationships.' },
-        { icon: '🔐', title: 'Strict Privacy:', desc: 'Your responses are computed in your browser and never logged.' },
-        { icon: '💡', title: 'Actionable Guidance:', desc: 'Clear educational summaries and professional consultation tips.' },
+        { icon: '›', title: 'Standardized Scales:', desc: 'Groundwork based on established diagnostic criteria.' },
+        { icon: '›', title: 'Multi-Factor Analysis:', desc: 'Evaluates emotional reactivity, stability, and relationships.' },
+        { icon: '›', title: 'Strict Privacy:', desc: 'Your responses are computed in your browser and never logged.' },
+        { icon: '›', title: 'Actionable Guidance:', desc: 'Clear educational summaries and professional consultation tips.' },
       ],
-      cta: 'Take BPD Assessment →',
+      cta: 'Launch Screener ↗',
     },
   },
   specsSection: {
@@ -346,10 +355,17 @@ const en: Translation = {
       },
     ],
   },
+  articlesSection: {
+    label: 'Engineering Notes',
+    title: 'Architectural Essays & Lab Notes',
+    subtitle: 'Deep dives into local-first computing, hardware enclave security, and client-side ephemeral sandboxing.',
+    readMore: 'Read Full Essay →',
+  },
   securitySection: {
     label: 'Trust & Architecture',
     title: 'Local-First Security Manifesto',
     subtitle: 'Why our software and web services guarantee strict privacy and client-side data isolation.',
+    readWhitepaper: 'Read Full Security Architecture & Data Isolation Whitepaper →',
     pillars: [
       {
         title: 'Zero Cloud Storage for Sensitive Assets',
@@ -463,23 +479,24 @@ const zh: Translation = {
     description: '探索 Vloam 矩阵：涵盖 VloamDb（MySQL 客户端）、VloamClip（剪贴板利器）、Vloam Mermaid（在线图表编辑）、ADHD 心理自测与 BPD 专业测评。',
   },
   nav: {
-    products: '产品矩阵',
+    products: '软件与工具',
     specs: '技术参数',
     radar: '发布雷达',
+    notes: '工程手记',
     security: '安全架构',
     about: '关于 Vloam',
     faq: '常见问题',
   },
   hero: {
-    badge: '数字产品与在线服务生态',
-    title: '专注、纯粹的实用工具与在线服务矩阵',
-    subtitle: '从高性能桌面客户端、轻快 Web 在线工具，到严谨匿名的专业健康自评，Vloam 坚持本地优先、零冗余与极致体验。',
+    badge: 'Vloam Labs · 独立人机工程与隐私实验室',
+    title: '本地优先的原生软件与零云端在线工具',
+    subtitle: '专注打造无网络遥测、启动毫秒级的原生桌面效能工具，以及运算 100% 隔离于浏览器前端沙盒的个人自评与可视化工具。',
   },
   categories: {
-    developerTools: '🛠️ 开发者与效能工具',
-    developerSubtitle: '原生桌面客户端与可视化工具，消除冗余，大幅提升开发效率与编码流。',
-    assessmentTools: '🧠 专业在线自评与健康测评',
-    assessmentSubtitle: '严谨循证的心理学与行为倾向自评工具，计算完全在浏览器本地运行，100% 保护隐私。',
+    developerTools: '开发者与系统工具',
+    developerSubtitle: '原生系统级编译，空闲内存严格受控，带来专注无干扰的原生操作心流。',
+    assessmentTools: '纯前端自测与健康工具',
+    assessmentSubtitle: '严谨循证的心理学与行为倾向自评工具，计算完全在浏览器前端沙盒即时运行，100% 保护隐私。',
   },
   products: {
     db: {
@@ -489,12 +506,12 @@ const zh: Translation = {
       slogan: '专为开发者打造的轻快、专注 MySQL 客户端',
       desc: '告别笨重庞大的传统数据库工具。原生极速启动、多环境醒目颜色标识、严谨的生产只读保护、双击 Shift 极速表检索与本地数据绝对安全。',
       features: [
-        { icon: '⚡', title: '瞬时启动：', desc: '启动时间小于 0.5 秒，内存消耗极低，无 Electron 卡顿。' },
-        { icon: '🛡️', title: '生产安全防护：', desc: '醒目环境颜色标签与强制只读锁定，防范误改误删生产数据。' },
-        { icon: '⌨️', title: '键盘优先体验：', desc: '双击 Shift 模糊检索表，Ctrl+F12 快速定位字段。' },
-        { icon: '🔒', title: '本地离线隐私：', desc: '数据库账号密码和查询历史仅保存在本地设备，绝不上传。' },
+        { icon: '›', title: '瞬时启动：', desc: '启动时间小于 0.5 秒，内存消耗极低，无 Electron 卡顿。' },
+        { icon: '›', title: '生产安全防护：', desc: '醒目环境颜色标签与强制只读锁定，防范误改误删生产数据。' },
+        { icon: '›', title: '键盘优先体验：', desc: '双击 Shift 模糊检索表，Ctrl+F12 快速定位字段。' },
+        { icon: '›', title: '本地离线隐私：', desc: '数据库账号密码和查询历史仅保存在本地设备，绝不上传。' },
       ],
-      cta: '探索 VloamDb →',
+      cta: '查看 VloamDb ↗',
     },
     clip: {
       tag: '剪贴板与生产力',
@@ -503,12 +520,12 @@ const zh: Translation = {
       slogan: '本地优先、支持先进粘贴队列的剪贴板利器',
       desc: '专为程序员和重度文字工作者设计的现代剪贴板工具。连续批量复制，按先进先出（FIFO）或后进先出（LIFO）队列依次粘贴，简化表单录入与代码重构。',
       features: [
-        { icon: '📋', title: 'FIFO / LIFO 队列：', desc: '批量复制代码或文本，一键依序粘贴，无需频繁来回切屏。' },
-        { icon: '🔍', title: '微秒级模糊搜索：', desc: '全文本历史毫秒级极速定位，覆盖纯文本、代码与链接。' },
-        { icon: '⭐', title: '常用模板与收藏：', desc: '分类固定高频 Shell 命令、SQL 片段与常用模板。' },
-        { icon: '🔐', title: '零云端追踪：', desc: '100% 本地加密存储，绝无任何网络遥测与云端同步。' },
+        { icon: '›', title: 'FIFO / LIFO 队列：', desc: '批量复制代码或文本，一键依序粘贴，无需频繁来回切屏。' },
+        { icon: '›', title: '微秒级模糊搜索：', desc: '全文本历史毫秒级极速定位，覆盖纯文本、代码与链接。' },
+        { icon: '›', title: '常用模板与收藏：', desc: '分类固定高频 Shell 命令、SQL 片段与常用模板。' },
+        { icon: '›', title: '零云端追踪：', desc: '100% 本地加密存储，绝无任何网络遥测与云端同步。' },
       ],
-      cta: '探索 VloamClip →',
+      cta: '查看 VloamClip ↗',
     },
     mermaid: {
       tag: '图表可视化工具',
@@ -517,12 +534,12 @@ const zh: Translation = {
       slogan: '实时交互式 Mermaid 架构与图表编辑器',
       desc: '极简流畅的浏览器端 Mermaid 语法编辑器。支持流程图、时序图、类图与状态图实时双向预览，并提供无损 SVG 和高清 PNG 一键导出。',
       features: [
-        { icon: '📊', title: '实时零延迟渲染：', desc: '输入语法即刻呈现专业图表，所见即所得。' },
-        { icon: '⚡', title: '多格式无损导出：', desc: '一键导出高保真矢量 SVG、高清 PNG 或复制 Markdown。' },
-        { icon: '🎨', title: '深浅主题预设：', desc: '专为工程文档与技术博客设计的现代高对比度配色方案。' },
-        { icon: '🔒', title: '纯前端本地计算：', desc: '图表代码绝不传输至后端服务器，保护技术架构隐私。' },
+        { icon: '›', title: '实时零延迟渲染：', desc: '输入语法即刻呈现专业图表，所见即所得。' },
+        { icon: '›', title: '多格式无损导出：', desc: '一键导出高保真矢量 SVG、高清 PNG 或复制 Markdown。' },
+        { icon: '›', title: '深浅主题预设：', desc: '专为工程文档与技术博客设计的现代高对比度配色方案。' },
+        { icon: '›', title: '纯前端本地计算：', desc: '图表代码绝不传输至后端服务器，保护技术架构隐私。' },
       ],
-      cta: '打开 Mermaid 编辑器 →',
+      cta: '打开编辑器 ↗',
     },
     adhd: {
       tag: '心理与专注力测评',
@@ -531,12 +548,12 @@ const zh: Translation = {
       slogan: '成人 ADHD 注意力缺陷与多动倾向自测评估',
       desc: '基于权威临床标准打造的成人注意力缺陷倾向自测工具。从专注力、冲动性与执行功能等多维度进行量化评估，即刻生成客观详尽的分析报告。',
       features: [
-        { icon: '🧪', title: '循证医学基准：', desc: '严格依据公认的临床评估量表逻辑与诊断标准编制。' },
-        { icon: '📊', title: '即时多维报告：', desc: '呈现细分维度分数分布、表现解读与生活管理建议。' },
-        { icon: '🔒', title: '完全匿名与保密：', desc: '测评结果全在本地浏览器运算生成，不记录任何个人健康数据。' },
-        { icon: '🌐', title: '10 国语言支持：', desc: '支持中文、英文、西语、法语、德语等全球主流语言。' },
+        { icon: '›', title: '循证医学基准：', desc: '严格依据公认的临床评估量表逻辑与诊断标准编制。' },
+        { icon: '›', title: '即时多维报告：', desc: '呈现细分维度分数分布、表现解读与生活管理建议。' },
+        { icon: '›', title: '完全匿名与保密：', desc: '测评结果全在本地浏览器运算生成，不记录任何个人健康数据。' },
+        { icon: '›', title: '10 国语言支持：', desc: '支持中文、英文、西语、法语、德语等全球主流语言。' },
       ],
-      cta: '开始 ADHD 评估自测 →',
+      cta: '进入自测 ↗',
     },
     bpd: {
       tag: '人格倾向自测',
@@ -545,12 +562,12 @@ const zh: Translation = {
       slogan: '边缘型人格倾向（BPD）专业筛查评估工具',
       desc: '循证编制的边缘型人格特质自测问卷。针对情绪波动、人际关系敏感、自我认知与行为控制等关键特征提供客观量化分析与认知指导。',
       features: [
-        { icon: '📑', title: '标准化量表设计：', desc: '严格依据临床心理学界经典特质筛查体系进行结构化设计。' },
-        { icon: '🎯', title: '情绪与关系评估：', desc: '深入剖析情绪易激度、分离焦虑与身份认同波动。' },
-        { icon: '🔐', title: '严苛数据隐私：', desc: '无需注册，不保存任何测试记录，营造安全安心的自省空间。' },
-        { icon: '💡', title: '专业建议引导：', desc: '提供清晰的科普解读、心理调节方向与就医建议指引。' },
+        { icon: '›', title: '标准化量表设计：', desc: '严格依据临床心理学界经典特质筛查体系进行结构化设计。' },
+        { icon: '›', title: '情绪与关系评估：', desc: '深入剖析情绪易激度、分离焦虑与身份认同波动。' },
+        { icon: '›', title: '严苛数据隐私：', desc: '无需注册，不保存任何测试记录，营造安全安心的自省空间。' },
+        { icon: '›', title: '专业建议引导：', desc: '提供清晰的科普解读、心理调节方向与就医建议指引。' },
       ],
-      cta: '开始 BPD 评估自测 →',
+      cta: '进入自测 ↗',
     },
   },
   specsSection: {
@@ -659,10 +676,17 @@ const zh: Translation = {
       },
     ],
   },
+  articlesSection: {
+    label: '工程与架构手记',
+    title: '架构思考与实验室手记',
+    subtitle: '深度剖析本地优先计算、硬件安全区集成与纯前端沙盒的工程实践。',
+    readMore: '阅读完整手记 →',
+  },
   securitySection: {
     label: '安全与信任',
     title: '本地优先（Local-First）工程安全宣言',
     subtitle: '揭秘为什么 Vloam 的软件与服务绝不擅自上传你的数据库凭证、剪贴板隐私与健康问卷。',
+    readWhitepaper: '阅读完整安全与数据隔离白皮书 →',
     pillars: [
       {
         title: '敏感凭据零云端化存储',
@@ -777,9 +801,11 @@ const es: Translation = {
     description: 'Explora el ecosistema Vloam: VloamDb (cliente MySQL), VloamClip (portapapeles), Vloam Mermaid, test de TDAH y test de TLP.',
   },
   nav: {
+    ...en.nav,
     products: 'Productos',
     specs: 'Especificaciones',
     radar: 'Actualizaciones',
+    notes: 'Notas de ingeniería',
     security: 'Seguridad',
     about: 'Acerca de',
     faq: 'FAQ',
@@ -793,9 +819,11 @@ const fr: Translation = {
     description: 'Explorez l’écosystème Vloam : VloamDb, VloamClip, Vloam Mermaid, tests TDAH et TPL.',
   },
   nav: {
+    ...en.nav,
     products: 'Produits',
     specs: 'Spécifications',
     radar: 'Versions',
+    notes: 'Notes techniques',
     security: 'Sécurité',
     about: 'À propos',
     faq: 'FAQ',
