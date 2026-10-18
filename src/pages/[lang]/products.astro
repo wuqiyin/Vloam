@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecsTable from '../../components/SpecsTable.astro';
+import { prefixedLocales, type Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/translations';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return prefixedLocales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const dbUrl = `https://db.vloam.com/${lang}/`;
+const clipUrl = `https://clip.vloam.com/${lang}/`;
+const mermaidUrl = `https://mermaid.vloam.com/${lang}/`;
+const adhdUrl = `https://adhdtest.vloam.com/${lang}/`;
+const bpdUrl = `https://bdptest.vloam.com/${lang}/`;
+---
+
+<Layout lang={lang}>
+  <div class="products-directory-page">
+    <header class="directory-header">
+      <div class="container">
+        <span class="section-label">{t.nav.products}</span>
+        <h1>{t.productsPage.title}</h1>
+        <p class="directory-subtitle">{t.productsPage.subtitle}</p>
+      </div>
+    </header>
+
+    <!-- Native Desktop Software Category -->
+    <section class="products-section">
+      <div class="container">
+        <h2 class="section-title">{t.categories.developerTools}</h2>
+        <p class="category-subtitle">{t.categories.developerSubtitle}</p>
+
+        <div class="products-grid two-col">
+          <!-- VloamDb Card -->
+          <article class="product-card" style="--card-accent: #3b82f6;">
+            <div class="card-header">
+              <span class="product-tag">{t.products.db.tag}</span>
+              <span class="os-tag">{t.products.db.badge}</span>
+            </div>
+            <h3>{t.products.db.title}</h3>
+            <p class="product-slogan blue-slogan">{t.products.db.slogan}</p>
+            <p class="product-desc">{t.products.db.desc}</p>
+
+            <div class="features-list">
+              {t.products.db.features.map(f => (
+                <div class="feature-item">
+                  <span class="feature-icon">{f.icon}</span>
+                  <div><strong>{f.title}</strong> {f.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="card-actions">
+              <a href={dbUrl} target="_blank" rel="noopener" class="btn-primary">
+                {t.products.db.cta}
+              </a>
+              <div class="deep-links">
+                <a href={`${dbUrl}features/`} target="_blank" rel="noopener">Features</a>
+                <a href={`${dbUrl}alternatives/`} target="_blank" rel="noopener">Navicat &amp; DataGrip Alt</a>
+                <a href={`${dbUrl}guides/`} target="_blank" rel="noopener">MySQL Guides</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- VloamClip Card -->
+          <article class="product-card" style="--card-accent: #10b981;">
+            <div class="card-header">
+              <span class="product-tag">{t.products.clip.tag}</span>
+              <span class="os-tag">{t.products.clip.badge}</span>
+            </div>
+            <h3>{t.products.clip.title}</h3>
+            <p class="product-slogan emerald-slogan">{t.products.clip.slogan}</p>
+            <p class="product-desc">{t.products.clip.desc}</p>
+
+            <div class="features-list">
+              {t.products.clip.features.map(f => (
+                <div class="feature-item">
+                  <span class="feature-icon">{f.icon}</span>
+                  <div><strong>{f.title}</strong> {f.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="card-actions">
+              <a href={clipUrl} target="_blank" rel="noopener" class="btn-primary btn-emerald">
+                {t.products.clip.cta}
+              </a>
+              <div class="deep-links">
+                <a href={`${clipUrl}features/`} target="_blank" rel="noopener">Features</a>
+                <a href={`${clipUrl}guides/`} target="_blank" rel="noopener">Usage Guides</a>
+                <a href={`${clipUrl}changelog/`} target="_blank" rel="noopener">Release Notes</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Applications & Tools Category -->
+    <section class="products-section alt-bg">
+      <div class="container">
+        <h2 class="section-title">{t.categories.assessmentTools}</h2>
+        <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
+
+        <div class="products-grid three-col">
+          <!-- Vloam Mermaid Card -->
+          <article class="product-card" style="--card-accent: #06b6d4;">
+            <div class="card-header">
+              <span class="product-tag">{t.products.mermaid.tag}</span>
+              <span class="os-tag">{t.products.mermaid.badge}</span>
+            </div>
+            <h3>{t.products.mermaid.title}</h3>
+            <p class="product-slogan cyan-slogan">{t.products.mermaid.slogan}</p>
+            <p class="product-desc">{t.products.mermaid.desc}</p>
+
+            <div class="features-list">
+              {t.products.mermaid.features.map(f => (
+                <div class="feature-item">
+                  <span class="feature-icon">{f.icon}</span>
+                  <div><strong>{f.title}</strong> {f.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="card-actions">
+              <a href={mermaidUrl} target="_blank" rel="noopener" class="btn-primary btn-cyan">
+                {t.products.mermaid.cta}
+              </a>
+              <div class="deep-links">
+                <a href={`${mermaidUrl}editor/`} target="_blank" rel="noopener">Interactive Canvas</a>
+                <a href={`${mermaidUrl}docs/`} target="_blank" rel="noopener">Syntax Cheatsheet</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ADHD Test Card -->
+          <article class="product-card" style="--card-accent: #f59e0b;">
+            <div class="card-header">
+              <span class="product-tag">{t.products.adhd.tag}</span>
+              <span class="os-tag">{t.products.adhd.badge}</span>
+            </div>
+            <h3>{t.products.adhd.title}</h3>
+            <p class="product-slogan amber-slogan">{t.products.adhd.slogan}</p>
+            <p class="product-desc">{t.products.adhd.desc}</p>
+
+            <div class="features-list">
+              {t.products.adhd.features.map(f => (
+                <div class="feature-item">
+                  <span class="feature-icon">{f.icon}</span>
+                  <div><strong>{f.title}</strong> {f.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="card-actions">
+              <a href={adhdUrl} target="_blank" rel="noopener" class="btn-primary btn-amber">
+                {t.products.adhd.cta}
+              </a>
+              <div class="deep-links">
+                <a href={`${adhdUrl}about/`} target="_blank" rel="noopener">Clinical Background</a>
+                <a href={`${adhdUrl}privacy/`} target="_blank" rel="noopener">Privacy Commitment</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BPD Test Card -->
+          <article class="product-card" style="--card-accent: #8b5cf6;">
+            <div class="card-header">
+              <span class="product-tag">{t.products.bpd.tag}</span>
+              <span class="os-tag">{t.products.bpd.badge}</span>
+            </div>
+            <h3>{t.products.bpd.title}</h3>
+            <p class="product-slogan purple-slogan">{t.products.bpd.slogan}</p>
+            <p class="product-desc">{t.products.bpd.desc}</p>
+
+            <div class="features-list">
+              {t.products.bpd.features.map(f => (
+                <div class="feature-item">
+                  <span class="feature-icon">{f.icon}</span>
+                  <div><strong>{f.title}</strong> {f.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="card-actions">
+              <a href={bpdUrl} target="_blank" rel="noopener" class="btn-primary btn-purple">
+                {t.products.bpd.cta}
+              </a>
+              <div class="deep-links">
+                <a href={`${bpdUrl}about/`} target="_blank" rel="noopener">Assessment Methodology</a>
+                <a href={`${bpdUrl}privacy/`} target="_blank" rel="noopener">Confidentiality Guarantee</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Matrix Technical Specs Table -->
+    <SpecsTable t={t} />
+  </div>
+</Layout>
+
+<style>
+  .directory-header {
+    padding: 5rem 0 3.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.08) 0%, rgba(11, 15, 23, 0) 70%);
+  }
+
+  .directory-header h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin: 0.75rem 0 1rem;
+    color: var(--text-main);
+  }
+
+  .directory-subtitle {
+    font-size: 1.12rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .directory-header {
+      padding: 3rem 0 2rem;
+    }
+    .directory-header h1 {
+      font-size: 1.85rem;
+    }
+    .directory-subtitle {
+      font-size: 0.98rem;
+    }
+  }
+</style>

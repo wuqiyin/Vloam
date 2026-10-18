@@ -157,6 +157,10 @@ export interface Translation {
       points?: string[];
     }[];
   };
+  productsPage: {
+    title: string;
+    subtitle: string;
+  };
   footer: {
     brandDesc: string;
     devTitle: string;
@@ -547,6 +551,10 @@ const en: Translation = {
       },
     ],
   },
+  productsPage: {
+    title: 'All Software & Online Tools',
+    subtitle: 'Focused native desktop software alongside zero-install web tools and evidence-based screening websites.',
+  },
   footer: {
     brandDesc: 'Focused, lightweight, and practical digital tools and web services—spanning native desktop applications, visual utilities, and helpful online resources.',
     devTitle: 'Desktop Software',
@@ -936,6 +944,10 @@ const zh: Translation = {
         content: '我们可能会根据产品演进和法律要求不时更新本条款。更新后的条款一旦在网站公布即行生效。如对本条款有任何法律相关的咨询，请联系 legal@vloam.com。',
       },
     ],
+  },
+  productsPage: {
+    title: '全部软件与在线网站',
+    subtitle: '涵盖轻巧高效的原生桌面客户端软件，以及打开即用的 Web 在线应用与自测网站。',
   },
   footer: {
     brandDesc: '独立软件工作室，专注打造轻快实用的原生桌面软件，以及开箱即用的在线工具与自测网站。',
