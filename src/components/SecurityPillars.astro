@@ -1,0 +1,42 @@
+---
+import type { Translation } from '../i18n/translations';
+
+interface Props {
+  t: Translation;
+  securityPageUrl: string;
+}
+
+const { t, securityPageUrl } = Astro.props;
+---
+
+<section id="security" class="security-section">
+  <div class="container">
+    <p class="section-label">{t.securitySection.label}</p>
+    <h2 class="section-title">{t.securitySection.title}</h2>
+    <p class="category-subtitle">{t.securitySection.subtitle}</p>
+
+    <div class="pillars-grid">
+      {t.securitySection.pillars.map((pillar, idx) => (
+        <div class="pillar-card">
+          <div class="pillar-badge">0{idx + 1}</div>
+          <h4>{pillar.title}</h4>
+          <p class="pillar-desc">{pillar.desc}</p>
+          <ul class="pillar-list">
+            {pillar.details.map(d => (
+              <li>
+                <span class="pillar-check">✓</span>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="security-cta-wrap">
+      <a href={securityPageUrl} class="security-deep-btn">
+        Read Full Security Architecture &amp; Data Isolation Whitepaper &rarr;
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import type { Translation } from '../i18n/translations';
+
+interface Props {
+  t: Translation;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="specs" class="specs-section">
+  <div class="container">
+    <p class="section-label">{t.specsSection.label}</p>
+    <h2 class="section-title">{t.specsSection.title}</h2>
+    <p class="category-subtitle">{t.specsSection.subtitle}</p>
+
+    <div class="specs-table-wrapper">
+      <table class="specs-table">
+        <thead>
+          <tr>
+            <th>{t.specsSection.headers.product}</th>
+            <th>{t.specsSection.headers.category}</th>
+            <th>{t.specsSection.headers.platforms}</th>
+            <th>{t.specsSection.headers.engine}</th>
+            <th>{t.specsSection.headers.dataStorage}</th>
+            <th>{t.specsSection.headers.license}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {t.specsSection.rows.map(row => (
+            <tr>
+              <td class="font-bold highlight-cell">{row.product}</td>
+              <td><span class="spec-tag">{row.category}</span></td>
+              <td>{row.platforms}</td>
+              <td class="font-mono text-faint">{row.engine}</td>
+              <td><span class="secure-tag">{row.dataStorage}</span></td>
+              <td class="text-muted">{row.license}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

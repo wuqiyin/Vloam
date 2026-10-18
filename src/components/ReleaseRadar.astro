@@ -1,0 +1,42 @@
+---
+import type { Translation } from '../i18n/translations';
+
+interface Props {
+  t: Translation;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="radar" class="radar-section">
+  <div class="container">
+    <p class="section-label">{t.radarSection.label}</p>
+    <h2 class="section-title">{t.radarSection.title}</h2>
+    <p class="category-subtitle">{t.radarSection.subtitle}</p>
+
+    <div class="radar-grid">
+      {t.radarSection.items.map(item => (
+        <div class="radar-card">
+          <div class="radar-header">
+            <div class="radar-title-group">
+              <span class="radar-version">{item.version}</span>
+              <span class="radar-product">{item.product}</span>
+            </div>
+            <div class="radar-meta">
+              <span class="radar-tag">{item.tag}</span>
+              <span class="radar-date">{item.date}</span>
+            </div>
+          </div>
+          <ul class="radar-highlights">
+            {item.highlights.map(h => (
+              <li>
+                <span class="radar-bullet">›</span>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

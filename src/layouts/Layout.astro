@@ -10,7 +10,12 @@ const { lang = defaultLocale } = Astro.props;
 const t = useTranslations(lang);
 
 const siteUrl = "https://vloam.com";
-const canonicalPath = lang === defaultLocale ? "/" : `/${lang}/`;
+
+// Derive current page segment (e.g. '', 'about', 'security')
+const pathname = Astro.url.pathname.replace(/^\/([a-z]{2}\/)?/, '').replace(/\/$/, '');
+const pageSuffix = pathname ? `${pathname}/` : '';
+
+const canonicalPath = lang === defaultLocale ? `/${pageSuffix}` : `/${lang}/${pageSuffix}`;
 const canonicalURL = new URL(canonicalPath, siteUrl);
 
 const dbUrl = lang === defaultLocale ? "https://db.vloam.com/" : `https://db.vloam.com/${lang}/`;
@@ -18,6 +23,10 @@ const clipUrl = lang === defaultLocale ? "https://clip.vloam.com/" : `https://cl
 const mermaidUrl = lang === defaultLocale ? "https://mermaid.vloam.com/" : `https://mermaid.vloam.com/${lang}/`;
 const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https://adhdtest.vloam.com/${lang}/`;
 const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
+
+const homeUrl = lang === defaultLocale ? "/" : `/${lang}/`;
+const aboutUrl = lang === defaultLocale ? "/about/" : `/${lang}/about/`;
+const securityUrl = lang === defaultLocale ? "/security/" : `/${lang}/security/`;
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -107,12 +116,12 @@ const structuredData = {
 
     <!-- Canonical & Multilingual Hreflang Alternates -->
     <link rel="canonical" href={canonicalURL} />
-    <link rel="alternate" hreflang="x-default" href="https://vloam.com/" />
+    <link rel="alternate" hreflang="x-default" href={`https://vloam.com/${pageSuffix}`} />
     {locales.map((l) => (
       <link
         rel="alternate"
         hreflang={localeTags[l]}
-        href={l === defaultLocale ? "https://vloam.com/" : `https://vloam.com/${l}/`}
+        href={l === defaultLocale ? `https://vloam.com/${pageSuffix}` : `https://vloam.com/${l}/${pageSuffix}`}
       />
     ))}
 
@@ -145,17 +154,19 @@ const structuredData = {
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a href={lang === defaultLocale ? "/" : `/${lang}/`} class="brand">
+        <a href={homeUrl} class="brand">
           <img src="/favicon.svg" alt="Vloam Logo" width="32" height="32" />
           <span>Vloam</span>
         </a>
 
         <div class="header-right">
           <nav class="nav-links">
-            <a href="#developer-tools">{t.nav.developerTools}</a>
-            <a href="#assessment-tools">{t.nav.wellnessTools}</a>
-            <a href="#values">{t.nav.philosophy}</a>
-            <a href="#faq">{t.nav.faq}</a>
+            <a href={`${homeUrl}#developer-tools`}>{t.nav.products}</a>
+            <a href={`${homeUrl}#specs`}>{t.nav.specs}</a>
+            <a href={`${homeUrl}#radar`}>{t.nav.radar}</a>
+            <a href={securityUrl}>{t.nav.security}</a>
+            <a href={aboutUrl}>{t.nav.about}</a>
+            <a href={`${homeUrl}#faq`}>{t.nav.faq}</a>
           </nav>
 
           <div class="lang-switch-wrapper">
@@ -166,7 +177,7 @@ const structuredData = {
             >
               {locales.map((l) => (
                 <option
-                  value={l === defaultLocale ? "/" : `/${l}/`}
+                  value={l === defaultLocale ? `/${pageSuffix}` : `/${l}/${pageSuffix}`}
                   selected={l === lang}
                 >
                   {localeNames[l]}
@@ -213,18 +224,19 @@ const structuredData = {
               </ul>
             </div>
             <div class="footer-col">
-              <h5>{t.footer.legalTitle}</h5>
+              <h5>{t.footer.trustTitle}</h5>
               <ul>
+                <li><a href={aboutUrl}>{t.footer.about}</a></li>
+                <li><a href={securityUrl}>{t.footer.security}</a></li>
                 <li><a href={`${dbUrl}privacy/`} target="_blank" rel="noopener">{t.footer.privacy}</a></li>
                 <li><a href={`${dbUrl}terms/`} target="_blank" rel="noopener">{t.footer.terms}</a></li>
-                <li><a href={`${dbUrl}about/`} target="_blank" rel="noopener">{t.footer.about}</a></li>
                 <li><a href="mailto:support@vloam.com">{t.footer.contact}</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>&copy; {new Date().getFullYear()} Vloam. {t.footer.rights}</span>
+          <span>&copy; {new Date().getFullYear()} Vloam Studio. {t.footer.rights}</span>
           <span>{t.footer.motto}</span>
         </div>
       </div>

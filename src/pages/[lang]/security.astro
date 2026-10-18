@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { prefixedLocales, type Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/translations';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return prefixedLocales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang}>
+  <div class="container article-page">
+    <header class="article-header">
+      <span class="section-label">Architecture &amp; Trust</span>
+      <h1>{t.securityPage.title}</h1>
+      <p class="article-subtitle">{t.securityPage.subtitle}</p>
+    </header>
+
+    <div class="article-body">
+      <section class="content-block">
+        <h2>{t.securityPage.localFirstTitle}</h2>
+        <p>{t.securityPage.localFirstP1}</p>
+      </section>
+
+      <section class="content-block">
+        <h2>{t.securityPage.credentialTitle}</h2>
+        <p>{t.securityPage.credentialP1}</p>
+      </section>
+
+      <section class="content-block">
+        <h2>{t.securityPage.telemetryTitle}</h2>
+        <p>{t.securityPage.telemetryP1}</p>
+      </section>
+
+      <section class="content-block">
+        <h2>{t.securityPage.healthTitle}</h2>
+        <p>{t.securityPage.healthP1}</p>
+      </section>
+
+      <section class="content-block contact-block">
+        <h2>{t.securityPage.contactTitle}</h2>
+        <p>{t.securityPage.contactP1}</p>
+      </section>
+    </div>
+  </div>
+</Layout>

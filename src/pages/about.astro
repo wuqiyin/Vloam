@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { defaultLocale } from '../i18n/config';
+import { useTranslations } from '../i18n/translations';
+import '../styles/global.css';
+
+const t = useTranslations(defaultLocale);
+---
+
+<Layout lang={defaultLocale}>
+  <div class="container article-page">
+    <header class="article-header">
+      <span class="section-label">Studio Transparency</span>
+      <h1>{t.aboutPage.title}</h1>
+      <p class="article-subtitle">{t.aboutPage.subtitle}</p>
+    </header>
+
+    <div class="article-body">
+      <section class="content-block">
+        <h2>{t.aboutPage.storyTitle}</h2>
+        <p>{t.aboutPage.storyP1}</p>
+        <p>{t.aboutPage.storyP2}</p>
+      </section>
+
+      <section class="content-block">
+        <h2>{t.aboutPage.missionTitle}</h2>
+        <p>{t.aboutPage.missionP1}</p>
+      </section>
+
+      <section class="content-block">
+        <h2>{t.aboutPage.pillarsTitle}</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h4>⚡ Native Performance</h4>
+            <p>Every tool launches in milliseconds and avoids multi-gigabyte memory footprints.</p>
+          </div>
+          <div class="value-card">
+            <h4>🛡️ Local-First Data</h4>
+            <p>Your database credentials, clipboard items, and responses belong on your hardware.</p>
+          </div>
+          <div class="value-card">
+            <h4>⌨️ Keyboard Ergonomics</h4>
+            <p>Thoughtfully mapped shortcuts to keep developers in unbroken flow.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block contact-block">
+        <h3>Contact &amp; Governance</h3>
+        <p>Vloam is maintained by an independent group of engineers. Inquiries and partnerships can be directed to <a href="mailto:contact@vloam.com" class="text-primary font-bold">contact@vloam.com</a>.</p>
+      </section>
+    </div>
+  </div>
+</Layout>
