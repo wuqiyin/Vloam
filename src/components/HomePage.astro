@@ -92,18 +92,15 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="badge">
-        <span class="badge-dot"></span>
-        <span>{t.hero.badge}</span>
-      </div>
+      <div class="badge">{t.hero.badge}</div>
       <h1>{t.hero.title}</h1>
       <p class="hero-subtitle">{t.hero.subtitle}</p>
 
       <div class="hero-trust-strip">
         {trustPillars.map(p => (
           <div class="trust-item">
-            <span>{p.icon}</span>
-            <div><strong>{p.title}</strong> · {p.desc}</div>
+            <strong>{p.title}</strong>
+            <span>{p.desc}</span>
           </div>
         ))}
       </div>
@@ -128,7 +125,7 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
           </div>
 
           <div class="card-identity">
-            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+            <div class="app-icon-squircle" style="background: #1d4ed8;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                 <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
@@ -173,7 +170,7 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
           </div>
 
           <div class="card-identity">
-            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">
+            <div class="app-icon-squircle" style="background: #047857;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
@@ -231,7 +228,7 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
           </div>
 
           <div class="card-identity">
-            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);">
+            <div class="app-icon-squircle" style="background: #0369a1;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="6" height="6" rx="1"></rect>
                 <rect x="15" y="15" width="6" height="6" rx="1"></rect>
@@ -272,7 +269,7 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
           </div>
 
           <div class="card-identity">
-            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+            <div class="app-icon-squircle" style="background: #b45309;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9"></circle>
                 <circle cx="12" cy="12" r="5"></circle>
@@ -315,7 +312,7 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
           </div>
 
           <div class="card-identity">
-            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+            <div class="app-icon-squircle" style="background: #6d28d9;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 <path d="M12 8v4"></path>
@@ -370,19 +367,16 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
 
       <div class="values-grid">
         <div class="value-card">
-          <div class="value-icon">⚡</div>
           <h3>{t.values.items.speedTitle}</h3>
           <p>{t.values.items.speedDesc}</p>
         </div>
 
         <div class="value-card">
-          <div class="value-icon">🛡️</div>
           <h3>{t.values.items.privacyTitle}</h3>
           <p>{t.values.items.privacyDesc}</p>
         </div>
 
         <div class="value-card">
-          <div class="value-icon">⌨️</div>
           <h3>{t.values.items.kbdTitle}</h3>
           <p>{t.values.items.kbdDesc}</p>
         </div>

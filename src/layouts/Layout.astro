@@ -30,7 +30,6 @@ const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https:
 const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
 
 const homeUrl = lang === defaultLocale ? "/" : `/${lang}/`;
-const productsUrl = lang === defaultLocale ? "/products/" : `/${lang}/products/`;
 const aboutUrl = lang === defaultLocale ? "/about/" : `/${lang}/about/`;
 const securityUrl = lang === defaultLocale ? "/security/" : `/${lang}/security/`;
 const articlesUrl = lang === defaultLocale ? "/articles/" : `/${lang}/articles/`;
@@ -170,7 +169,6 @@ const structuredData = {
 
         <div class="header-right">
           <nav class="nav-links" id="siteNav">
-            <a href={productsUrl}>{t.nav.products}</a>
             <a href={articlesUrl}>{t.nav.notes}</a>
             <a href={securityUrl}>{t.nav.security}</a>
             <a href={aboutUrl}>{t.nav.about}</a>
@@ -264,7 +262,6 @@ const structuredData = {
             <div class="footer-col">
               <h5>{t.footer.trustTitle}</h5>
               <ul>
-                <li><a href={productsUrl}>{t.nav.products}</a></li>
                 <li><a href={articlesUrl}>{t.nav.notes}</a></li>
                 <li><a href={securityUrl}>{t.footer.security}</a></li>
                 <li><a href={aboutUrl}>{t.footer.about}</a></li>
