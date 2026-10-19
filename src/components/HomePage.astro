@@ -21,6 +21,71 @@ const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https:
 const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
 
 const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/security/`;
+
+const trustPillarsMap: Record<string, { icon: string; title: string; desc: string }[]> = {
+  zh: [
+    { icon: '⚡', title: '原生底层架构', desc: '零冗余开销' },
+    { icon: '🛡️', title: '离线优先设计', desc: '100% 数据不离机' },
+    { icon: '🚀', title: '毫秒极速响应', desc: '开箱即用' },
+    { icon: '🔒', title: '零知识安全隔离', desc: '无遥测无埋点' }
+  ],
+  en: [
+    { icon: '⚡', title: 'Native Architecture', desc: 'Zero Electron Bloat' },
+    { icon: '🛡️', title: 'Offline-First Storage', desc: '100% On-Device' },
+    { icon: '🚀', title: 'Instant Cold Launch', desc: 'Sub-second Startup' },
+    { icon: '🔒', title: 'Zero Telemetry', desc: 'No Cloud Tracking' }
+  ],
+  es: [
+    { icon: '⚡', title: 'Arquitectura Nativa', desc: 'Cero Bloatware' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Local' },
+    { icon: '🚀', title: 'Inicio Instantáneo', desc: 'Milisegundos' },
+    { icon: '🔒', title: 'Cero Telemetría', desc: 'Sin Rastreo' }
+  ],
+  fr: [
+    { icon: '⚡', title: 'Architecture Native', desc: 'Zéro Bloatware' },
+    { icon: '🛡️', title: 'Stockage Local', desc: '100% Sur Machine' },
+    { icon: '🚀', title: 'Lancement Éclair', desc: 'Sous la seconde' },
+    { icon: '🔒', title: 'Zéro Télémétrie', desc: 'Confidentialité Totale' }
+  ],
+  de: [
+    { icon: '⚡', title: 'Native Architektur', desc: 'Kein Ballast' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Lokal' },
+    { icon: '🚀', title: 'Blitzstart', desc: 'Millisekundenschnell' },
+    { icon: '🔒', title: 'Null Telemetrie', desc: 'Privat & Sicher' }
+  ],
+  pt: [
+    { icon: '⚡', title: 'Arquitetura Nativa', desc: 'Zero Bloatware' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Local' },
+    { icon: '🚀', title: 'Início Instantâneo', desc: 'Milissegundos' },
+    { icon: '🔒', title: 'Zero Telemetria', desc: 'Sem Rastreamento' }
+  ],
+  it: [
+    { icon: '⚡', title: 'Architettura Nativa', desc: 'Zero Bloatware' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Locale' },
+    { icon: '🚀', title: 'Avvio Istantaneo', desc: 'Millisecondi' },
+    { icon: '🔒', title: 'Zero Telemetria', desc: 'Nessun Tracciamento' }
+  ],
+  nl: [
+    { icon: '⚡', title: 'Native Architectuur', desc: 'Geen Bloatware' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Lokaal' },
+    { icon: '🚀', title: 'Bliksemstart', desc: 'Milliseconden' },
+    { icon: '🔒', title: 'Geen Telemetrie', desc: 'Volledig Privé' }
+  ],
+  pl: [
+    { icon: '⚡', title: 'Natywna Architektura', desc: 'Zero Narzutu' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Lokalnie' },
+    { icon: '🚀', title: 'Błyskawiczny Start', desc: 'Milisekundy' },
+    { icon: '🔒', title: 'Zero Telemetrii', desc: 'Prywatność' }
+  ],
+  ro: [
+    { icon: '⚡', title: 'Arhitectură Nativă', desc: 'Fără Încărcare' },
+    { icon: '🛡️', title: 'Offline-First', desc: '100% Pe Dispozitiv' },
+    { icon: '🚀', title: 'Pornire Instantanee', desc: 'Milisecunde' },
+    { icon: '🔒', title: 'Zero Telemetrie', desc: 'Fără Urmărire' }
+  ]
+};
+
+const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
 ---
 
 <Layout lang={lang}>
@@ -28,35 +93,60 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
   <section class="hero">
     <div class="container">
       <div class="badge">
-        <span>✦</span> {t.hero.badge}
+        <span class="badge-dot"></span>
+        <span>{t.hero.badge}</span>
       </div>
       <h1>{t.hero.title}</h1>
       <p class="hero-subtitle">{t.hero.subtitle}</p>
+
+      <div class="hero-trust-strip">
+        {trustPillars.map(p => (
+          <div class="trust-item">
+            <span>{p.icon}</span>
+            <div><strong>{p.title}</strong> · {p.desc}</div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- Developer Tools Section -->
   <section id="developer-tools" class="products-section">
     <div class="container">
-      <p class="section-label">{lang === 'zh' ? '原生桌面应用' : 'Desktop Applications'}</p>
-      <h2 class="section-title">{t.categories.developerTools}</h2>
-      <p class="category-subtitle">{t.categories.developerSubtitle}</p>
+      <div class="section-header-wrap">
+        <p class="section-label">{lang === 'zh' ? '原生桌面应用' : 'Desktop Applications'}</p>
+        <h2 class="section-title">{t.categories.developerTools}</h2>
+        <p class="category-subtitle">{t.categories.developerSubtitle}</p>
+      </div>
 
       <div class="products-grid two-col">
         <!-- VloamDb Card -->
-        <article class="product-card" style="--card-accent: #3b82f6;">
+        <article class="product-card" style="--card-accent: #2563eb;">
           <div class="card-header">
             <span class="product-tag">{t.products.db.tag}</span>
             <span class="os-tag">{t.products.db.badge}</span>
           </div>
-          <h3>{t.products.db.title}</h3>
-          <p class="product-slogan blue-slogan">{t.products.db.slogan}</p>
+
+          <div class="card-identity">
+            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>{t.products.db.title}</h3>
+              <p class="product-slogan blue-slogan">{t.products.db.slogan}</p>
+            </div>
+          </div>
+
           <p class="product-desc">{t.products.db.desc}</p>
 
           <div class="features-list">
             {t.products.db.features.map(f => (
               <div class="feature-item">
-                <span class="feature-icon">{f.icon}</span>
+                <span class="feature-icon-box">{f.icon}</span>
                 <div><strong>{f.title}</strong> {f.desc}</div>
               </div>
             ))}
@@ -64,7 +154,8 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
 
           <div class="card-actions">
             <a href={dbUrl} target="_blank" rel="noopener" class="btn-primary">
-              {t.products.db.cta}
+              <span>{t.products.db.cta}</span>
+              <span>→</span>
             </a>
             <div class="deep-links">
               <a href={`${dbUrl}features/`} target="_blank" rel="noopener">Features</a>
@@ -75,19 +166,32 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
         </article>
 
         <!-- VloamClip Card -->
-        <article class="product-card" style="--card-accent: #10b981;">
+        <article class="product-card" style="--card-accent: #059669;">
           <div class="card-header">
             <span class="product-tag">{t.products.clip.tag}</span>
             <span class="os-tag">{t.products.clip.badge}</span>
           </div>
-          <h3>{t.products.clip.title}</h3>
-          <p class="product-slogan emerald-slogan">{t.products.clip.slogan}</p>
+
+          <div class="card-identity">
+            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                <path d="m11 11 3 3-5 5"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>{t.products.clip.title}</h3>
+              <p class="product-slogan emerald-slogan">{t.products.clip.slogan}</p>
+            </div>
+          </div>
+
           <p class="product-desc">{t.products.clip.desc}</p>
 
           <div class="features-list">
             {t.products.clip.features.map(f => (
               <div class="feature-item">
-                <span class="feature-icon">{f.icon}</span>
+                <span class="feature-icon-box">{f.icon}</span>
                 <div><strong>{f.title}</strong> {f.desc}</div>
               </div>
             ))}
@@ -95,7 +199,8 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
 
           <div class="card-actions">
             <a href={clipUrl} target="_blank" rel="noopener" class="btn-primary btn-emerald">
-              {t.products.clip.cta}
+              <span>{t.products.clip.cta}</span>
+              <span>→</span>
             </a>
             <div class="deep-links">
               <a href={`${clipUrl}features/`} target="_blank" rel="noopener">Features</a>
@@ -111,25 +216,41 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
   <!-- Assessment Tools Section -->
   <section id="assessment-tools" class="products-section alt-bg">
     <div class="container">
-      <p class="section-label">{lang === 'zh' ? '免安装 Web 矩阵' : 'Browser Utilities'}</p>
-      <h2 class="section-title">{t.categories.assessmentTools}</h2>
-      <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
+      <div class="section-header-wrap">
+        <p class="section-label">{lang === 'zh' ? '免安装 Web 矩阵' : 'Browser Utilities'}</p>
+        <h2 class="section-title">{t.categories.assessmentTools}</h2>
+        <p class="category-subtitle">{t.categories.assessmentSubtitle}</p>
+      </div>
 
       <div class="products-grid three-col">
         <!-- Vloam Mermaid Card -->
-        <article class="product-card" style="--card-accent: #06b6d4;">
+        <article class="product-card" style="--card-accent: #0284c7;">
           <div class="card-header">
             <span class="product-tag">{t.products.mermaid.tag}</span>
             <span class="os-tag">{t.products.mermaid.badge}</span>
           </div>
-          <h3>{t.products.mermaid.title}</h3>
-          <p class="product-slogan cyan-slogan">{t.products.mermaid.slogan}</p>
+
+          <div class="card-identity">
+            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+                <rect x="15" y="15" width="6" height="6" rx="1"></rect>
+                <path d="M6 9v3a3 3 0 0 0 3 3h6"></path>
+                <path d="m15 12 3 3-3 3"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>{t.products.mermaid.title}</h3>
+              <p class="product-slogan cyan-slogan">{t.products.mermaid.slogan}</p>
+            </div>
+          </div>
+
           <p class="product-desc">{t.products.mermaid.desc}</p>
 
           <div class="features-list">
             {t.products.mermaid.features.map(f => (
               <div class="feature-item">
-                <span class="feature-icon">{f.icon}</span>
+                <span class="feature-icon-box">{f.icon}</span>
                 <div><strong>{f.title}</strong> {f.desc}</div>
               </div>
             ))}
@@ -137,7 +258,8 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
 
           <div class="card-actions">
             <a href={mermaidUrl} target="_blank" rel="noopener" class="btn-primary btn-cyan">
-              {t.products.mermaid.cta}
+              <span>{t.products.mermaid.cta}</span>
+              <span>→</span>
             </a>
             <div class="deep-links">
               <a href={`${mermaidUrl}editor/`} target="_blank" rel="noopener">Interactive Canvas</a>
@@ -147,19 +269,35 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
         </article>
 
         <!-- ADHD Test Card -->
-        <article class="product-card" style="--card-accent: #f59e0b;">
+        <article class="product-card" style="--card-accent: #d97706;">
           <div class="card-header">
             <span class="product-tag">{t.products.adhd.tag}</span>
             <span class="os-tag">{t.products.adhd.badge}</span>
           </div>
-          <h3>{t.products.adhd.title}</h3>
-          <p class="product-slogan amber-slogan">{t.products.adhd.slogan}</p>
+
+          <div class="card-identity">
+            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="2" x2="12" y2="4"></line>
+                <line x1="12" y1="20" x2="12" y2="22"></line>
+                <line x1="2" y1="12" x2="4" y2="12"></line>
+                <line x1="20" y1="12" x2="22" y2="12"></line>
+              </svg>
+            </div>
+            <div>
+              <h3>{t.products.adhd.title}</h3>
+              <p class="product-slogan amber-slogan">{t.products.adhd.slogan}</p>
+            </div>
+          </div>
+
           <p class="product-desc">{t.products.adhd.desc}</p>
 
           <div class="features-list">
             {t.products.adhd.features.map(f => (
               <div class="feature-item">
-                <span class="feature-icon">{f.icon}</span>
+                <span class="feature-icon-box">{f.icon}</span>
                 <div><strong>{f.title}</strong> {f.desc}</div>
               </div>
             ))}
@@ -167,7 +305,8 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
 
           <div class="card-actions">
             <a href={adhdUrl} target="_blank" rel="noopener" class="btn-primary btn-amber">
-              {t.products.adhd.cta}
+              <span>{t.products.adhd.cta}</span>
+              <span>→</span>
             </a>
             <div class="deep-links">
               <a href={`${adhdUrl}about/`} target="_blank" rel="noopener">Clinical Background</a>
@@ -177,19 +316,32 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
         </article>
 
         <!-- BPD Test Card -->
-        <article class="product-card" style="--card-accent: #8b5cf6;">
+        <article class="product-card" style="--card-accent: #7c3aed;">
           <div class="card-header">
             <span class="product-tag">{t.products.bpd.tag}</span>
             <span class="os-tag">{t.products.bpd.badge}</span>
           </div>
-          <h3>{t.products.bpd.title}</h3>
-          <p class="product-slogan purple-slogan">{t.products.bpd.slogan}</p>
+
+          <div class="card-identity">
+            <div class="app-icon-squircle" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M12 8v4"></path>
+                <path d="M12 16h.01"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>{t.products.bpd.title}</h3>
+              <p class="product-slogan purple-slogan">{t.products.bpd.slogan}</p>
+            </div>
+          </div>
+
           <p class="product-desc">{t.products.bpd.desc}</p>
 
           <div class="features-list">
             {t.products.bpd.features.map(f => (
               <div class="feature-item">
-                <span class="feature-icon">{f.icon}</span>
+                <span class="feature-icon-box">{f.icon}</span>
                 <div><strong>{f.title}</strong> {f.desc}</div>
               </div>
             ))}
@@ -197,7 +349,8 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
 
           <div class="card-actions">
             <a href={bpdUrl} target="_blank" rel="noopener" class="btn-primary btn-purple">
-              {t.products.bpd.cta}
+              <span>{t.products.bpd.cta}</span>
+              <span>→</span>
             </a>
             <div class="deep-links">
               <a href={`${bpdUrl}about/`} target="_blank" rel="noopener">Assessment Methodology</a>
