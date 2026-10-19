@@ -620,6 +620,7 @@ a {
   margin-bottom: 0.75rem;
 }
 
+.pillar-card h3,
 .pillar-card h4 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -787,6 +788,7 @@ a {
   margin-bottom: 1rem;
 }
 
+.value-card h3,
 .value-card h4 {
   font-size: 1.15rem;
   font-weight: 700;
@@ -820,6 +822,7 @@ a {
   padding: 1.5rem;
 }
 
+.faq-item h3,
 .faq-item h4 {
   font-size: 1.05rem;
   font-weight: 600;

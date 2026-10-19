@@ -20,4 +20,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# Content signals for AI search and training discovery
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 Sitemap: https://vloam.com/sitemap-index.xml

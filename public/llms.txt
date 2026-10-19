@@ -19,5 +19,8 @@ Vloam Labs is an independent engineering collective dedicated to local-first com
 
 ## Architecture, Security & Governance
 
+- [Software Directory & Download Index](https://vloam.com/products/): Overview of native binaries, SHA-256 verification, and web tools.
 - [About Vloam Labs](https://vloam.com/about/): Studio transparency, engineering values, and mission.
-- [Security Architecture Manifesto](https://vloam.com/security/): Local-first security commitments, macOS Keychain & Windows DPAPI secret storage, and zero cloud harvesting guarantees.
+- [Security & Privacy](https://vloam.com/security/): Local-first security commitments, macOS Keychain & Windows DPAPI secret storage, and zero cloud harvesting guarantees.
+- [Privacy Policy](https://vloam.com/privacy/): Complete data protection and zero-tracking commitment.
+- [Terms of Service](https://vloam.com/terms/): Licensing and usage terms for desktop tools and online web applications.

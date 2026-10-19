@@ -230,19 +230,19 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
       <div class="values-grid">
         <div class="value-card">
           <div class="value-icon">⚡</div>
-          <h4>{t.values.items.speedTitle}</h4>
+          <h3>{t.values.items.speedTitle}</h3>
           <p>{t.values.items.speedDesc}</p>
         </div>
 
         <div class="value-card">
           <div class="value-icon">🛡️</div>
-          <h4>{t.values.items.privacyTitle}</h4>
+          <h3>{t.values.items.privacyTitle}</h3>
           <p>{t.values.items.privacyDesc}</p>
         </div>
 
         <div class="value-card">
           <div class="value-icon">⌨️</div>
-          <h4>{t.values.items.kbdTitle}</h4>
+          <h3>{t.values.items.kbdTitle}</h3>
           <p>{t.values.items.kbdDesc}</p>
         </div>
       </div>
@@ -258,7 +258,7 @@ const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/securi
       <div class="faq-list">
         {t.faq.items.map(item => (
           <div class="faq-item">
-            <h4>{item.q}</h4>
+            <h3>{item.q}</h3>
             <p>{item.a}</p>
           </div>
         ))}
