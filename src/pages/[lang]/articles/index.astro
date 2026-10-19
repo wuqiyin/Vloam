@@ -96,12 +96,12 @@ const readMoreText = isZh ? "阅读完整文章 →" : "Read Essay →";
   }
 
   .article-breadcrumb a {
-    color: #60a5fa;
+    color: var(--primary);
     transition: color 0.15s ease;
   }
 
   .article-breadcrumb a:hover {
-    color: #93c5fd;
+    color: var(--primary-hover);
   }
 
   .breadcrumb-sep {
@@ -141,13 +141,14 @@ const readMoreText = isZh ? "阅读完整文章 →" : "Read Essay →";
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 2.25rem;
+    box-shadow: var(--card-shadow);
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .article-list-item:hover {
     transform: translateY(-2px);
-    border-color: #3b82f6;
-    box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.5);
+    border-color: var(--primary);
+    box-shadow: var(--card-shadow-hover);
   }
 
   .item-meta {
@@ -161,7 +162,7 @@ const readMoreText = isZh ? "阅读完整文章 →" : "Read Essay →";
   }
 
   .item-category {
-    color: #60a5fa;
+    color: var(--primary);
     font-weight: 600;
   }
 
@@ -183,7 +184,7 @@ const readMoreText = isZh ? "阅读完整文章 →" : "Read Essay →";
   }
 
   .item-title a:hover {
-    color: #60a5fa;
+    color: var(--primary);
   }
 
   .item-lead {
@@ -204,12 +205,12 @@ const readMoreText = isZh ? "阅读完整文章 →" : "Read Essay →";
     gap: 0.35rem;
     font-size: 0.88rem;
     font-weight: 600;
-    color: #60a5fa;
-    transition: gap 0.15s ease;
+    color: var(--primary);
+    transition: gap 0.15s ease, color 0.15s ease;
   }
 
   .item-link:hover {
-    color: #93c5fd;
+    color: var(--primary-hover);
     gap: 0.55rem;
   }
 

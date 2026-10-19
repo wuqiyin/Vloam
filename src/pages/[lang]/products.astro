@@ -269,7 +269,7 @@ const securityUrl = `/${lang}/security/`;
     padding: 4.5rem 0 3rem;
     text-align: center;
     border-bottom: 1px solid var(--border);
-    background: radial-gradient(circle at 50% 10%, rgba(59, 130, 246, 0.08) 0%, rgba(11, 15, 23, 0) 70%);
+    background: radial-gradient(circle at 50% 10%, rgba(37, 99, 235, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
   }
 
   .directory-header h1 {
@@ -316,15 +316,15 @@ const securityUrl = `/${lang}/security/`;
     letter-spacing: 0.06em;
     padding: 0.2rem 0.55rem;
     border-radius: 6px;
-    background: rgba(59, 130, 246, 0.15);
-    color: #93c5fd;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    background: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+    border: 1px solid rgba(37, 99, 235, 0.2);
   }
 
   .dir-group-badge.badge-web {
-    background: rgba(16, 185, 129, 0.15);
-    color: #6ee7b7;
-    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(5, 150, 105, 0.08);
+    color: #047857;
+    border-color: rgba(5, 150, 105, 0.2);
   }
 
   .dir-group-title h2 {
@@ -356,7 +356,8 @@ const securityUrl = `/${lang}/security/`;
     gap: 1.5rem;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
   }
 
   .dir-row::before {
@@ -371,7 +372,8 @@ const securityUrl = `/${lang}/security/`;
 
   .dir-row:hover {
     border-color: var(--border-highlight);
-    background: var(--bg-card-hover);
+    background: #ffffff;
+    box-shadow: var(--card-shadow-hover);
     transform: translateY(-1px);
   }
 
@@ -397,11 +399,11 @@ const securityUrl = `/${lang}/security/`;
     border: 1px solid var(--border-highlight);
   }
 
-  .db-avatar { color: #60a5fa; border-color: rgba(59, 130, 246, 0.4); }
-  .clip-avatar { color: #34d399; border-color: rgba(16, 185, 129, 0.4); }
-  .mermaid-avatar { color: #22d3ee; border-color: rgba(6, 182, 212, 0.4); }
-  .adhd-avatar { color: #fbbf24; border-color: rgba(245, 158, 11, 0.4); font-size: 0.72rem; }
-  .bpd-avatar { color: #a78bfa; border-color: rgba(139, 92, 246, 0.4); font-size: 0.78rem; }
+  .db-avatar { color: #2563eb; border-color: rgba(37, 99, 235, 0.25); background: rgba(37, 99, 235, 0.05); }
+  .clip-avatar { color: #059669; border-color: rgba(5, 150, 105, 0.25); background: rgba(5, 150, 105, 0.05); }
+  .mermaid-avatar { color: #0891b2; border-color: rgba(8, 145, 178, 0.25); background: rgba(8, 145, 178, 0.05); }
+  .adhd-avatar { color: #d97706; border-color: rgba(217, 119, 6, 0.25); background: rgba(217, 119, 6, 0.05); font-size: 0.72rem; }
+  .bpd-avatar { color: #7c3aed; border-color: rgba(124, 58, 237, 0.25); background: rgba(124, 58, 237, 0.05); font-size: 0.78rem; }
 
   .dir-name-row {
     display: flex;
@@ -448,14 +450,14 @@ const securityUrl = `/${lang}/security/`;
     padding: 0.2rem 0.55rem;
     border-radius: 6px;
     background: var(--bg-subtle);
-    color: #cbd5e1;
+    color: var(--text-muted);
     border: 1px solid var(--border);
   }
 
   .dir-chip.chip-free {
-    color: #6ee7b7;
-    background: rgba(16, 185, 129, 0.08);
-    border-color: rgba(16, 185, 129, 0.25);
+    color: #047857;
+    background: rgba(5, 150, 105, 0.08);
+    border-color: rgba(5, 150, 105, 0.2);
   }
 
   .dir-tech-sub {
@@ -478,23 +480,25 @@ const securityUrl = `/${lang}/security/`;
     border-radius: 8px;
     font-size: 0.88rem;
     font-weight: 600;
-    background: var(--bg-subtle);
+    background: #ffffff;
     border: 1px solid var(--border-highlight);
     color: var(--text-main);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     transition: all 0.15s ease;
     white-space: nowrap;
   }
 
   .dir-cta-btn:hover {
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border-color: var(--accent-color, var(--primary));
   }
 
-  .btn-blue:hover { color: #60a5fa; border-color: #3b82f6; }
-  .btn-emerald:hover { color: #34d399; border-color: #10b981; }
-  .btn-cyan:hover { color: #22d3ee; border-color: #06b6d4; }
-  .btn-amber:hover { color: #fbbf24; border-color: #f59e0b; }
-  .btn-purple:hover { color: #a78bfa; border-color: #8b5cf6; }
+  .btn-blue:hover { color: #2563eb; border-color: #2563eb; }
+  .btn-emerald:hover { color: #059669; border-color: #059669; }
+  .btn-cyan:hover { color: #0891b2; border-color: #0891b2; }
+  .btn-amber:hover { color: #d97706; border-color: #d97706; }
+  .btn-purple:hover { color: #7c3aed; border-color: #7c3aed; }
 
   .dir-sub-links {
     display: flex;
@@ -510,7 +514,7 @@ const securityUrl = `/${lang}/security/`;
   }
 
   .dir-sub-links a:hover {
-    color: #60a5fa;
+    color: var(--primary);
     text-decoration: underline;
   }
 
@@ -524,6 +528,7 @@ const securityUrl = `/${lang}/security/`;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 14px;
+    box-shadow: var(--card-shadow);
     display: flex;
     align-items: flex-start;
     gap: 1.25rem;
@@ -552,12 +557,12 @@ const securityUrl = `/${lang}/security/`;
   .integrity-link a {
     font-size: 0.88rem;
     font-weight: 600;
-    color: #60a5fa;
+    color: var(--primary);
     transition: color 0.15s ease;
   }
 
   .integrity-link a:hover {
-    color: #93c5fd;
+    color: var(--primary-hover);
   }
 
   @media (max-width: 900px) {

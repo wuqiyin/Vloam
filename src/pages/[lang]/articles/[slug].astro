@@ -125,12 +125,12 @@ const articleStructuredData = {
   }
 
   .article-breadcrumb a {
-    color: #60a5fa;
+    color: var(--primary);
     transition: color 0.15s ease;
   }
 
   .article-breadcrumb a:hover {
-    color: #93c5fd;
+    color: var(--primary-hover);
   }
 
   .breadcrumb-sep {
@@ -154,7 +154,7 @@ const articleStructuredData = {
   }
 
   .article-tag {
-    color: #60a5fa;
+    color: var(--primary);
     font-weight: 600;
   }
 
@@ -173,17 +173,17 @@ const articleStructuredData = {
 
   .article-lead {
     font-size: 1.15rem;
-    color: #cbd5e1;
+    color: #334155;
     line-height: 1.7;
     font-style: normal;
-    border-left: 3px solid #3b82f6;
+    border-left: 3px solid var(--primary);
     padding-left: 1.25rem;
   }
 
   .article-body {
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #e2e8f0;
+    color: #334155;
   }
 
   .content-block {
@@ -200,7 +200,7 @@ const articleStructuredData = {
 
   .content-block p {
     margin-bottom: 1.25rem;
-    color: #cbd5e1;
+    color: #334155;
   }
 
   .lab-box {
@@ -209,6 +209,7 @@ const articleStructuredData = {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
+    box-shadow: var(--card-shadow);
   }
 
   .lab-box h3 {
@@ -232,10 +233,10 @@ const articleStructuredData = {
   }
 
   .lab-links a {
-    color: #60a5fa;
+    color: var(--primary);
   }
 
   .lab-links a:hover {
-    color: #93c5fd;
+    color: var(--primary-hover);
   }
 </style>
