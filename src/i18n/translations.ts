@@ -588,7 +588,7 @@ const en: Translation = {
 
 const zh: Translation = {
   meta: {
-    title: 'Vloam — 轻快实用的桌面软件与在线网站',
+    title: 'Vloam — 轻快实用的软件工具与在线网站',
     description: '独立软件工作室，打造轻巧高效的原生桌面软件（VloamDb、VloamClip）与免安装开箱即用的 Web 在线工具与自测网站（Vloam Mermaid、ADHD 与 BPD 自评）。',
   },
   nav: {
@@ -602,7 +602,7 @@ const zh: Translation = {
   },
   hero: {
     badge: 'Vloam · 独立软件与在线网站',
-    title: '轻快实用的桌面软件与在线网站',
+    title: '轻快实用的软件工具与在线网站',
     subtitle: '简单、顺手、拒绝臃肿。涵盖轻巧高效的原生桌面软件，以及打开即用的 Web 在线工具与自测网站。',
   },
   categories: {
