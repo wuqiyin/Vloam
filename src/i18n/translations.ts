@@ -488,7 +488,7 @@ const en: Translation = {
     healthTitle: '4. Client-Side Psychological Assessments',
     healthP1: 'Both ADHD Test and BPD Test execute questionnaire calculation logic entirely in your local browser sandbox. No answers, scores, or identifiers are transmitted to our servers.',
     contactTitle: '5. Security Contact & Disclosures',
-    contactP1: 'If you discover a security concern or vulnerability in any Vloam software, please contact our engineering team directly at security@vloam.com.',
+    contactP1: 'If you discover a security concern or vulnerability in any Vloam software, please contact our engineering team directly at support@vloam.com.',
   },
   privacyPage: {
     title: 'Privacy Policy',
@@ -524,7 +524,7 @@ const en: Translation = {
       },
       {
         title: '5. Privacy Inquiries & Data Rights',
-        content: 'If you have questions, feedback, or concerns regarding your privacy when using Vloam software or sites, please reach out directly to privacy@vloam.com.',
+        content: 'If you have questions, feedback, or concerns regarding your privacy when using Vloam software or sites, please reach out directly to support@vloam.com.',
       },
     ],
   },
@@ -555,7 +555,7 @@ const en: Translation = {
       },
       {
         title: '6. Amendments & Contact',
-        content: 'We may modify these terms as our products and services evolve. Notice of substantial revisions will be published on our website. For inquiries concerning these terms, contact us at legal@vloam.com.',
+        content: 'We may modify these terms as our products and services evolve. Notice of substantial revisions will be published on our website. For inquiries concerning these terms, contact us at support@vloam.com.',
       },
     ],
   },
@@ -890,7 +890,7 @@ const zh: Translation = {
     healthTitle: '4. 纯前端离线自测机制',
     healthP1: 'ADHD Test 和 BPD Test 均采用纯前端离线运算模型。测评题目回答只保留在当前标签页内存中，关闭页面即刻销毁，无任何服务器数据库留存。',
     contactTitle: '5. 安全问题联络通道',
-    contactP1: '如果你在 Vloam 旗下任何产品中发现安全隐患或漏洞，请直接发送邮件至 security@vloam.com，我们将第一时间评估并响应。',
+    contactP1: '如果你在 Vloam 旗下任何产品中发现安全隐患或漏洞，请直接发送邮件至 support@vloam.com，我们将第一时间评估并响应。',
   },
   privacyPage: {
     title: '隐私政策与说明',
@@ -926,7 +926,7 @@ const zh: Translation = {
       },
       {
         title: '5. 隐私咨询与联络',
-        content: '如果你对本隐私政策有任何疑问，或需要了解具体技术实现，欢迎直接发送邮件至 privacy@vloam.com 与我们沟通。',
+        content: '如果你对本隐私政策有任何疑问，或需要了解具体技术实现，欢迎直接发送邮件至 support@vloam.com 与我们沟通。',
       },
     ],
   },
@@ -957,7 +957,7 @@ const zh: Translation = {
       },
       {
         title: '6. 条款修订与法律联络',
-        content: '我们可能会根据产品演进和法律要求不时更新本条款。更新后的条款一旦在网站公布即行生效。如对本条款有任何法律相关的咨询，请联系 legal@vloam.com。',
+        content: '我们可能会根据产品演进和法律要求不时更新本条款。更新后的条款一旦在网站公布即行生效。如对本条款有任何法律相关的咨询，请联系 support@vloam.com。',
       },
     ],
   },
