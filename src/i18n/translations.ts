@@ -300,7 +300,7 @@ const en: Translation = {
         platforms: 'macOS (Silicon/Intel), Windows x64',
         engine: 'Native Desktop (Go / WebView)',
         dataStorage: 'Local Only (macOS Keychain / DPAPI)',
-        license: '15-Day Trial · One-Time License',
+        license: 'Free Schema Browse · 15-Day Trial · One-Time License',
       },
       {
         product: 'VloamClip',
@@ -342,14 +342,14 @@ const en: Translation = {
     subtitle: 'Version updates and maintenance milestones across our desktop applications and web tools.',
     items: [
       {
-        version: 'v3.3.4',
+        version: 'v3.3.7',
         product: 'VloamDb',
         date: 'October 2026',
         tag: 'Desktop App',
         highlights: [
-          'Added production color-tagging system and strict read-only lock to prevent accidental table drops.',
-          'Enhanced double-tap Shift fuzzy search to index schemas with 5,000+ tables instantly.',
-          'Native arm64 and x86_64 binary optimizations reducing memory footprint below 38MB on idle.',
+          'Browse free, run when ready: connect, open tables, and inspect schemas without signing in; trial activates when executing SQL or WHERE filters.',
+          'Double-Shift search: disambiguates identically-named databases across different connections with parent connection subtitles.',
+          'UI & navigation polish: keyboard selection no longer conflicts with resting mouse cursors; added native macOS File, View, and Window menu items.',
         ],
       },
       {
@@ -702,7 +702,7 @@ const zh: Translation = {
         platforms: 'macOS (Apple Silicon / Intel), Windows x64',
         engine: '原生桌面应用 (Go / 原生渲染)',
         dataStorage: '本地设备 (macOS Keychain / DPAPI)',
-        license: '15 天全功能试用 · 一次性买断',
+        license: '免登录开表浏览 · 运行试用 15 天 · 一次性买断',
       },
       {
         product: 'VloamClip',
@@ -744,14 +744,14 @@ const zh: Translation = {
     subtitle: '持续迭代与日常维护记录。',
     items: [
       {
-        version: 'v3.3.4',
+        version: 'v3.3.7',
         product: 'VloamDb',
-        date: '2026-10',
+        date: '2026-10-24',
         tag: 'Desktop',
         highlights: [
-          '新增生产环境颜色标签与只读锁定机制，避免误删误改线上数据。',
-          '优化双击 Shift 表检索索引，支持数千张表的快速过滤。',
-          '针对 Apple Silicon 与 Windows x64 优化编译，空闲内存占用低于 38MB。',
+          '浏览免费、执行再试用：连接、开表与结构浏览完全免登录；执行 SQL 或点击 WHERE「运行」时开启 15 天全功能试用。',
+          '双击 Shift 搜库优化：不同连接下的同名数据库分行呈现并展示连接名副标题，生产与预发环境一目了然。',
+          '交互细节提升：修复搜库弹框键盘选择与鼠标悬浮冲突，macOS 补齐原生 File / View / Window 菜单栏。',
         ],
       },
       {
