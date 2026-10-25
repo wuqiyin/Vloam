@@ -19,6 +19,7 @@ const clipUrl = lang === defaultLocale ? "https://clip.vloam.com/" : `https://cl
 const mermaidUrl = lang === defaultLocale ? "https://mermaid.vloam.com/" : `https://mermaid.vloam.com/${lang}/`;
 const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https://adhdtest.vloam.com/${lang}/`;
 const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
+const kinkUrl = lang === defaultLocale ? "https://kinktest.vloam.com/" : `https://kinktest.vloam.com/${lang}/`;
 
 const securityPageUrl = lang === defaultLocale ? "/security/" : `/${lang}/security/`;
 
@@ -339,6 +340,47 @@ const trustPillars = trustPillarsMap[lang] || trustPillarsMap.en;
           <div class="card-actions">
             <a href={bpdUrl} target="_blank" rel="noopener" class="btn-primary btn-purple">
               <span>{t.products.bpd.cta}</span>
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- KinkTest Card -->
+        <article class="product-card" style="--card-accent: #e11d48;">
+          <div class="card-header">
+            <span class="product-tag">{t.products.kink.tag}</span>
+            <span class="os-tag">{t.products.kink.badge}</span>
+          </div>
+
+          <div class="card-identity">
+            <div class="app-icon-squircle" style="background: #be123c;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="7.5" cy="15.5" r="4.5"></circle>
+                <path d="m10.7 12.3 8.8-8.8"></path>
+                <path d="m16 7 2 2"></path>
+                <path d="m19 4 2 2"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>{t.products.kink.title}</h3>
+              <p class="product-slogan rose-slogan">{t.products.kink.slogan}</p>
+            </div>
+          </div>
+
+          <p class="product-desc">{t.products.kink.desc}</p>
+
+          <div class="features-list">
+            {t.products.kink.features.map(f => (
+              <div class="feature-item">
+                <span class="feature-icon-box">{f.icon}</span>
+                <div><strong>{f.title}</strong> {f.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="card-actions">
+            <a href={kinkUrl} target="_blank" rel="noopener" class="btn-primary btn-rose">
+              <span>{t.products.kink.cta}</span>
               <span>→</span>
             </a>
           </div>

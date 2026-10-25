@@ -11,6 +11,7 @@ Vloam Labs is an independent engineering collective dedicated to local-first com
 - [Vloam Mermaid](https://mermaid.vloam.com/): Real-time interactive in-browser Mermaid diagram visualizer and editor. Instant split-pane preview, lossless SVG and high-resolution PNG export, and zero-telemetry client-side processing.
 - [ADHD Test](https://adhdtest.vloam.com/): Evidence-based adult ADHD screening self-assessment tool with confidential in-browser scoring, comprehensive dimensional breakdown, and 10-language international support.
 - [BPD Test](https://bdptest.vloam.com/): Clinically referenced Borderline Personality screening tool providing confidential evaluation, multi-factor analysis, and actionable educational summaries.
+- [KinkTest](https://kinktest.vloam.com/): Private 12-dimension intimate preference and relationship dynamics quiz with client-side local scoring, couple comparison fit codes, and educational guidance on consent and aftercare.
 
 ## Engineering Essays & Architectural Notes
 

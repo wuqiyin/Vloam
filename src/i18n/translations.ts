@@ -58,6 +58,7 @@ export interface Translation {
     mermaid: ProductCardData;
     adhd: ProductCardData;
     bpd: ProductCardData;
+    kink: ProductCardData;
   };
   specsSection: {
     label: string;
@@ -187,7 +188,7 @@ export interface Translation {
 const en: Translation = {
   meta: {
     title: 'Vloam — Focused Desktop Software & Useful Web Apps',
-    description: 'Independent software studio building lightweight desktop tools (VloamDb, VloamClip) and clean web applications (Vloam Mermaid, ADHD Test, BPD Test).',
+    description: 'Independent software studio building lightweight desktop tools (VloamDb, VloamClip) and clean web applications (Vloam Mermaid, ADHD Test, BPD Test, KinkTest).',
   },
   nav: {
     products: 'Software & Tools',
@@ -280,6 +281,20 @@ const en: Translation = {
       ],
       cta: 'Launch Screener',
     },
+    kink: {
+      tag: 'Intimate Dynamics Quiz',
+      badge: 'Browser · 18+',
+      title: 'KinkTest',
+      slogan: 'Private 12-Dimension Intimate Preference & Dynamics Quiz',
+      desc: 'Private self-discovery tool: instant 12-dimension radar charts, two-person compatibility codes, and communication guidance. Scores calculated locally in your browser with zero server uploads.',
+      features: [
+        { icon: '›', title: '12-Dimension Profile:', desc: 'Instant radar chart evaluating relationship dynamics and preferences.' },
+        { icon: '›', title: 'Couple Comparison:', desc: 'Compare two fit codes client-side to find common ground without an account.' },
+        { icon: '›', title: '100% On-Device Scoring:', desc: 'Evaluation logic runs completely in memory; answers are never saved.' },
+        { icon: '›', title: 'Safety & Aftercare:', desc: 'Educational guides on consent, safewords, boundaries, and emotional drop.' },
+      ],
+      cta: 'Start KinkTest',
+    },
   },
   specsSection: {
     label: 'Specifications',
@@ -333,6 +348,14 @@ const en: Translation = {
         engine: 'Client-Side JavaScript / Static',
         dataStorage: 'Browser Memory (No Backend Logging)',
         license: 'Free Public Resource',
+      },
+      {
+        product: 'KinkTest',
+        category: 'Intimate Dynamics',
+        platforms: 'Modern Web Browsers (Mobile & Desktop)',
+        engine: 'Client-Side JavaScript / Static',
+        dataStorage: 'Browser Memory (No Backend Logging)',
+        license: 'Free Public Resource (18+)',
       },
     ],
   },
@@ -446,7 +469,7 @@ const en: Translation = {
     items: [
       {
         q: 'What is the Vloam ecosystem?',
-        a: 'Vloam is an independent software studio building native desktop applications (VloamDb, VloamClip), visual web utilities (Vloam Mermaid), and privacy-first online self-assessment tools (ADHD Test, BPD Test).',
+        a: 'Vloam is an independent software studio building native desktop applications (VloamDb, VloamClip), visual web utilities (Vloam Mermaid), and privacy-first online self-assessment tools (ADHD Test, BPD Test, KinkTest).',
       },
       {
         q: 'Are my data or test results sent to cloud servers?',
@@ -485,8 +508,8 @@ const en: Translation = {
     credentialP1: 'Vloam desktop software delegates secret storage to hardware-backed system keychains: Apple Keychain Services on macOS and the Data Protection API (DPAPI) on Windows. We never store credentials in plain text.',
     telemetryTitle: '3. Zero Data Harvesting',
     telemetryP1: 'We collect zero telemetry on clipboard contents, SQL queries, or database schema names. Our desktop utilities operate without required network telemetry.',
-    healthTitle: '4. Client-Side Psychological Assessments',
-    healthP1: 'Both ADHD Test and BPD Test execute questionnaire calculation logic entirely in your local browser sandbox. No answers, scores, or identifiers are transmitted to our servers.',
+    healthTitle: '4. Client-Side Self-Assessments',
+    healthP1: 'ADHD Test, BPD Test, and KinkTest execute questionnaire calculation logic entirely in your local browser sandbox. No answers, scores, or identifiers are transmitted to our servers.',
     contactTitle: '5. Security Contact & Disclosures',
     contactP1: 'If you discover a security concern or vulnerability in any Vloam software, please contact our engineering team directly at support@vloam.com.',
   },
@@ -510,10 +533,10 @@ const en: Translation = {
       },
       {
         title: '3. Web Applications & Online Assessments',
-        content: 'For our browser-based utilities including Vloam Mermaid, ADHD Test, and BPD Test:',
+        content: 'For our browser-based utilities including Vloam Mermaid, ADHD Test, BPD Test, and KinkTest:',
         points: [
           'Diagram rendering (Mermaid syntax) executes entirely client-side inside your active browser session.',
-          'Psychological questionnaire responses and score breakdowns are calculated via in-memory JavaScript.',
+          'Psychological and intimate preference questionnaire responses are calculated via in-memory JavaScript.',
           'Zero test answers or personal screening data are stored on or sent to remote databases.',
           'All session memory is purged as soon as you close or reload the browser tab.',
         ],
@@ -542,8 +565,8 @@ const en: Translation = {
         content: 'Vloam desktop software (including VloamDb and VloamClip) is distributed with an unrestricted 15-day free evaluation period. Continued usage following the evaluation period requires purchase of a perpetual lifetime license. Licenses are non-exclusive and non-transferable, granting you the right to run the application on supported personal or work devices.',
       },
       {
-        title: '3. Online Tools & Health Self-Assessment Disclaimer',
-        content: 'Web applications such as Vloam Mermaid, ADHD Test, and BPD Test are provided free of charge for public benefit. Please note the clinical self-assessment tools are intended solely for educational and informational self-screening purposes and do not replace professional psychological diagnosis, medical advice, or psychiatric treatment. Always seek the advice of a qualified healthcare provider with any medical questions.',
+        title: '3. Online Tools & Self-Assessment Disclaimer',
+        content: 'Web applications such as Vloam Mermaid, ADHD Test, BPD Test, and KinkTest are provided free of charge for public benefit. Please note the clinical and self-assessment tools are intended solely for educational and informational self-screening purposes (KinkTest for consenting adults 18+) and do not replace professional psychological diagnosis, medical advice, or psychiatric treatment. Always seek the advice of a qualified healthcare provider with any medical questions.',
       },
       {
         title: '4. Permitted Use & Restrictions',
@@ -589,7 +612,7 @@ const en: Translation = {
 const zh: Translation = {
   meta: {
     title: 'Vloam — 轻快实用的软件工具与在线网站',
-    description: '独立软件工作室，打造轻巧高效的原生桌面软件（VloamDb、VloamClip）与免安装开箱即用的 Web 在线工具与自测网站（Vloam Mermaid、ADHD 与 BPD 自评）。',
+    description: '独立软件工作室，打造轻巧高效的原生桌面软件（VloamDb、VloamClip）与免安装开箱即用的 Web 在线工具与自测网站（Vloam Mermaid、ADHD、BPD 与 KinkTest）。',
   },
   nav: {
     products: '软件与工具',
@@ -682,6 +705,20 @@ const zh: Translation = {
       ],
       cta: '进入自测',
     },
+    kink: {
+      tag: '亲密偏好自测',
+      badge: 'Web 在线 · 18+',
+      title: 'KinkTest',
+      slogan: '私密的 12 维亲密偏好与关系动态测评',
+      desc: '在浏览器本地完成私密的 12 维亲密偏好测评：即时多维雷达图、双人契合码对比与安全沟通建议。纯前端计算，答卷不上传，零隐私泄露风险。',
+      features: [
+        { icon: '›', title: '12 维雷达画像：', desc: '即时呈现控制与臣服、感官探索等多维亲密倾向。' },
+        { icon: '›', title: '双人契合对比：', desc: '基于 Base64 契合码对比重合度，无需注册或云端存储。' },
+        { icon: '›', title: '100% 本地运算：', desc: '题目打分全程在浏览器内存计算，绝不收集用户答卷。' },
+        { icon: '›', title: '安全指引与边界：', desc: '提供安全词体系、边界沟通及事后关怀（Aftercare）科普。' },
+      ],
+      cta: '进入自测',
+    },
   },
   specsSection: {
     label: '技术参数',
@@ -735,6 +772,14 @@ const zh: Translation = {
         engine: '静态 Web (纯前端本地计算)',
         dataStorage: '当前标签页内存 (不保存答卷)',
         license: '免费开放',
+      },
+      {
+        product: 'KinkTest',
+        category: '亲密偏好自测',
+        platforms: '现代桌面与移动端浏览器',
+        engine: '静态 Web (纯前端本地计算)',
+        dataStorage: '当前标签页内存 (不保存答卷)',
+        license: '免费开放 (18+ 科普工具)',
       },
     ],
   },
@@ -848,7 +893,7 @@ const zh: Translation = {
     items: [
       {
         q: '什么是 Vloam？',
-        a: 'Vloam 是一家独立的数字化软件工作室，旗下涵盖桌面客户端软件（VloamDb、VloamClip）、Web 在线工具（Vloam Mermaid）以及免注册的专业自测网站（ADHD Test、BPD Test）。',
+        a: 'Vloam 是一家独立的数字化软件工作室，旗下涵盖桌面客户端软件（VloamDb、VloamClip）、Web 在线工具（Vloam Mermaid）以及免注册的专业自测网站（ADHD Test、BPD Test、KinkTest）。',
       },
       {
         q: '我的数据或测评结果会被上传到云端服务器吗？',
@@ -888,7 +933,7 @@ const zh: Translation = {
     telemetryTitle: '3. 拒绝隐蔽遥测',
     telemetryP1: '我们的工具不扫描剪贴板内容、不分析执行的 SQL 语义、不上传数据库表结构信息，杜绝任何侵犯用户隐私的隐蔽行为。',
     healthTitle: '4. 纯前端离线自测机制',
-    healthP1: 'ADHD Test 和 BPD Test 均采用纯前端离线运算模型。测评题目回答只保留在当前标签页内存中，关闭页面即刻销毁，无任何服务器数据库留存。',
+    healthP1: 'ADHD Test、BPD Test 与 KinkTest 均采用纯前端离线运算模型。题目回答只保留在当前标签页内存中，关闭页面即刻销毁，无任何服务器数据库留存。',
     contactTitle: '5. 安全问题联络通道',
     contactP1: '如果你在 Vloam 旗下任何产品中发现安全隐患或漏洞，请直接发送邮件至 support@vloam.com，我们将第一时间评估并响应。',
   },
@@ -912,10 +957,10 @@ const zh: Translation = {
       },
       {
         title: '3. Web 在线应用与工具网站',
-        content: '针对 Vloam Mermaid、ADHD Test 与 BPD Test 等在浏览器中运行的 Web 工具：',
+        content: '针对 Vloam Mermaid、ADHD Test、BPD Test 与 KinkTest 等在浏览器中运行的 Web 工具：',
         points: [
           'Mermaid 图表语法的解析与渲染完全在当前浏览器窗口内即时完成，无需后端传输等待。',
-          '心理与性格倾向测评的计分算法由浏览器端 JavaScript 在前端内存中即时计算。',
+          '心理、性格倾向与亲密偏好测评的计分算法由浏览器端 JavaScript 在前端内存中即时计算。',
           '无需注册账号，我们的服务器绝不存储任何用户的答题选项与测评报告。',
           '关闭或刷新当前网页标签页后，所有临时运算内存立即自动销毁，不留任何痕迹。',
         ],
@@ -944,8 +989,8 @@ const zh: Translation = {
         content: 'Vloam 桌面客户端（如 VloamDb、VloamClip）提供为期 15 天的全功能免费试用。试用期结束后，用户可通过购买一次性终身授权继续使用。该授权授予你在受支持的设备上运行本软件的非排他性、不可转让的权利。Vloam 保留所有软件代码、界面设计、商标与知识产权所有权。',
       },
       {
-        title: '3. 在线工具与心理测评免责声明',
-        content: 'Vloam Mermaid、ADHD Test 与 BPD Test 等在线工具面向公众免费开放。请注意：心理与性格自评工具仅供个人自我筛查认知与常识科普参考，不能替代执业医师、心理学家或专科医疗机构的临床诊断与治疗方案。如有身心健康疑虑，请务必咨询专业医疗人员。',
+        title: '3. 在线工具与自测网站免责声明',
+        content: 'Vloam Mermaid、ADHD Test、BPD Test 与 KinkTest 等在线工具面向公众免费开放。请注意：心理、性格与亲密偏好自评工具仅供个人自我筛查认知与常识科普参考（KinkTest 仅限 18 岁以上成年人使用），不能替代执业医师、心理学家或专科医疗机构的临床诊断与治疗方案。如有身心健康疑虑，请务必咨询专业医疗人员。',
       },
       {
         title: '4. 合理合规使用规范',
@@ -992,7 +1037,7 @@ const es: Translation = {
   ...en,
   meta: {
     title: 'Vloam — Herramientas digitales y utilidades privadas en línea',
-    description: 'Explora el ecosistema Vloam: VloamDb (cliente MySQL), VloamClip (portapapeles), Vloam Mermaid, test de TDAH y test de TLP.',
+    description: 'Explora el ecosistema Vloam: VloamDb (cliente MySQL), VloamClip (portapapeles), Vloam Mermaid, test de TDAH, test de TLP y KinkTest.',
   },
   nav: {
     ...en.nav,
@@ -1010,7 +1055,7 @@ const fr: Translation = {
   ...en,
   meta: {
     title: 'Vloam — Outils numériques et services en ligne privés',
-    description: 'Explorez l’écosystème Vloam : VloamDb, VloamClip, Vloam Mermaid, tests TDAH et TPL.',
+    description: 'Explorez l’écosystème Vloam : VloamDb, VloamClip, Vloam Mermaid, tests TDAH, TPL et KinkTest.',
   },
   nav: {
     ...en.nav,
@@ -1024,7 +1069,7 @@ const fr: Translation = {
   },
 };
 
-function createMirror(devNav: string, healthNav: string, dbCta: string, clipCta: string, mermaidCta: string, adhdCta: string, bpdCta: string): Translation {
+function createMirror(devNav: string, healthNav: string, dbCta: string, clipCta: string, mermaidCta: string, adhdCta: string, bpdCta: string, kinkCta: string): Translation {
   return {
     ...en,
     nav: {
@@ -1039,6 +1084,7 @@ function createMirror(devNav: string, healthNav: string, dbCta: string, clipCta:
       mermaid: { ...en.products.mermaid, cta: mermaidCta },
       adhd: { ...en.products.adhd, cta: adhdCta },
       bpd: { ...en.products.bpd, cta: bpdCta },
+      kink: { ...en.products.kink, cta: kinkCta },
     },
   };
 }
@@ -1048,12 +1094,12 @@ export const translations: Record<Locale, Translation> = {
   zh,
   es,
   fr,
-  de: createMirror('Produkte', 'Selbsttests', 'VloamDb öffnen →', 'VloamClip öffnen →', 'Mermaid Editor öffnen →', 'ADHD Test starten →', 'BPD Test starten →'),
-  pt: createMirror('Produtos', 'Autoavaliação', 'Abrir VloamDb →', 'Abrir VloamClip →', 'Abrir Editor Mermaid →', 'Fazer Teste TDAH →', 'Fazer Teste TPB →'),
-  it: createMirror('Prodotti', 'Autovalutazione', 'Apri VloamDb →', 'Apri VloamClip →', 'Apri Mermaid Editor →', 'Inizia Test ADHD →', 'Inizia Test BPD →'),
-  nl: createMirror('Producten', 'Zelftests', 'Open VloamDb →', 'Open VloamClip →', 'Open Mermaid Editor →', 'Start ADHD-test →', 'Start BPD-test →'),
-  pl: createMirror('Produkty', 'Autodiagnoza', 'Otwórz VloamDb →', 'Otwórz VloamClip →', 'Otwórz Mermaid Editor →', 'Rozpocznij test ADHD →', 'Rozpocznij test BPD →'),
-  ro: createMirror('Produse', 'Autoevaluare', 'Deschide VloamDb →', 'Deschide VloamClip →', 'Deschide Editor Mermaid →', 'Începe testul ADHD →', 'Începe testul BPD →'),
+  de: createMirror('Produkte', 'Selbsttests', 'VloamDb öffnen →', 'VloamClip öffnen →', 'Mermaid Editor öffnen →', 'ADHD Test starten →', 'BPD Test starten →', 'KinkTest starten →'),
+  pt: createMirror('Produtos', 'Autoavaliação', 'Abrir VloamDb →', 'Abrir VloamClip →', 'Abrir Editor Mermaid →', 'Fazer Teste TDAH →', 'Fazer Teste TPB →', 'Fazer KinkTest →'),
+  it: createMirror('Prodotti', 'Autovalutazione', 'Apri VloamDb →', 'Apri VloamClip →', 'Apri Mermaid Editor →', 'Inizia Test ADHD →', 'Inizia Test BPD →', 'Inizia KinkTest →'),
+  nl: createMirror('Producten', 'Zelftests', 'Open VloamDb →', 'Open VloamClip →', 'Open Mermaid Editor →', 'Start ADHD-test →', 'Start BPD-test →', 'Start KinkTest →'),
+  pl: createMirror('Produkty', 'Autodiagnoza', 'Otwórz VloamDb →', 'Otwórz VloamClip →', 'Otwórz Mermaid Editor →', 'Rozpocznij test ADHD →', 'Rozpocznij test BPD →', 'Rozpocznij KinkTest →'),
+  ro: createMirror('Produse', 'Autoevaluare', 'Deschide VloamDb →', 'Deschide VloamClip →', 'Deschide Editor Mermaid →', 'Începe testul ADHD →', 'Începe testul BPD →', 'Începe testul KinkTest →'),
 };
 
 export function useTranslations(locale: Locale): Translation {

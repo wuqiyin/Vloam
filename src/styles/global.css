@@ -355,7 +355,8 @@ a {
 .emerald-slogan,
 .cyan-slogan,
 .amber-slogan,
-.purple-slogan {
+.purple-slogan,
+.rose-slogan {
   color: var(--text-muted);
 }
 
@@ -386,7 +387,8 @@ a {
 .btn-emerald,
 .btn-cyan,
 .btn-amber,
-.btn-purple {
+.btn-purple,
+.btn-rose {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -407,7 +409,8 @@ a {
 .btn-emerald:hover,
 .btn-cyan:hover,
 .btn-amber:hover,
-.btn-purple:hover {
+.btn-purple:hover,
+.btn-rose:hover {
   background: #000000;
   color: #ffffff !important;
   box-shadow: none;
@@ -1076,7 +1079,8 @@ a {
   .btn-emerald,
   .btn-cyan,
   .btn-amber,
-  .btn-purple {
+  .btn-purple,
+  .btn-rose {
     width: 100%;
   }
 

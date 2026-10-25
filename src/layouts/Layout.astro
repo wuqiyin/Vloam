@@ -28,6 +28,7 @@ const clipUrl = lang === defaultLocale ? "https://clip.vloam.com/" : `https://cl
 const mermaidUrl = lang === defaultLocale ? "https://mermaid.vloam.com/" : `https://mermaid.vloam.com/${lang}/`;
 const adhdUrl = lang === defaultLocale ? "https://adhdtest.vloam.com/" : `https://adhdtest.vloam.com/${lang}/`;
 const bpdUrl = lang === defaultLocale ? "https://bdptest.vloam.com/" : `https://bdptest.vloam.com/${lang}/`;
+const kinkUrl = lang === defaultLocale ? "https://kinktest.vloam.com/" : `https://kinktest.vloam.com/${lang}/`;
 
 const homeUrl = lang === defaultLocale ? "/" : `/${lang}/`;
 const aboutUrl = lang === defaultLocale ? "/about/" : `/${lang}/about/`;
@@ -51,7 +52,8 @@ const structuredData = {
         clipUrl,
         mermaidUrl,
         adhdUrl,
-        bpdUrl
+        bpdUrl,
+        kinkUrl
       ]
     },
     {
@@ -98,6 +100,13 @@ const structuredData = {
       "applicationCategory": "HealthApplication",
       "url": bpdUrl,
       "description": t.products.bpd.desc
+    },
+    {
+      "@type": "WebApplication",
+      "name": "KinkTest",
+      "applicationCategory": "HealthApplication",
+      "url": kinkUrl,
+      "description": t.products.kink.desc
     },
     {
       "@type": "FAQPage",
@@ -255,6 +264,7 @@ const structuredData = {
                 <li><a href={mermaidUrl} target="_blank" rel="noopener">Vloam Mermaid (Editor)</a></li>
                 <li><a href={adhdUrl} target="_blank" rel="noopener">ADHD Assessment Test</a></li>
                 <li><a href={bpdUrl} target="_blank" rel="noopener">BPD Screening Test</a></li>
+                <li><a href={kinkUrl} target="_blank" rel="noopener">KinkTest (Intimate Dynamics)</a></li>
                 <li><a href={`${adhdUrl}about/`} target="_blank" rel="noopener">ADHD Clinical Criteria</a></li>
                 <li><a href={`${bpdUrl}about/`} target="_blank" rel="noopener">BPD Assessment Scale</a></li>
               </ul>
